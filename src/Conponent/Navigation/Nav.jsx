@@ -14,6 +14,10 @@ const[hide, setIsHide] = useState(true)
 const handleClick =() => {
      setIsHide(!hide)
 }
+const handleShow = ()=> {
+     setShow(!show)
+
+}
 
   return (
     <div className="nav__div">
@@ -52,7 +56,7 @@ const handleClick =() => {
           </div>
 }
           <div className='menu'>
-                       {show ? <CloseIcon onClick={handleClick}/> : <MenuIcon onClick={handleClick}/>}  
+               {show ? <CloseIcon onClick={handleClick}/> : <MenuIcon onClick={handleClick}/>}  
            </div>
         </div>
       </nav>
