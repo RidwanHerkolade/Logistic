@@ -1,0 +1,6 @@
+.available__div h1  {
+    margin: 1.5rem 0rem;
+    font-size: var(--font-header);
+    font-weight: 200;
+    color: var(--color-header);
+}

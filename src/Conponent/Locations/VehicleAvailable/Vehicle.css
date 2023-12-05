@@ -1,0 +1,26 @@
+.vehicle__divs .h1 {
+  font-size: var(--font-header);
+  padding: 1.5rem 0rem;
+  color: var(--color-header);
+  font-weight: 200;
+  border-bottom: 2px solid var(--color-icon);
+}
+.vehicle__div {
+  border-bottom: 2px solid var(--color-icon);
+  padding: 2rem 0rem;
+}
+.vehicle__content {
+  width: 100%;
+  border-left: 7px solid var(--color-yellow);
+  padding: 0.07rem 0rem;
+  background: var(--color-truckBorder);
+}
+.vehicle__div p {
+    margin-left: 2rem;
+    font-weight: 200;
+    display: flex;
+    font-size: var(--font-headers);
+    color: var(--color-header);
+  }
+
+
