@@ -1,0 +1,134 @@
+.record__divs {
+    width: 100%;
+    height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.record__div {
+    width: 80%;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    justify-content: center;
+}
+.record__header {
+    font-size: var(--font-folds);
+    line-height: 50px;
+}
+.h4 {
+    margin-top: 1.5rem;
+    font-size: var(--font-header);
+    color: var(--color-migro);
+    font-weight: 700;
+}
+.record__ad {
+    width: 100%;
+}
+.record__location {
+    width: 100%;
+}
+
+.formdivs__record {
+    display: flex;
+    gap: 0.8rem;
+    width: 100%;
+
+}
+.form__recorddivs {
+    display: flex;
+    flex-direction: column;
+}
+ .record__inputs {
+    display: flex;
+    margin: 0.5rem 0rem;
+    width: 100%;
+    position: relative;
+    /* flex-direction: column !important; */
+}
+.record__input {
+    width: calc(100% - 4.1rem);
+}
+.record__inputs .record__input input {
+    font-size: var(--font-small);
+    width: 100%;
+    padding: 0.7rem 2rem;
+    border: 1px solid var(--color-icon);
+    position: relative;
+    border-radius: 0.2rem;
+  }
+  .record__inputs span {
+    position: absolute;
+    font-size: 0rem;
+    left: 0.5rem;
+    top: 0.75rem;
+  } 
+  .record__inputs span .iconsize {
+    font-size: 1rem;
+    color: var(--color-icon);
+ }
+ .record__btn button{
+    padding: 0.7rem 1rem;
+    color: var(--color-nav);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    margin: 1rem 0rem;
+    border: none;
+    background: var(--color-yellow);
+    font-size: var(--font-small);
+    outline: 0rem;
+ }
+ /* REGISTER */
+ .register__btn{
+    padding: 0.5rem ;
+    text-align: center;
+    border-radius: 0.3rem;
+    width: 6rem;
+    color: var(--color-reg);
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid var(--color-reg);
+    outline: none;
+    background: transparent;
+    font-size: var(--font-small);
+
+ }
+ .register__btn:hover {
+    background: var(--color-reg);
+    color: var(--color-white);
+ }
+
+  @media screen and (max-width: 480px) {
+    .formdivs__record {
+        display: flex;
+        flex-direction: column;
+    }
+    .register{
+
+        width: 5rem;
+    
+     }
+    
+  }
+ 
+@media  (min-width: 481px) and  (max-width: 768px) {
+    .formdivs__record {
+        display: flex;
+        flex-direction: column;
+    }
+    
+   
+}
+@media  (min-width: 1200px) and  (max-width: 1919px) {
+    
+}
+@media (min-width: 1920px) 
+{
+    
+
+}

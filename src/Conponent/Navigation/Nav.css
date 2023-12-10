@@ -108,13 +108,14 @@
   }
   .nav__link {
     position: absolute;
-    background-color: var(--color-white);
+    background-color: var(--color-orange);
     width: 100%;
     z-index: 11;
+    padding: 0rem 0rem;
     /* border: 2px solid yellow; */
-    height: 28vh;
+    height: 29%;
     right: -0.85rem;
-    top: 4rem;
+    top: 3.75rem;
   }
    .nav__links { 
     flex-direction: column;
@@ -145,6 +146,7 @@
 }
 .menu {
   display: flex;
+  border: 3px solid red;
   position: absolute;
   right: 2rem;
 }
@@ -161,8 +163,8 @@
     background-color: var(--color-white);
     width: 100%;
     z-index: 11;
-    /* border: 2px solid yellow; */
-    height: 28vh;
+    padding: 1rem 0rem;
+    height: 23vh;
     right: -0.85rem;
     top: 4rem;
   }
@@ -185,7 +187,7 @@
 }
 .homepage__link {
   position: absolute;
-  z-index: 22;
+  z-index: 23;
   top: 1rem;
   left: 1rem;
   border: 1px solid var(--color-header);
@@ -199,10 +201,10 @@
   right: 2rem;
 }
    
-  
-   
-
     
+}
+@media screen and (max-width: 480px) {
+
 }
 @media  (min-width: 768px) and  (max-width: 991px) {
   .nav__content {
@@ -216,8 +218,9 @@
     background-color: var(--color-white);
     width: 100%;
     z-index: 11;
+    padding: 1rem 0rem;
     /* border: 2px solid yellow; */
-    height: 28vh;
+    height: 27vh;
     right: -0.85rem;
     top: 4rem;
   }
@@ -262,6 +265,54 @@
     
 
 @media  (min-width: 992px) and  (max-width: 1199px) {
+  .nav__content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+  }
+  .nav__link {
+    position: absolute;
+    background-color: var(--color-white);
+    width: 100%;
+    z-index: 11;
+    height: 30vh;
+    right: -0.85rem;
+    top: 4rem;
+  }
+   .nav__links { 
+    flex-direction: column;
+    top: 5rem;
+    left: 1rem;
+    position: absolute; 
+}
+.nav__links .links {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 0.7rem;
+  width: 100%;
+}
+.nav__links li {
+  position: relative;
+  top: 3rem;
+  right: 0rem;
+}
+.homepage__link {
+  position: absolute;
+  z-index: 22;
+  top: 1rem;
+  left: 1rem;
+  border: 1px solid var(--color-header);
+}
+.nav__links #announcement {
+  color: var(--color-nav);
+}
+.menu {
+  display: flex;
+  position: absolute;
+  right: 2rem;
+}
+ 
    
 }
 @media  (min-width: 1200px) and  (max-width: 1919px) {

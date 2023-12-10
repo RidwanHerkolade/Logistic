@@ -8,17 +8,18 @@ import Home from "../../Pages/Homepage/Home";
 import "./Nav.css";
 
 const Nav = () => {
-const [show, setShow] = useState(true)
-const[hide, setIsHide] = useState(true)
+// const [show, setShow] = useState(true)
+const[hide, setIsHide] = useState(false)
 
 const handleClick =() => {
      setIsHide(!hide)
 }
-const handleShow = ()=> {
-     setShow(!show)
+const handleMobile =() => {
+    setIsHide(!hide)
+}
+const handleMobiles =() => {
 
 }
-
   return (
     <div className="nav__div">
       <nav className="nav">
@@ -45,18 +46,18 @@ const handleShow = ()=> {
                 Visitor announcements
               </Link>
               <div className="linkss">
-                <Link to="driverad" className="drive__ad">
+                <Link to="driverrecord" className="drive__ad">
                   Add your ad
                 </Link>
-                <Link to="announcement" className="drive__logins">
+                <Link to="driverform" className="drive__logins">
                   Drivers login{" "}
                 </Link>
               </div>
             </div>
           </div>
 }
-          <div className='menu'>
-               {show ? <CloseIcon onClick={handleClick}/> : <MenuIcon onClick={handleClick}/>}  
+          <div className='menu' onClick={handleClick}>
+               {hide ? <MenuIcon/> : <CloseIcon/>}  
            </div>
         </div>
       </nav>
