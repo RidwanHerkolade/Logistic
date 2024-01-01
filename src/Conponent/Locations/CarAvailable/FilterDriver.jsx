@@ -4,15 +4,13 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import ErrorIcon from "@mui/icons-material/Error";
-import { useForm } from "react-hook-form";
+import { tripDestination, vehicleType } from "../../../Constants/Constant";
+import { useForm, Controller } from "react-hook-form";
+import Select from 'react-select';
 
 const FilterDriver = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = () => {
+  const { control, handleSubmit, formState:{errors} } = useForm({});
+  const onSubmit = (data) => {
     console.log(data);
   };
   return (
@@ -23,46 +21,89 @@ const FilterDriver = () => {
             <LocationOnIcon className="iconsize" />
           </span>
           <div className="input">
-            <input
+            <div className="ss">
+            <Controller
+                name="initialDestination"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    options={tripDestination}
+                    placeholder="to"
+                    isSearchable
+                    noOptionsMessage={() => 'no location found'}
+                  />
+                )}
+               
+                defaultValue=""
+                rules={{
+                  required: "chooose your initial destination"
+                }}
+              />
+              
+            </div>
+            {errors.initialDestination && (<p className="errors">{errors.initialDestination.message}</p>)}
+            {/* <input
               type="text"
               placeholder="to"
               name="finalDestination"
               {...register("finalDestination", {
                 required: "Please fill out the field",
               })}
-            />
+            /> */}
           </div>
-          <span className="input__icon">
+          {/* <span className="input__icon">
             <LocationOnIcon className="iconsize" />
-          </span>
-          <div className="error__edge"></div>
-          {errors.finalDestination && (
+          </span> */}
+          {/* <div className="error__edge"></div> */}
+          {/* {errors.finalDestination && (
             <p className="errors">
               <ErrorIcon className="error__icon" />
               {errors.finalDestination.message}
             </p>
-          )}
+          )} */}
         </div>
         <div className="form__input">
           <div className="input">
-            <input
+            <div className="ss">
+            <Controller
+                name="finalDestination"
+                 control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    options={tripDestination}
+                    placeholder="from"
+                    isSearchable
+                    noOptionsMessage={() => 'no location found'}
+                  />
+                )}
+                // control={control}
+                defaultValue=""
+                rules={{
+                  required: "chooose your final destination"
+                }}
+              />
+            </div>
+            {errors.finalDestination && (<p className="errors">{errors.finalDestination.message}</p>)}
+            {/* <input
               type="text"
               placeholder="from"
               name="aboutDestination"
               {...register("about destination", {
                 required: "Please fill out the field",
               })}
-            />
+            /> */}
           </div>
-          <span className="input__icon">
+          {/* <span className="input__icon">
             <LocationOnIcon className="iconsize" />
-          </span>
-          {errors.locationDestination && (
+          </span> */}
+          {/* {errors.locationDestination && (
             <p className="errors">
               <ErrorIcon className="error__icon" />
               {errors.locationDestination.message}
             </p>
-          )}
+          )} */}
         </div>
         <div className="form__input">
           <button type="submit">Filter</button>

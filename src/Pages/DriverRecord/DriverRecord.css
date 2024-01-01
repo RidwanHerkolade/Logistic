@@ -31,12 +31,14 @@
     width: 100%;
 }
 .record__location {
-    width: 100%;
+    width: 100%;    
+    /* border: 2px solid red; */
 }
 
 .formdivs__record {
     display: flex;
-    gap: 0.8rem;
+    gap: 5rem;
+    /* border: 2px solid yellow; */
     width: 100%;
 
 }
@@ -52,12 +54,17 @@
     /* flex-direction: column !important; */
 }
 .record__input {
-    width: calc(100% - 4.1rem);
+    width: calc(100% - 0rem);
+   
 }
+.record__input .ss {
+    width: 100%;
+}
+
 .record__inputs .record__input input {
     font-size: var(--font-small);
     width: 100%;
-    padding: 0.7rem 2rem;
+    padding: 0.55rem 2rem;
     border: 1px solid var(--color-icon);
     position: relative;
     border-radius: 0.2rem;
@@ -101,6 +108,38 @@
  .register__btn:hover {
     background: var(--color-reg);
     color: var(--color-white);
+ }
+
+ /* ADS DIVS */
+ .ad__divs {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .ad__div {
+    display: flex;
+    border-radius: 0.4rem;
+    padding: 6rem;
+    justify-content: flex-start;
+    align-items: start ;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+ }
+ .ads__content {
+    font-size: var(--font-small);
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    font-family: var(--font-family);
+ }
+ .ad__div p {
+    font-family: var(--font-family);
+    font-size: var(--font-header);
+    font-weight: 600;
+    color: var(--color-yellow);
+    margin: 0rem;
+    padding: 0rem;
  }
 
   @media screen and (max-width: 480px) {

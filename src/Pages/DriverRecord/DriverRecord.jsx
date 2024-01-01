@@ -6,165 +6,188 @@ import MailIcon from "@mui/icons-material/Mail";
 // import LoginIcon from "@mui/icons-material/Login";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { useForm } from "react-hook-form";
-import './DriverRecord.css'
+import { useForm, Controller } from "react-hook-form";
+import { tripDestination } from "../../Constants/Constant";
+import Select from "react-select";
+import { vehicleType } from "../../Constants/Constant";
+import "./DriverRecord.css";
+import { useNavigate } from "react-router-dom";
+
 const DriverRecord = () => {
   const {
-    handleSubmit,
     register,
+    control,
+    handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({});
 
-  const onSubmit =(e) => {
-    e.prevent.default()
-  }
+  const navigate = useNavigate();
+ 
+  const onSubmit = (data) => {
+    navigate("/driverad", { state: { formData: data } });
+  };
   return (
     <div className="record__divs">
       <div className="h4">Logistics</div>
       <div className="record__div">
         <div className="record__header">Add your Ad</div>
         <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
-
-           <div className="formdivs__record">
-
-          
-          <div className="record__ad">
-             <div className="record__inputs">
-             <div className="record__input">
-                <input
-                  type="name"
-                  placeholder="First Name"
-                  name="firstName"
-                  {...register("name", {
-                    required: "Please fill out the field",
-                  })}
-                />
-                
-              </div>
-              <span className="input__icon">
-                  <PersonIcon className="iconsize" />
-                </span>
-                
-                
-             </div>
-
-             <div className="record__inputs">
-                  <div className="record__input">
+          <div className="formdivs__record">
+            <div className="record__ad">
+              <div className="record__inputs">
+                <div className="record__input">
                   <input
-                  type="name"
-                  placeholder="Family Name"
-                  name="familyName"
-                  {...register("familyName", {
-                    required: "Please fill out the field",
-                  })}
-              
-                />
-                       
-                  </div>
-                  <span className="input__icon">
+                    type="name"
+                    placeholder="First Name"
+                    name="firstName"
+                    {...register("firstName", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+                <span className="input__icon">
                   <PersonIcon className="iconsize" />
                 </span>
               </div>
 
               <div className="record__inputs">
-                   <div className="record__input">
-                   <input
-                  type="email"
-                  placeholder="E-mail"
-                  name="email"
-                  {...register("email", {
-                    required: "Please fill out the field",
-                  })}
-                />
-                       
-                   </div>
-                   <span className="input__icon">
+                <div className="record__input">
+                  <input
+                    type="name"
+                    placeholder="Last Name"
+                    name="lastName"
+                    {...register("lastName", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+                <span className="input__icon">
+                  <PersonIcon className="iconsize" />
+                </span>
+              </div>
+
+              <div className="record__inputs">
+                <div className="record__input">
+                  <input
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                    {...register("email", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+                <span className="input__icon">
                   <MailIcon className="iconsize" />
                 </span>
-               </div>
-
-               <div className="record__inputs">
-              <div className="record__input">
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  name="phone"
-                  {...register("phone", {
-                    required: "Please fill out the field",
-                  })}
-                />
-               
-              </div>
-              <span className="input__icon">
-                  <CallIcon className="iconsize" />
-                </span>
-            </div>
-            </div>
-
-
-          <div className="record__location">
-          <div className="record__inputs">
-             <div className="record__input" id="order2">
-                <input
-                  type="name"
-                  placeholder="Starting city"
-                  name="startingCity"
-                  {...register("starting city", {
-                    required: "Please fill out the field",
-                  })}
-                />
-                
-              </div>
-              <span className="input__icon">
-                  <LocationOnIcon className="iconsize" />
-                </span>
-                
-                
-             </div>
-
-             <div className="record__inputs">
-                  <div className="record__input">
-                  <input
-                  type="text"
-                  placeholder="Arrival City"
-                  name="arrivalCity"
-                  {...register("arrivalCity", {
-                    required: "Please fill out the field",
-                  })}
-                />
-
-                  </div>
-                  <span className="input__icon">
-                  <LocationOnIcon className="iconsize" />
-                </span>
               </div>
 
               <div className="record__inputs">
-              <div className="record__input">
-                <input
-                  type="text"
-                  placeholder="the type of vehicle"
-                  name="vehicle"
-                  {...register("vehicle", {
-                    required: "Please fill out the field",
-                  })}
-                />
-                
-              </div>
-
-              <span className="input__icon">
-                  <LocalShippingIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    name="phone"
+                    {...register("phone", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+                <span className="input__icon">
+                  <CallIcon className="iconsize" />
                 </span>
-              
+              </div>
             </div>
 
+            <div className="record__location">
+              <div className="record__inputs">
+                <div className="record__input" id="order2">
+                  <div className="ss">
+                    <Controller
+                      name="initialDestination"
+                      control={control}
+                      render={({ field }) => (
+                        <Select
+                          className="select"
+                          // name="initialDestination"
+                          {...field}
+                          options={tripDestination}
+                          placeholder="To"
+                          isSearchable
+                          noOptionsMessage={() => "no location found"}
+                          // {...register("initalDestination", {
+                          //   required: "choose your initial destination",
+                          // })}
+                        />
+                      )}
+                      defaultValue=""
+                      rules={{
+                        required: "chooose your initial destination",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
 
-          </div>
+              <div className="record__inputs">
+                <div className="record__input">
+                  <div className="ss">
+                    <Controller
+                      name="finalDestination"
+                      control={control}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          options={tripDestination}
+                          placeholder="From"
+                          // name="finalDestination"
+                          isSearchable
+                          noOptionsMessage={() => "no location found"}
+                          // {...register("finalDestination", {
+                          //   required: "choose your final destination",
+                          // })}
+                        />
+                      )}
+                      defaultValue=""
+                      rules={{
+                        required: "chooose your initial destination",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="record__inputs">
+                <div className="record__input">
+                  <div className="ss">
+                    <Controller
+                      name="vehicle"
+                      control={control}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          options={vehicleType}
+                          placeholder="Type of vehicle"
+                          // name="vehicle"
+                          isSearchable
+                          noOptionsMessage={() => "no location found"}
+                          // {...register("vehicle", {
+                          //   required: "choose your vehicle type",
+                          // })}
+                        />
+                      )}
+                      defaultValue=""
+                      rules={{
+                        required: "chooose your initial destination",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="record__btn">
-              <button type="submit">Submit an ad</button>
+            <button type="submit">Submit an ad</button>
           </div>
-        
         </form>
       </div>
     </div>

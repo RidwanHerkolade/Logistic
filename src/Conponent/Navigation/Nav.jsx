@@ -9,7 +9,7 @@ import "./Nav.css";
 
 const Nav = () => {
 // const [show, setShow] = useState(true)
-const[hide, setIsHide] = useState(false)
+const[hide, setIsHide] = useState(true)
 
 const handleClick =() => {
      setIsHide(!hide)

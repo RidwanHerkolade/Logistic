@@ -5,13 +5,9 @@ form {
     display: flex;
     gap: 1rem;
 }
-.form__inputs {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-.form__input {
 
+.form__input {
+    width: 100%;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -19,21 +15,20 @@ form {
 .form__input .input {
       width: 100%;
       display: flex;
+      flex-direction: column;
       position: relative;
 }
-.form__input .input input {
+/* .form__input .input input {
     width: 100%;
     font-size: var(--font-small);
     padding: 0.7rem 2rem;
     border: 1px solid var(--color-icon);
     position: relative;
     border-radius: 0.2rem;
-
-}
-.form__input .input input::placeholder{
+} */
+/* .form__input .input input::placeholder{
     color: var(--color-icon);
-}
-
+} */
 .form__input span {
     position: absolute;
     font-size: 0rem;
@@ -53,32 +48,57 @@ form {
     background: var(--color-yellow);
     font-size: var(--font-small);
 }
+.form__input .input .ss  {
+    width: 100%;
+}
+.form__input .input .ss .select {
+      outline: none;
+      text-transform: capitalize;
+      font-family: var(--font-family);
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .form__input span .iconsearch {
     font-size: 1rem;
     color: var(--color-nav);
 }
-.error__edge {
-    border: 0.1px solid var(--color-icon);
-    position: absolute;
-    width: 2rem;
-    /* z-index: 15; */
-    top: 3rem;
-    rotate: 50deg;
-    left: 3rem;
-    background:  var(--color-white);
-    height: 2rem;
-}
 .errors{
     display: flex;
-    gap: 0.3rem;
-    position: relative;
-    margin: 0.4rem 0rem;
-    background: var(--color-white);
-    box-shadow: var(--box-shadow);
-    padding: 0.6rem 0.8rem;
-    border: 0.1px solid var(--color-icon);
-    align-items: center;
+    gap: 0; 
     line-height: 0rem;
+    position: relative;
+    font-size: var(--font-small);
+    color: var(--color-orange);
+    /* margin: 0.4rem 0rem; */
+    /* background: var(--color-white); */
+    /* box-shadow: var(--box-shadow); */
+    /* padding: 0.6rem 0.8rem; */
+    /* border: 0.1px solid var(--color-icon); */
+    /* align-items: center; */
+    /* line-height: 0rem; */
 }
 .error__icon {
     color: var(--color-orange);
