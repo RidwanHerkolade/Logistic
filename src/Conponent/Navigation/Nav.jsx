@@ -33,7 +33,7 @@ const Nav = () => {
           </div>
           <div
             className={mobile ? "nav__link-mobile" : "nav__link"}
-            onClick={handleClick}
+            // onClick={handleClick}
           >
             <Link to="/" className="homepage__link">
               <HouseIcon className="icon" />

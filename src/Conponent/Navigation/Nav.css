@@ -317,9 +317,9 @@
     top: 4rem;
     left: 0rem;
   }
-  .nav__link {
+  /* .nav__link {
     display: none;
-  }
+  } */
   .nav__link-mobile .nav__links { 
     flex-direction: column;
     top: 5rem;
