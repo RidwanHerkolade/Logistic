@@ -22,7 +22,7 @@ const Register = () => {
 
   const navigate = useNavigate();
   const handleSignIn = () => {
-    navigate("/driverform");
+    navigate("");
   };
 
   return (

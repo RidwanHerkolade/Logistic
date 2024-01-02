@@ -26,9 +26,7 @@ const TripForm = () => {
     }),
     control: (defaultStyles) => ({
       ...defaultStyles,
-      // rgb(230,156,49)
       backgroundColor: "#fffff",
-      // color: "rgb(230,156,49)",
       padding: "0rem",
       border: "none",
       boxShadow: "none",

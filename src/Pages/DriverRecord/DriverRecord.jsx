@@ -30,20 +30,18 @@ const DriverRecord = () => {
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
-      // color: state.isSelected ? "#212529" : "#fff",
-      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
+      color: state.isSelected ? "#212529" : "white",
+      backgroundColor: state.isSelected ? "rgb(255,224,138)" : "#212529",
     }),
     control: (defaultStyles) => ({
       ...defaultStyles,
-      // rgb(230,156,49)
-      // backgroundColor: "#212529",
+      backgroundColor: "#fffff",
       color: "rgb(219,219,219)",
       padding: "0",
-      // width: "100%",
       border: "none",
       boxShadow: "none",
     }),
-    singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
   return (
     <div className="record__divs">
@@ -79,9 +77,6 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <PersonIcon className="iconsize" />
-                </span> */}
               </div>
 
               <div className="record__inputs">
@@ -96,12 +91,9 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <MailIcon className="iconsize" />
-                </span> */}
               </div>
 
-              <div className="record__inputs">
+              {/* <div className="record__inputs">
                 <CallIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -113,10 +105,8 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <CallIcon className="iconsize" />
-                </span> */}
-              </div>
+               
+              </div> */}
             </div>
 
             <div className="record__location">
@@ -130,16 +120,12 @@ const DriverRecord = () => {
                       render={({ field }) => (
                         <Select
                           className="select"
-                          // name="initialDestination"
                           {...field}
                           options={tripDestination}
                           placeholder="To"
                           isSearchable
                           noOptionsMessage={() => "no location found"}
                           styles={customStyles}
-                          // {...register("initalDestination", {
-                          //   required: "choose your initial destination",
-                          // })}
                         />
                       )}
                       defaultValue=""
@@ -167,9 +153,6 @@ const DriverRecord = () => {
                           isSearchable
                           noOptionsMessage={() => "no location found"}
                           styles={customStyles}
-                          // {...register("finalDestination", {
-                          //   required: "choose your final destination",
-                          // })}
                         />
                       )}
                       defaultValue=""
@@ -196,9 +179,6 @@ const DriverRecord = () => {
                           isSearchable
                           noOptionsMessage={() => "no location found"}
                           styles={customStyles}
-                          // {...register("vehicle", {
-                          //   required: "choose your vehicle type",
-                          // })}
                         />
                       )}
                       defaultValue=""
