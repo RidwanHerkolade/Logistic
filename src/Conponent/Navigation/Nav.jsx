@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import HouseIcon from "@mui/icons-material/House";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,18 +8,16 @@ import Home from "../../Pages/Homepage/Home";
 import "./Nav.css";
 
 const Nav = () => {
-// const [show, setShow] = useState(true)
-const[hide, setIsHide] = useState(true)
+  const [mobile, setMobile] = useState(false);
+  // const[hide, setIsHide] = useState(true)
+  const handleMobile = () => {
+    setMobile(false);
+  };
 
-const handleClick =() => {
-     setIsHide(!hide)
-}
-// const handleMobile =() => {
-//     setIsHide(!hide)
-// }
-// const handleMobiles =() => {
+  const handleClick = () => {
+    setMobile(!mobile);
+  };
 
-// }
   return (
     <div className="nav__div">
       <nav className="nav">
@@ -33,7 +31,10 @@ const handleClick =() => {
             </div>
             {/* <Link to='/' className='homepage__link'><HouseIcon className='icon'/><span>Homepage</span></Link> */}
           </div>
-          {hide && <div className="nav__link">
+          <div
+            className={mobile ? "nav__link-mobile" : "nav__link"}
+            onClick={handleClick}
+          >
             <Link to="/" className="homepage__link">
               <HouseIcon className="icon" />
               <span>Homepage</span>
@@ -55,10 +56,14 @@ const handleClick =() => {
               </div>
             </div>
           </div>
-}
-          <div className='menu' onClick={handleClick}>
-               {!hide ? <MenuIcon style={{color: "white"}}/> : <CloseIcon style={{color: "white"}}/>}  
-           </div>
+
+          <div className="menu" onClick={handleClick}>
+            {mobile ? (
+              <CloseIcon style={{ color: "white" }} onClick={handleMobile} />
+            ) : (
+              <MenuIcon style={{ color: "white" }} onClick={handleMobile} />
+            )}
+          </div>
         </div>
       </nav>
     </div>
