@@ -172,8 +172,9 @@
       }
       .ad__div {
         display: flex;
+        flex-direction: column;
         border-radius: 0.4rem;
-        padding: 6rem 0rem;
+        padding: 6rem 4rem;
      }
     
    
@@ -186,13 +187,9 @@
         flex-direction: column;
     }
     .ad__div {
-        display: flex;
+        flex-direction: column;
         border-radius: 0.4rem;
-        padding: 6rem 0rem;
-        justify-content: flex-start;
-        align-items: start ;
-        background: var(--color-white);
-        box-shadow: var(--box-shadow);
+        padding: 6rem 5rem;
      }
     
    
