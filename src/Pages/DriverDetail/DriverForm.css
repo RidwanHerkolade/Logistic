@@ -1,7 +1,7 @@
 .driverform__divs {
     display: flex;
-    height: calc(100vh - 5rem);
-    border: 2px solid yellow;
+    height: calc(100vh - 3.8rem);
+    background: var(--color-white);
 }
 .driverform__grid {
     display: grid;
@@ -123,7 +123,7 @@ small {
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
         margin: 0rem 2rem;
-        gap: 3rem;
+        gap: 0rem;
     }
     .driverform__images {
         display: none;
@@ -215,6 +215,9 @@ small {
         height: 18rem;
         object-fit: cover
 
+    }
+    .div .register {
+        width: 35%;
     }
     
 

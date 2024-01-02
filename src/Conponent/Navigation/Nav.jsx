@@ -14,12 +14,12 @@ const[hide, setIsHide] = useState(true)
 const handleClick =() => {
      setIsHide(!hide)
 }
-const handleMobile =() => {
-    setIsHide(!hide)
-}
-const handleMobiles =() => {
+// const handleMobile =() => {
+//     setIsHide(!hide)
+// }
+// const handleMobiles =() => {
 
-}
+// }
   return (
     <div className="nav__div">
       <nav className="nav">
@@ -57,7 +57,7 @@ const handleMobiles =() => {
           </div>
 }
           <div className='menu' onClick={handleClick}>
-               {hide ? <MenuIcon/> : <CloseIcon/>}  
+               {!hide ? <MenuIcon style={{color: "white"}}/> : <CloseIcon style={{color: "white"}}/>}  
            </div>
         </div>
       </nav>

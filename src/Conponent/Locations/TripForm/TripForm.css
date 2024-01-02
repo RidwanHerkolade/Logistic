@@ -18,6 +18,21 @@ form {
       flex-direction: column;
       position: relative;
 }
+.form__input .input .display__loc {
+    display: flex;
+    border: 1px solid var(--color-icon);
+    position: relative;
+    border-radius: 0.2rem;
+    background: var(--color-white);
+    align-items: center;
+}
+.form__input .input .display__loc .color {
+    color: var(--color-icon);
+    position: relative;
+    font-size: var(--font-small);
+    margin-left: 0.5rem;
+    left: 0rem;
+}
 /* .form__input .input input {
     width: 100%;
     font-size: var(--font-small);
@@ -50,6 +65,8 @@ form {
 }
 .form__input .input .ss  {
     width: 100%;
+  
+    /* display: flex; */
 }
 .form__input .input .ss .select {
       outline: none;
@@ -97,7 +114,7 @@ form {
     /* box-shadow: var(--box-shadow); */
     /* padding: 0.6rem 0.8rem; */
     /* border: 0.1px solid var(--color-icon); */
-    /* align-items: center; */
+    align-items: center;
     /* line-height: 0rem; */
 }
 .error__icon {
@@ -136,12 +153,27 @@ form {
         position: relative;
   }
    
-  
-   
-
     
 }
+@media  (width: 280px)  {
+    .tripform__div {
+        margin: 2.5rem 1rem;
+    }
+    .errors{
+        line-height: 1rem;
+    }
+    
+
+}
 @media  (min-width: 768px) and  (max-width: 991px) {
+    .tripform__div {
+        margin: 2.5rem 2rem;
+
+       
+    }
+    form {
+        flex-direction: column;
+    }
   
 }
  
@@ -150,6 +182,11 @@ form {
     
 
 @media  (min-width: 992px) and  (max-width: 1199px) {
+    .tripform__div {
+        margin: 2.5rem 2rem;
+
+    }
+
    
 }
 @media  (min-width: 1200px) and  (max-width: 1919px) {

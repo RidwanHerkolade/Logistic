@@ -13,6 +13,24 @@ const FilterDriver = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+  const customStyles = {
+    option: (defaultStyles, state) => ({
+      ...defaultStyles,
+      // color: state.isSelected ? "#212529" : "#fff",
+      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
+    }),
+
+    control: (defaultStyles) => ({
+      ...defaultStyles,
+      // rgb(230,156,49)
+      // backgroundColor: "#212529",
+      color: "rgb(219,219,219)",
+      padding: "0",
+      border: "none",
+      boxShadow: "none",
+    }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
+  };
   return (
     <div className="driverform__div">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -21,6 +39,8 @@ const FilterDriver = () => {
             <LocationOnIcon className="iconsize" />
           </span>
           <div className="input">
+          <div className="display__loc">
+          <LocalShippingIcon className="color"/>
             <div className="ss">
             <Controller
                 name="initialDestination"
@@ -32,6 +52,7 @@ const FilterDriver = () => {
                     placeholder="to"
                     isSearchable
                     noOptionsMessage={() => 'no location found'}
+                    styles={customStyles}
                   />
                 )}
                
@@ -41,6 +62,7 @@ const FilterDriver = () => {
                 }}
               />
               
+            </div>
             </div>
             {errors.initialDestination && (<p className="errors">{errors.initialDestination.message}</p>)}
             {/* <input
@@ -65,6 +87,8 @@ const FilterDriver = () => {
         </div>
         <div className="form__input">
           <div className="input">
+          <div className="display__loc">
+          <LocalShippingIcon className="color"/>
             <div className="ss">
             <Controller
                 name="finalDestination"
@@ -76,6 +100,7 @@ const FilterDriver = () => {
                     placeholder="from"
                     isSearchable
                     noOptionsMessage={() => 'no location found'}
+                    styles={customStyles}
                   />
                 )}
                 // control={control}
@@ -84,6 +109,7 @@ const FilterDriver = () => {
                   required: "chooose your final destination"
                 }}
               />
+            </div>
             </div>
             {errors.finalDestination && (<p className="errors">{errors.finalDestination.message}</p>)}
             {/* <input

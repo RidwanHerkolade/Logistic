@@ -1,6 +1,6 @@
 import React from "react";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-// import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import SearchIcon from "@mui/icons-material/Search";
 // import ErrorIcon from "@mui/icons-material/Error";
 import "./TripForm.css";
@@ -17,12 +17,37 @@ const TripForm = () => {
   const onSubmit = (data) => {
     navigate("/driverform");
   };
+
+  const customStyles = {
+    option: (defaultStyles, state) => ({
+      ...defaultStyles,
+      // color: state.isSelected ? "#212529" : "#fff",
+      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
+    }),
+    control: (defaultStyles) => ({
+      ...defaultStyles,
+      // rgb(230,156,49)
+      // backgroundColor: "#212529",
+      color: "rgb(219,219,219)",
+      padding: "0rem",
+      border: "none",
+      boxShadow: "none",
+    }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
+  };
+
   return (
     <div className="tripform__div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form__input">
           <div className="input">
+          
+          <div className="display__loc">
+          <LocationOnIcon className="color"/>
+         
             <div className="ss">
+
+              
               <Controller
                 name="initialDestination"
                 control={control}
@@ -33,14 +58,16 @@ const TripForm = () => {
                     placeholder="to"
                     isSearchable
                     noOptionsMessage={() => 'no location found'}
+                    styles={customStyles}
                   />
                 )}
                
                 defaultValue=""
                 rules={{
-                  required: "chooose your initial destination"
+                  required: "choose your initial destination"
                 }}
               />
+            </div>
             </div>
             {errors.initialDestination && (<p className="errors">{errors.initialDestination.message}</p>)}
           </div>
@@ -48,6 +75,8 @@ const TripForm = () => {
 
         <div className="form__input">
           <div className="input">
+          <div className="display__loc">
+          <LocationOnIcon className="color"/>
             <div className="ss">
               <Controller
                 name="finalDestination"
@@ -59,6 +88,7 @@ const TripForm = () => {
                     placeholder="from"
                     isSearchable
                     noOptionsMessage={() => 'no location found'}
+                    styles={customStyles}
                   />
                 )}
                 // control={control}
@@ -68,12 +98,15 @@ const TripForm = () => {
                 }}
               />
             </div>
+            </div>
             {errors.finalDestination && (<p className="errors">{errors.finalDestination.message}</p>)}
           </div>
         </div>
 
         <div className="form__input">
           <div className="input">
+          <div className="display__loc">
+          <LocalShippingIcon className="color"/>
             <div className="ss">
               <Controller
                 name="vehicle"
@@ -82,7 +115,8 @@ const TripForm = () => {
                   <Select
                     {...field}
                     options={vehicleType}
-                    placeholder="type of vehicle"
+                    placeholder="type of vehicle....."
+                    styles={customStyles}
                   />
                 )}
              
@@ -91,6 +125,7 @@ const TripForm = () => {
                   required: "chooose your type of vehicle"
                 }}
               />
+            </div>
             </div>
             {errors.vehicle && (<p className="errors">{errors.vehicle.message}</p>)}
           </div>

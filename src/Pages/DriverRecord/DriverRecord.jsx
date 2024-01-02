@@ -22,9 +22,28 @@ const DriverRecord = () => {
   } = useForm({});
 
   const navigate = useNavigate();
- 
+
   const onSubmit = (data) => {
     navigate("/driverad", { state: { formData: data } });
+  };
+
+  const customStyles = {
+    option: (defaultStyles, state) => ({
+      ...defaultStyles,
+      // color: state.isSelected ? "#212529" : "#fff",
+      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
+    }),
+    control: (defaultStyles) => ({
+      ...defaultStyles,
+      // rgb(230,156,49)
+      // backgroundColor: "#212529",
+      color: "rgb(219,219,219)",
+      padding: "0",
+      // width: "100%",
+      border: "none",
+      boxShadow: "none",
+    }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
   };
   return (
     <div className="record__divs">
@@ -35,6 +54,7 @@ const DriverRecord = () => {
           <div className="formdivs__record">
             <div className="record__ad">
               <div className="record__inputs">
+                <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
@@ -45,12 +65,10 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
-                  <PersonIcon className="iconsize" />
-                </span>
               </div>
 
               <div className="record__inputs">
+                <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
@@ -61,12 +79,13 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <PersonIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <MailIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="email"
@@ -77,12 +96,13 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <MailIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <CallIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="text"
@@ -93,14 +113,15 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <CallIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
             </div>
 
             <div className="record__location">
               <div className="record__inputs">
+                <LocationOnIcon className="iconloc" />
                 <div className="record__input" id="order2">
                   <div className="ss">
                     <Controller
@@ -115,6 +136,7 @@ const DriverRecord = () => {
                           placeholder="To"
                           isSearchable
                           noOptionsMessage={() => "no location found"}
+                          styles={customStyles}
                           // {...register("initalDestination", {
                           //   required: "choose your initial destination",
                           // })}
@@ -130,6 +152,7 @@ const DriverRecord = () => {
               </div>
 
               <div className="record__inputs">
+                <LocationOnIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
                     <Controller
@@ -143,6 +166,7 @@ const DriverRecord = () => {
                           // name="finalDestination"
                           isSearchable
                           noOptionsMessage={() => "no location found"}
+                          styles={customStyles}
                           // {...register("finalDestination", {
                           //   required: "choose your final destination",
                           // })}
@@ -157,6 +181,7 @@ const DriverRecord = () => {
                 </div>
               </div>
               <div className="record__inputs">
+                <LocalShippingIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
                     <Controller
@@ -170,6 +195,7 @@ const DriverRecord = () => {
                           // name="vehicle"
                           isSearchable
                           noOptionsMessage={() => "no location found"}
+                          styles={customStyles}
                           // {...register("vehicle", {
                           //   required: "choose your vehicle type",
                           // })}

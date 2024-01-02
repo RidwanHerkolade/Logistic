@@ -9,7 +9,6 @@ import LockIcon from "@mui/icons-material/Lock";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-
 const Register = () => {
   const {
     handleSubmit,
@@ -17,18 +16,16 @@ const Register = () => {
     formState: { errors },
     watch,
   } = useForm();
-  const onSubmit =(e) => {
-    e.prevent.default()
-  }
- 
-  const navigate = useNavigate()
+  const onSubmit = (e) => {
+    e.prevent.default();
+  };
+
+  const navigate = useNavigate();
   const handleSignIn = () => {
-      navigate('/driverform')
-        
-  }
+    navigate("/driverform");
+  };
 
   return (
-    
     <div className="record__divs">
       <div className="h4">Logistics</div>
       <div className="record__div">
@@ -36,6 +33,7 @@ const Register = () => {
           <div className="formdivs__record">
             <div className="record__ad">
               <div className="record__inputs">
+                <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
@@ -46,28 +44,30 @@ const Register = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <PersonIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
-                    placeholder="Family Name"
-                    name="familyName"
+                    placeholder="last Name"
+                    name="lastName"
                     {...register("familyName", {
                       required: "Please fill out the field",
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <PersonIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <MailIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="email"
@@ -78,14 +78,15 @@ const Register = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <MailIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
             </div>
 
             <div className="record__location">
               <div className="record__inputs">
+                <CallIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="tel"
@@ -96,12 +97,13 @@ const Register = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <CallIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <LockIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="password"
@@ -112,12 +114,13 @@ const Register = () => {
                     })}
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <LockIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
 
               <div className="record__inputs">
+                <LockIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="password"
@@ -126,18 +129,16 @@ const Register = () => {
                     {...register("confirmPassword", {
                       required: "Please fill out the field",
                       validate: (value) => {
-                          if (value !== watch('passWord')) {
-                            return "Your passwords do not match";
-                          }
-                      }
-                    
+                        if (value !== watch("passWord")) {
+                          return "Your passwords do not match";
+                        }
+                      },
                     })}
-                    
                   />
                 </div>
-                <span className="input__icon">
+                {/* <span className="input__icon">
                   <LockIcon className="iconsize" />
-                </span>
+                </span> */}
               </div>
             </div>
           </div>
@@ -145,11 +146,12 @@ const Register = () => {
             <button type="submit">Register with us</button>
           </div>
           <small>Or</small>
-          <div className="register__btn" onClick={handleSignIn}>Sign in</div>
+          <div className="register__btn" onClick={handleSignIn}>
+            Sign in
+          </div>
         </form>
       </div>
     </div>
-  )
-}
-export default Register
-
+  );
+};
+export default Register;
