@@ -19,18 +19,7 @@ const DriverAd = () => {
              <div className="ads__content">vehicle type: {formData.vehicle.value}</div>
 
         </div>
-        
-        {/* <ul>
-          <li>
-            full name: {formData.firstName} {formData.lastName}
-          </li>
 
-          <li>email: {formData.email}</li>
-          <li>phone number: {formData.phone}</li>
-          <li>to: {formData.initialDestination}</li>
-          <li>from: {formData.finalDestination}</li>
-          <li>vehicle type: {formData.vehicle}</li>
-        </ul> */}
       </div>
     </div>
   );

@@ -37,8 +37,8 @@ const DriverRecord = () => {
       ...defaultStyles,
       backgroundColor: "#fffff",
       color: "rgb(219,219,219)",
-      padding: "0",
-      border: "none",
+      padding: "0rem",
+      border: "0rem",
       boxShadow: "none",
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
@@ -57,6 +57,7 @@ const DriverRecord = () => {
                   <input
                     type="name"
                     placeholder="First Name"
+                    // className=""
                     name="firstName"
                     {...register("firstName", {
                       required: "Please fill out the field",
@@ -93,20 +94,7 @@ const DriverRecord = () => {
                 </div>
               </div>
 
-              {/* <div className="record__inputs">
-                <CallIcon className="iconsize" />
-                <div className="record__input">
-                  <input
-                    type="text"
-                    placeholder="Phone"
-                    name="phone"
-                    {...register("phone", {
-                      required: "Please fill out the field",
-                    })}
-                  />
-                </div>
-               
-              </div> */}
+            
             </div>
 
             <div className="record__location">

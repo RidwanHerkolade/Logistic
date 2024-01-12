@@ -9,11 +9,9 @@ import "./Nav.css";
 
 const Nav = () => {
   const [mobile, setMobile] = useState(false);
-  // const[hide, setIsHide] = useState(true)
   const handleMobile = () => {
     setMobile(false);
   };
-
   const handleClick = () => {
     setMobile(!mobile);
   };
@@ -29,7 +27,6 @@ const Nav = () => {
               </div>
               <span>MigRo</span>
             </div>
-            {/* <Link to='/' className='homepage__link'><HouseIcon className='icon'/><span>Homepage</span></Link> */}
           </div>
           <div
             className={mobile ? "nav__link-mobile" : "nav__link"}

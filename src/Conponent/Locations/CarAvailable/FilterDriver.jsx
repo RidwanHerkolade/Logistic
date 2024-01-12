@@ -16,20 +16,20 @@ const FilterDriver = () => {
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
+      color: state.isSelected ? "#212529" : "white",
+      backgroundColor: state.isSelected ? "rgb(255,224,138)" : "#212529",
       // color: state.isSelected ? "#212529" : "#fff",
       // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
     }),
 
     control: (defaultStyles) => ({
       ...defaultStyles,
-      // rgb(230,156,49)
-      // backgroundColor: "#212529",
-      color: "rgb(219,219,219)",
+      backgroundColor: "#fffff",
       padding: "0",
       border: "none",
       boxShadow: "none",
     }),
-    singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
   return (
     <div className="driverform__div">
