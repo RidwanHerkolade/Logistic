@@ -7,6 +7,8 @@ import DriverRecord from './Pages/DriverRecord/DriverRecord';
 import Home from './Pages/Homepage/Home';
 import Nav from './Conponent/Navigation/Nav';
 import Register from './Pages/DriverRecord/Register';
+import ConfirmationPage from './Pages/Confirmation/ConfirmationPage';
+
 import './App.css'
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
                       <Route path='driverform' element={<DriverForm/>}></Route>
                       <Route path='driverrecord' element={<DriverRecord/>}></Route>
                       <Route path='register' element={<Register/>}></Route>
+                      <Route path='confirmationpage' element={<ConfirmationPage/>}></Route>
                </Routes>
 
         </BrowserRouter>       

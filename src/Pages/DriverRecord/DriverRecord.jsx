@@ -23,7 +23,7 @@ const DriverRecord = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
+  const onSubmit  =  (data) => {
     navigate("/driverad", { state: { formData: data } });
   };
 

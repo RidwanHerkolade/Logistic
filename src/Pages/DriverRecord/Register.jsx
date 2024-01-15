@@ -3,11 +3,15 @@ import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
+import ErrorIcon from "@mui/icons-material/Error";
 // import LoginIcon from "@mui/icons-material/Login";
 // import LocationOnIcon from "@mui/icons-material/LocationOn";
 // import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+// import LinearProgress from '@mui/material/LinearProgress';
+import axios from "axios";
+// import ConfirmationPage from "../Confirmation/ConfirmationPage";
 
 const Register = () => {
   const {
@@ -16,11 +20,38 @@ const Register = () => {
     formState: { errors },
     watch,
   } = useForm();
-  const onSubmit = (e) => {
-    e.prevent.default();
-  };
 
+  // const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+
+  const onSubmit = async (data) => {
+    // setIsLoading(true);
+
+    try {
+      const registerUrl =
+        "https://truckapp-main-production.up.railway.app/v1/register";
+      const response = await axios.post(registerUrl, data);
+
+      //  successfull response
+      const responseData = response.data;
+      console.log("Form submission successful:", responseData);
+      navigate("/driverform");
+
+      
+    
+
+    } catch (error) {
+      console.error("Error submitting form:", error.message);
+    } finally {
+      // setIsLoading(false);
+    }
+  };
+  // const onSubmit =  (data) => {
+  //     navigate('/ConfirmationPage')
+  // }
+ 
+  // const navigate = useNavigate();
   const handleSignIn = () => {
     navigate("");
   };
@@ -30,43 +61,59 @@ const Register = () => {
       <div className="h4">Logistics</div>
       <div className="record__div">
         <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
-          <div className="formdivs__record">
+       <div className="formdivs__record">
             <div className="record__ad">
+             
               <div className="record__inputs">
+                <div className="record__divInp">
+                
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
                     placeholder="First Name"
                     name="firstName"
-                    {...register("name", {
+                    {...register("firstName", {
                       required: "Please fill out the field",
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <PersonIcon className="iconsize" />
-                </span> */}
+              
+                </div>
+                {errors.firstName && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.firstName.message}
+                  </p>
+                )}
+                
               </div>
+             
 
               <div className="record__inputs">
+              <div className="record__divInp">
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
                     placeholder="last Name"
                     name="lastName"
-                    {...register("familyName", {
+                    {...register("lastName", {
                       required: "Please fill out the field",
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <PersonIcon className="iconsize" />
-                </span> */}
+              </div>
+                {errors.lastName && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.lastName.message}
+                  </p>
+                )}
               </div>
 
               <div className="record__inputs">
+               <div className="record__divInp">
                 <MailIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -78,14 +125,21 @@ const Register = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <MailIcon className="iconsize" />
-                </span> */}
+               
               </div>
+             
+              </div>
+              {errors.email && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             <div className="record__location">
-              <div className="record__inputs">
+              {/* <div className="record__inputs">
+                <div className="record__divInp">
                 <CallIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -97,29 +151,40 @@ const Register = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <CallIcon className="iconsize" />
-                </span> */}
-              </div>
+                </div>
+                {errors.phone && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.phone.message}
+                  </p>
+                )}
+              </div> */}
 
               <div className="record__inputs">
+              <div className="record__divInp">
                 <LockIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="password"
                     placeholder="Password"
-                    name="password"
-                    {...register("password", {
+                    name="passWord"
+                    {...register("passWord", {
                       required: "Please fill out the field",
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <LockIcon className="iconsize" />
-                </span> */}
+                
+                </div>
+                {errors.passWord && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.passWord.message}
+                  </p>
+                )}
               </div>
 
               <div className="record__inputs">
+                <div className="record__divInp">
                 <LockIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -136,9 +201,13 @@ const Register = () => {
                     })}
                   />
                 </div>
-                {/* <span className="input__icon">
-                  <LockIcon className="iconsize" />
-                </span> */}
+                </div>
+                {errors.confirmPassword && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.confirmPassword.message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -148,7 +217,7 @@ const Register = () => {
           <small>Or</small>
           <div className="register__btn" onClick={handleSignIn}>
             Sign in
-          </div>
+          </div> 
         </form>
       </div>
     </div>
