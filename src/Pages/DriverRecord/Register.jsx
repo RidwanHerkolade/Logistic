@@ -4,9 +4,6 @@ import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
 import ErrorIcon from "@mui/icons-material/Error";
-// import LoginIcon from "@mui/icons-material/Login";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-// import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 // import LinearProgress from '@mui/material/LinearProgress';
@@ -138,7 +135,7 @@ const Register = () => {
             </div>
 
             <div className="record__location">
-              {/* <div className="record__inputs">
+              <div className="record__inputs">
                 <div className="record__divInp">
                 <CallIcon className="iconsize" />
                 <div className="record__input">
@@ -158,7 +155,7 @@ const Register = () => {
                     {errors.phone.message}
                   </p>
                 )}
-              </div> */}
+              </div>
 
               <div className="record__inputs">
               <div className="record__divInp">

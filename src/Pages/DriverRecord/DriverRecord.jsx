@@ -8,6 +8,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useForm, Controller } from "react-hook-form";
 import { tripDestination } from "../../Constants/Constant";
+import ErrorIcon from "@mui/icons-material/Error";
 import Select from "react-select";
 import { vehicleType } from "../../Constants/Constant";
 import "./DriverRecord.css";
@@ -51,27 +52,38 @@ const DriverRecord = () => {
         <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
           <div className="formdivs__record">
             <div className="record__ad">
-              <div className="record__inputs">
+            <div className="record__inputs">
+                <div className="record__divInp">
+                
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
                     placeholder="First Name"
-                    // className=""
                     name="firstName"
                     {...register("firstName", {
                       required: "Please fill out the field",
                     })}
                   />
                 </div>
+              
+                </div>
+                {errors.firstName && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.firstName.message}
+                  </p>
+                )}
+                
               </div>
 
               <div className="record__inputs">
+              <div className="record__divInp">
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
                     type="name"
-                    placeholder="Last Name"
+                    placeholder="last Name"
                     name="lastName"
                     {...register("lastName", {
                       required: "Please fill out the field",
@@ -79,8 +91,16 @@ const DriverRecord = () => {
                   />
                 </div>
               </div>
+                {errors.lastName && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.lastName.message}
+                  </p>
+                )}
+              </div>
 
               <div className="record__inputs">
+               <div className="record__divInp">
                 <MailIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -92,6 +112,15 @@ const DriverRecord = () => {
                     })}
                   />
                 </div>
+               
+              </div>
+              {errors.lastName && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.lastName.message}
+                  </p>
+                )}
+             
               </div>
 
             
@@ -99,6 +128,7 @@ const DriverRecord = () => {
 
             <div className="record__location">
               <div className="record__inputs">
+              <div className="record__divInp">
                 <LocationOnIcon className="iconloc" />
                 <div className="record__input" id="order2">
                   <div className="ss">
@@ -118,14 +148,22 @@ const DriverRecord = () => {
                       )}
                       defaultValue=""
                       rules={{
-                        required: "chooose your initial destination",
+                        required: "please select",
                       }}
                     />
                   </div>
                 </div>
+                </div>
+                {errors.initialDestination && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.initialDestination.message}
+                  </p>
+                )}
               </div>
 
               <div className="record__inputs">
+              <div className="record__divInp">
                 <LocationOnIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
@@ -145,13 +183,21 @@ const DriverRecord = () => {
                       )}
                       defaultValue=""
                       rules={{
-                        required: "chooose your initial destination",
+                        required: "please select",
                       }}
                     />
                   </div>
                 </div>
               </div>
+              {errors.finalDestination && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.finalDestination.message}
+                  </p>
+                )}
+              </div>
               <div className="record__inputs">
+              <div className="record__divInp">
                 <LocalShippingIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
@@ -171,11 +217,18 @@ const DriverRecord = () => {
                       )}
                       defaultValue=""
                       rules={{
-                        required: "chooose your initial destination",
+                        required: "please select",
                       }}
                     />
                   </div>
                 </div>
+              </div>
+              {errors.vehicle && (
+                  <p className="errors">
+                    <ErrorIcon className="error__icon" />
+                    {errors.vehicle.message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
