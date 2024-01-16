@@ -83,3 +83,20 @@ export const tripDestination = [
     label: "Al Khobar",
   },
 ];
+
+export const TYPE = [
+  {
+    value: "ADMIN",
+    label: "admin",
+  },
+  {
+    value: "DRIVER",
+    label: "driver",
+  },
+  {
+    value: "CUSTOMER",
+    label: "customer",
+  },
+ 
+ 
+];

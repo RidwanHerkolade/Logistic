@@ -1,17 +1,25 @@
 .record__divs {
     width: 100%;
-    height: calc(100vh - 8rem);
+    height: 100%;
+  
+    height: calc(100vh - 4.4rem);
+
+}
+.record___divs {
+    width: 100%;
+    height: 100%;
+    /* padding: 5rem 0rem; */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .record__div {
     width: 80%;
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
     border-radius: 0.3rem;
@@ -19,7 +27,6 @@
 }
 .record__divAd {
     display: flex;
-    border: 1px solid red;
     flex-direction: column;
 }
 .record__header {
@@ -27,7 +34,6 @@
     line-height: 50px;
 }
 .h4 {
-    margin-top: 1.5rem;
     font-size: var(--font-header);
     color: var(--color-migro);
     font-weight: 700;
@@ -96,6 +102,7 @@
     color: var(--color-icon);
  }
  .record__btn button{
+   
     padding: 0.7rem 1rem;
     color: var(--color-nav);
     font-weight: 500;
@@ -107,6 +114,7 @@
     outline: 0rem;
  }
  /* REGISTER */
+
  .register__btn{
     padding: 0.5rem ;
     text-align: center;
@@ -158,19 +166,36 @@
     padding: 0rem;
  }
  @media screen and (width: 280px) {
+    .record__divs {
+        padding: 0rem 0rem;
+    }
     .h4 {
         margin-top:  6rem;
         
+    }
+    
+    .record__div {
+        padding: 4rem 0rem;
+        border-radius: 0rem;
+      
     }
 
  }
 
   @media screen and (max-width: 480px) {
-  
-    .h4 {
-        margin-top: 13rem;
+    .record__divs {
+        padding: 10rem 0rem;
     }
-  
+    .record__div {
+        width: 100%;
+        height: calc(100vh - 0rem) !important;
+        padding: 3rem 0rem;
+        border-radius: 0rem;
+      
+    }
+    .form__recorddivs {
+        padding: 2rem 1rem;
+    }
     .formdivs__record {
         flex-direction: column;
         gap: 0rem;
@@ -203,12 +228,17 @@
  
 @media  (min-width: 481px) and  (max-width: 768px) {
     .record__divs {
+        padding: 6rem 0rem;
+       
+    }
+    .record__div {
         width: 100%;
-        height: calc(100vh - 2rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        padding: 3rem 0rem;
+        border-radius: 0rem;
+      
+    }
+    .form__recorddivs {
+        padding: 0rem 2rem;
     }
     .formdivs__record {
         display: flex;
@@ -229,6 +259,13 @@
    
 }
 @media  (min-width: 992px) and  (max-width: 1199px) {
+    .record__divs {
+        padding: 4rem 0rem;
+    }
+    /* .record___div {
+        width: 100%;
+        height: calc(100vh - 4.4rem);
+    } */
     .formdivs__record {
         gap: 0.5rem;
     }
