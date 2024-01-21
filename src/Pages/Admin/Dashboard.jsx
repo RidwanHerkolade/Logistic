@@ -8,9 +8,9 @@ const Dashboard = () => {
   return (
     <section className="admin__section">
       {/* <div className="admin__content"> */}
-      <div className="admin__content1">
+      {/* <div className="admin__content1">
         <SideNav />
-      </div>
+      </div> */}
       <div className="admin__content2">
         <AdminContent />
         {/* <Outlet/> */}

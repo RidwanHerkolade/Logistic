@@ -14,29 +14,39 @@ import AddYourAdd from "./Pages/Admin/AddYourAdd";
 import Dashboard from "./Pages/Admin/Dashboard";
 import AddContextProvider from "./Context/AddContext";
 import Customer from "./Pages/Admin/CustomerList/Customer";
-import { useLocation } from "react-router-dom";
-
 
 import "./App.css";
-
+import ShareLayout from "./sharedLayout/ShareLayout";
+import AdminSharedLayout from "./sharedLayout/AdminSharedLayout";
 
 function App() {
   return (
     <>
       <AddContextProvider>
         <BrowserRouter>
-          <Nav />
-          <Routes>
-            <Route path="admin" element={<Admin />}></Route>
-            <Route path="dashboard" element={<Dashboard/>}></Route>
+          {/* <Nav /> */}
 
-            <Route path="/admin/dashboard/*" element={<Dashboard />}>
-                <Route path="customer" element={<Customer />}/>
+          <Routes>
+              <Route path="admin" element={<Admin />}></Route>
+              <Route path="admin/dashboard" element={<AdminSharedLayout/>}>
+              <Route index element={<Dashboard />}></Route>
 
             </Route>
-            {/* <Route path="/admin/dashboard" element={<DriverList />}></Route> */}
+            <Route path="/" element={<ShareLayout />}>
+              <Route path="addyouradd" element={<AddYourAdd />}></Route>
+              <Route path="announcement" element={<Announcement />}></Route>
+              <Route index element={<Home />}></Route>
+              <Route path="driverad" element={<DriverAd />}></Route>
+              <Route path="driverform" element={<DriverForm />}></Route>
+              <Route path="driverrecord" element={<DriverRecord />}></Route>
+              <Route path="register" element={<Register />}></Route>
+              <Route
+                path="confirmationpage"
+                element={<ConfirmationPage />}
+              ></Route>
+            </Route>
 
-            <Route path="addyouradd" element={<AddYourAdd />}></Route>
+            {/* <Route path="addyouradd" element={<AddYourAdd />}></Route>
             <Route path="announcement" element={<Announcement />}></Route>
             <Route path="/" element={<Home />}></Route>
             <Route path="driverad" element={<DriverAd />}></Route>
@@ -46,7 +56,7 @@ function App() {
             <Route
               path="confirmationpage"
               element={<ConfirmationPage />}
-            ></Route>
+            ></Route> */}
           </Routes>
         </BrowserRouter>
       </AddContextProvider>
@@ -55,4 +65,3 @@ function App() {
 }
 
 export default App;
-

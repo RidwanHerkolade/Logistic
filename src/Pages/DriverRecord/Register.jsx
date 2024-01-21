@@ -52,6 +52,7 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     try {
+      setLoading(true)
       const response = await axios.post(
         "https://truckapp-main-production.up.railway.app/api/v1/register",
         {
