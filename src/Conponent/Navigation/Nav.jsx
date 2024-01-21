@@ -4,18 +4,21 @@ import HouseIcon from "@mui/icons-material/House";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
-import Home from "../../Pages/Homepage/Home";
+// import Home from "../../Pages/Homepage/Home";
 import "./Nav.css";
 
 const Nav = () => {
   const [mobile, setMobile] = useState(false);
+  
   const handleMobile = () => {
     setMobile(false);
   };
   const handleClick = () => {
     setMobile(!mobile);
   };
-
+  const handleNavClick =() => {
+    setMobile(false)
+  }
   return (
     <div className="nav__div">
       <nav className="nav">
@@ -29,25 +32,25 @@ const Nav = () => {
             </div>
           </div>
           <div
-            className={mobile ? "nav__link-mobile" : "nav__link"}
+            className={mobile ? "nav__link-mobile" : "nav__link" }
             // onClick={handleClick}
           >
-            <Link to="/" className="homepage__link">
+            <Link to="/" className="homepage__link" onClick={handleNavClick}>
               <HouseIcon className="icon" />
               <span>Homepage</span>
             </Link>
             <div className="nav__links">
-              <Link to="announcement" className="links" id="announcement">
+              <Link to="announcement" className="links" id="announcement" onClick={handleNavClick}>
                 Driver advertisements
               </Link>
-              <Link to="announcement" className=" links" id="announcement">
+              <Link to="announcememnt" className=" links" id="announcement">
                 Visitor announcements
               </Link>
               <div className="linkss">
-                <Link to="driverrecord" className="drive__ad">
+                <Link to="driverrecord" className="drive__ad" onClick={handleNavClick} >
                   Add your ad
                 </Link>
-                <Link to="driverform" className="drive__logins">
+                <Link to="driverform" className="drive__logins" onClick={handleNavClick}>
                   Drivers login{" "}
                 </Link>
               </div>

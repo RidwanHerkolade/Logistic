@@ -12,9 +12,6 @@ const DriverForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
-    watch,
-    getValues,
   } = useForm();
 
   const onSubmit = (data) => {

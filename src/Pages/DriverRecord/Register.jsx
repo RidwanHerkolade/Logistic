@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
@@ -8,8 +8,8 @@ import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { TYPE } from "../../Constants/Constant";
-// import LinearProgress from '@mui/material/LinearProgress';
 import axios from "axios";
+// import LinearProgress from '@mui/material/LinearProgress';
 
 // Values for the validation from react-hook-form
 const Register = () => {
@@ -43,35 +43,32 @@ const Register = () => {
       textTransform: "uppercase",
     }),
   };
-
-// Submit handler for the registration form 
+  // Navigation Handler
   const navigate = useNavigate();
+  // usestate function for logic
+  const [loading, setLoading] = useState(false);
+  const [values, setValues] = useState("");
+  // Submit handler for the registration form
+
   const onSubmit = async (data) => {
     try {
-      const registerUrl = "/v1/register";
-      const response = await axios.post(registerUrl, data);
-      // Assuming the server responds with user details and token
-      const { user, token } = response.data;
-      // Send email with the token
-      await sendEmail(user.email, token);
-      // Navigate to confirmation page
-      navigate("/confirmationPage");
+      const response = await axios.post(
+        "https://truckapp-main-production.up.railway.app/api/v1/register",
+        {
+          phoneNumber: data.phone,
+          email: data.email,
+          password: data.passWord,
+          type: data.TYPE.value,
+          firstName: data.firstName,
+          lastName: data.lastName,
+        }
+      );
+      const email = response.data.email || data.email;
+      navigate(`/confirmationPage?email=${encodeURIComponent(email)}`);
     } catch (error) {
-      console.error(error.message);
+      console.error("Error registering user:", error);
+
     }
-    const sendEmail = async (email, token) => {
-      console.log(`Email sent to ${email} with token ${token}`);
-    };
-    // };
-    // try {
-    //   const res = await fetch("/v1/register");
-    //   const data = await res.json();
-    //   console.log(data);
-    //   if (!res.ok) throw new Error("something went wrong");
-    //   navigate("/confirmationPage");
-    // } catch (error) {
-    //   console.error(error.message);
-    // }
   };
 
   const handleSignIn = () => {
@@ -81,192 +78,197 @@ const Register = () => {
   return (
     <div className="record__divs">
       <div className="record___divs">
-      <div className="h4">Logistics</div>
-      <div className="record__div">
-        <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
-          <div className="formdivs__record">
-            <div className="record__ad">
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <PersonIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="name"
-                      placeholder="First Name"
-                      name="firstName"
-                      {...register("firstName", {
-                        required: "Please fill out the field",
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.firstName && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.firstName.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <PersonIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="name"
-                      placeholder="last Name"
-                      name="lastName"
-                      {...register("lastName", {
-                        required: "Please fill out the field",
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.lastName && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.lastName.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <MailIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="email"
-                      placeholder="E-mail"
-                      name="email"
-                      {...register("email", {
-                        required: "Please fill out the field",
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.email && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <div className="record__input" id="order2">
-                    <div className="ss">
-                      <Controller
-                        name="type"
-                        control={control}
-                        render={({ field }) => (
-                          <Select
-                            className="select"
-                            {...field}
-                            options={TYPE}
-                            placeholder="Type"
-                            isSearchable
-                            noOptionsMessage={() => "no location found"}
-                            styles={customStyles}
-                          />
-                        )}
-                        defaultValue=""
-                        rules={{
-                          required: "please select",
-                        }}
+        <div className="h4">Logistics</div>
+        <div className="record__div">
+          <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
+            {/* {userExist && (
+            <div className="user__error">
+              User already exists! Please log in or use a different email.
+            </div>
+          )} */}
+            <div className="formdivs__record">
+              <div className="record__ad">
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <PersonIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="name"
+                        placeholder="First Name"
+                        name="firstName"
+                        {...register("firstName", {
+                          required: "Please fill out the field",
+                        })}
                       />
                     </div>
                   </div>
+                  {errors.firstName && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.firstName.message}
+                    </p>
+                  )}
                 </div>
-                {errors.type && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.type.message}
-                  </p>
-                )}
+
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <PersonIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="name"
+                        placeholder="last Name"
+                        name="lastName"
+                        {...register("lastName", {
+                          required: "Please fill out the field",
+                        })}
+                      />
+                    </div>
+                  </div>
+                  {errors.lastName && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.lastName.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <MailIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="email"
+                        placeholder="E-mail"
+                        name="email"
+                        {...register("email", {
+                          required: "Please fill out the field",
+                        })}
+                      />
+                    </div>
+                  </div>
+                  {errors.email && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <div className="record__input" id="order2">
+                      <div className="ss">
+                        <Controller
+                          name="TYPE"
+                          control={control}
+                          render={({ field }) => (
+                            <Select
+                              className="select"
+                              {...field}
+                              options={TYPE}
+                              placeholder="Type"
+                              isSearchable
+                              noOptionsMessage={() => "no location found"}
+                              styles={customStyles}
+                            />
+                          )}
+                          defaultValue=""
+                          rules={{
+                            required: "please select",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {errors.type && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.type.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="record__location">
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <CallIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="tel"
+                        placeholder="Phone"
+                        name="phone"
+                        {...register("phone", {
+                          required: "Please fill out the field",
+                        })}
+                      />
+                    </div>
+                  </div>
+                  {errors.phone && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.phone.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <LockIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        name="passWord"
+                        {...register("passWord", {
+                          required: "Please fill out the field",
+                        })}
+                      />
+                    </div>
+                  </div>
+                  {errors.passWord && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.passWord.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="record__inputs">
+                  <div className="record__divInp">
+                    <LockIcon className="iconsize" />
+                    <div className="record__input">
+                      <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        {...register("confirmPassword", {
+                          required: "Please fill out the field",
+                          validate: (value) => {
+                            if (value !== watch("passWord")) {
+                              return "Your passwords do not match";
+                            }
+                          },
+                        })}
+                      />
+                    </div>
+                  </div>
+                  {errors.confirmPassword && (
+                    <p className="errors">
+                      <ErrorIcon className="error__icon" />
+                      {errors.confirmPassword.message}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-            <div className="record__location">
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <CallIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="tel"
-                      placeholder="Phone"
-                      name="phone"
-                      {...register("phone", {
-                        required: "Please fill out the field",
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.phone && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.phone.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <LockIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      name="passWord"
-                      {...register("passWord", {
-                        required: "Please fill out the field",
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.passWord && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.passWord.message}
-                  </p>
-                )}
-              </div>
-
-              <div className="record__inputs">
-                <div className="record__divInp">
-                  <LockIcon className="iconsize" />
-                  <div className="record__input">
-                    <input
-                      type="password"
-                      placeholder="Confirm Password"
-                      name="confirmPassword"
-                      {...register("confirmPassword", {
-                        required: "Please fill out the field",
-                        validate: (value) => {
-                          if (value !== watch("passWord")) {
-                            return "Your passwords do not match";
-                          }
-                        },
-                      })}
-                    />
-                  </div>
-                </div>
-                {errors.confirmPassword && (
-                  <p className="errors">
-                    <ErrorIcon className="error__icon" />
-                    {errors.confirmPassword.message}
-                  </p>
-                )}
-              </div>
+            <div className="record__btn">
+              <button type="submit">Register with us</button>
             </div>
-          </div>
-          <div className="record__btn">
-            <button type="submit">Register with us</button>
-          </div>
-          <small>Or</small>
-          <div className="register__btn" onClick={handleSignIn}>
-            Sign in
-          </div>
-        </form>
-      </div>
+            <small>Or</small>
+            <div className="register__btn" onClick={handleSignIn}>
+              Sign in
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

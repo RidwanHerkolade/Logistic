@@ -1,3 +1,7 @@
+import DriveEtaIcon from '@mui/icons-material/DriveEta';
+import PeopleIcon from '@mui/icons-material/People';
+import AirlineSeatReclineNormalIcon from '@mui/icons-material/AirlineSeatReclineNormal';
+
 export const vehicleType = [
   {
     value: "pick-up",
@@ -86,17 +90,34 @@ export const tripDestination = [
 
 export const TYPE = [
   {
-    value: "ADMIN",
-    label: "admin",
-  },
-  {
     value: "DRIVER",
     label: "driver",
   },
   {
-    value: "CUSTOMER",
-    label: "customer",
+    value: "ADMIN",
+    label: "ADMIN",
   },
- 
- 
 ];
+
+export const headCount= [
+  // {
+  //      id: 1,
+  //      number: "109",
+  //      name: "Staff",
+  //      icon: <DriveEtaIcon style={{fontSize: "2.7rem"}}/>
+  // },
+  {
+       id: 2,
+       number: "65", 
+       name: "Driver",
+       icon: <PeopleIcon style={{fontSize: "2.7rem", color: "rgb(54,54,54)", opacity:"0.7"}}/>
+
+  },
+  {
+       id: 3,
+       number: "44",
+       name: "Customer",
+       icon: <AirlineSeatReclineNormalIcon style={{fontSize: "2.7rem", color: "rgb(54,54,54)", opacity: "0.7"}}/>
+  },
+]
+

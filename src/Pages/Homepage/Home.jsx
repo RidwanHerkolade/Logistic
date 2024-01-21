@@ -5,7 +5,6 @@ import TripForm from '../../Conponent/Locations/TripForm/TripForm'
 const Home = () => {
   return (
     <div>
-        {/* <Nav/> */}
         <TripForm/>
       
     </div>

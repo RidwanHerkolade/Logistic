@@ -1,0 +1,137 @@
+
+/* sidenav styles  */
+aside {
+    display: flex;
+    justify-content: center;
+}
+.aside__navs {
+    margin: 2.8rem 0rem;
+}
+.aside__links {
+    margin: 2rem 0rem;
+}
+.aside__links .li {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-logo);
+    font-family: var(--font-family);
+    color: var(--color-white);
+    text-transform: capitalize;
+    padding: 1rem 0rem;
+}
+.admin__section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.admin__content1 {
+    flex: 0.4;
+    order: 1;
+    background: var(--color-nav);
+}
+.admin__content2 {
+    flex: 2;
+    background: var(--color-white);
+}
+
+
+/* AdminContent */
+.admincontent__divs {
+    margin: 1.5rem 2rem;
+    position: relative;
+
+}
+.greeting__divs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.greetings {
+    font-size: var(--font-fold);
+    font-weight: 600;
+    color: var(--color-nav);
+}
+.greeting__divs .add {
+    padding: 1rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    color: var(--color-nav);
+    background-color: var(--color-yellow);
+    
+}
+.move__ad {
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+}
+
+/* AdminCount Divs */
+.count__divs {
+    display: grid;
+    gap: 4rem;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 1.5rem;
+}
+
+.count {
+      width: 100%;
+      box-shadow: var(--box-shadow);
+      background: var(--color-white);
+      border-radius: 0.3rem;
+      padding: 1.4rem 1rem;
+      display: flex;
+      justify-content: space-between;
+}
+.count__num h2  {
+    font-size: var(--font-fold);
+    opacity: 0.8;
+    
+}
+.count__num h3  {
+    font-size: var(--font-fold);
+    opacity: 0.8;
+    
+}
+
+.form {
+        width: 45%;
+        padding: 2rem;
+   }
+   @media screen and (max-width: 480px) {
+    .admin__section {
+        /* flex-direction: column-reverse;  */
+        height: auto; 
+    }
+
+    .admin__content1,
+    .admin__content2 {
+        flex: 1; 
+        width: 100%; 
+    }
+    
+   }
+
+   @media  (min-width: 992px) and  (max-width: 1199px) {
+
+   }
+/* ADDYOURADD STYLES */
+/* .Add__divs {
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0rem 0rem;
+    align-items: center;
+}
+.Add___div {
+  width: 100%;
+  padding: 0rem 0rem;
+}
+@media  (min-width: 481px) and  (max-width: 768px) {
+
+} */

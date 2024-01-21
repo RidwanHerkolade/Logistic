@@ -52,6 +52,7 @@
    --color-mpurple:#293264;
    --color-logos: #127D60;
    --box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+   --box-shadows: 25px 24px 48px rgba(0, 0, 0, 0.04);
 }
 html {
   scroll-behavior: smooth;

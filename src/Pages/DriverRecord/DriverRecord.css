@@ -1,8 +1,14 @@
 .record__divs {
     width: 100%;
-    height: 100%;
-  
     height: calc(100vh - 4.4rem);
+
+}
+.record__divsAd {
+    width: 100%;
+    z-index: 15;
+    height: calc(100vh - 6.5rem);
+    position: relative;
+    background-color: var(--color-yellow);
 
 }
 .record___divs {
@@ -13,6 +19,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.user__error {
+    font-size:(--font-small);
+    color: var(--color-red);
 }
 
 .record__div {
@@ -31,6 +41,7 @@
 }
 .record__header {
     font-size: var(--font-folds);
+    margin-left: 2rem;
     line-height: 50px;
 }
 .h4 {
@@ -59,7 +70,7 @@
 }
  .record__divInp {
     display: flex !important;
-    
+    background: var(--color-white);
     align-items: center;
     gap: 0.55rem;
     position: relative;
