@@ -1,5 +1,4 @@
 import React from "react";
-// import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
@@ -12,6 +11,7 @@ import Select from "react-select";
 import { vehicleType } from "../../Constants/Constant";
 import "./DriverRecord.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const DriverRecordAd = () => {
   const {
@@ -23,8 +23,30 @@ const DriverRecordAd = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    navigate("/driverad", { state: { formData: data } });
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "https://truckapp-main-production.up.railway.app/api/ads/add",
+        {
+          lastName: data.lastName,
+          fistName: data.firstName,
+          phoneNumber: data.phone,
+          email: data.email,
+          from_city: data.finalDestination,
+          from_province: data.fromProvince,
+          from_neighborhood: data.fromNeighborhood,
+          to_city: data.initialDestination,
+          to_province: data.toProvince,
+          to_neighborhood: data.toNeighborhood,
+          typeVehicle: data.vehicle,
+          typeLoad: data.typeOfLoad,
+        }
+      );
+      console.log("ad successfully posted:", response.data);
+      navigate("/driverad");
+    } catch (error) {
+      console.log("ads not successfully posted:", error);
+    }
   };
   const customStyles = {
     option: (defaultStyles, state) => ({
@@ -106,10 +128,10 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.lastName && (
+              {errors.email && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
-                  {errors.lastName.message}
+                  {errors.email.message}
                 </p>
               )}
             </div>
@@ -152,128 +174,11 @@ const DriverRecordAd = () => {
               {errors.typeOfLoad && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
-                  {errors.toProvince.message}
+                  {errors.typeOfLoad.message}
                 </p>
               )}
             </div>
 
-          
-          </div>
-
-          <div className="record__location">
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconloc" />
-                <div className="record__input" id="order2">
-                  <div className="ss">
-                    <Controller
-                      name="initialDestination"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          className="select"
-                          {...field}
-                          options={tripDestination}
-                          placeholder="To"
-                          isSearchable
-                          noOptionsMessage={() => "no location found"}
-                          styles={customStyles}
-                        />
-                      )}
-                      defaultValue=""
-                      rules={{
-                        required: "please select",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-              {errors.initialDestination && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.initialDestination.message}
-                </p>
-              )}
-            </div>
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconsize" />
-                <div className="record__input">
-                  <input
-                    type="text"
-                    placeholder="To Province"
-                    name="toProvice"
-                    {...register("toProvince", {
-                      required: "Please fill out the field",
-                    })}
-                  />
-                </div>
-              </div>
-              {errors.toProvince && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.toProvince.message}
-                </p>
-              )}
-            </div>
-
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconloc" />
-                <div className="record__input">
-                  <div className="ss">
-                    <Controller
-                      name="finalDestination"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={tripDestination}
-                          placeholder="From"
-                          // name="finalDestination"
-                          isSearchable
-                          noOptionsMessage={() => "no location found"}
-                          styles={customStyles}
-                        />
-                      )}
-                      defaultValue=""
-                      rules={{
-                        required: "please select",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-              {errors.finalDestination && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.finalDestination.message}
-                </p>
-              )}
-            </div>
-            
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconsize" />
-                <div className="record__input">
-                  <input
-                    type="text"
-                    placeholder="From Province"
-                    name="fromProvice"
-                    {...register("fromProvince", {
-                      required: "Please fill out the field",
-                    })}
-                  />
-                </div>
-              </div>
-              {errors.fromProvince && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.fromProvince.message}
-                </p>
-              )}
-            </div>
-            
             <div className="record__inputs">
               <div className="record__divInp">
                 <LocalShippingIcon className="iconloc" />
@@ -308,8 +213,165 @@ const DriverRecordAd = () => {
                 </p>
               )}
             </div>
-           
-           
+          </div>
+
+          <div className="record__location">
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconloc" />
+                <div className="record__input">
+                  <div className="ss">
+                    <Controller
+                      name="finalDestination"
+                      control={control}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          options={tripDestination}
+                          placeholder="From City"
+                          // name="finalDestination"
+                          isSearchable
+                          noOptionsMessage={() => "no location found"}
+                          styles={customStyles}
+                        />
+                      )}
+                      defaultValue=""
+                      rules={{
+                        required: "please select",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              {errors.finalDestination && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.finalDestination.message}
+                </p>
+              )}
+            </div>
+
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="To Province"
+                    name="toProvince"
+                    {...register("toProvince", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.toProvince && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.toProvince.message}
+                </p>
+              )}
+            </div>
+
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconloc" />
+                <div className="record__input">
+                  <div className="ss">
+                    <Controller
+                      name="initialDestination"
+                      control={control}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          options={tripDestination}
+                          placeholder="To City"
+                          // name="finalDestination"
+                          isSearchable
+                          noOptionsMessage={() => "no location found"}
+                          styles={customStyles}
+                        />
+                      )}
+                      defaultValue=""
+                      rules={{
+                        required: "please select",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              {errors.initialDestination && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.initialDestination.message}
+                </p>
+              )}
+            </div>
+
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="From Province"
+                    name="fromProvince"
+                    {...register("fromProvince", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.fromProvince && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.fromProvince.message}
+                </p>
+              )}
+            </div>
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="To Neigborhood"
+                    name="toNeighborhood"
+                    {...register("toNeighborhood", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.toNeighborhood && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.toNeighborhood.message}
+                </p>
+              )}
+            </div>
+
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="From Neigborhood"
+                    name="fromNeighborhood"
+                    {...register("fromNeighborhood", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.fromNeighborhood && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.fromNeighborhood.message}
+                </p>
+              )}
+            </div>
           </div>
         </div>
         <div className="record__btn">

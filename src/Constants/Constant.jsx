@@ -93,10 +93,10 @@ export const TYPE = [
     value: "DRIVER",
     label: "driver",
   },
-  {
-    value: "ADMIN",
-    label: "ADMIN",
-  },
+  // {
+  //   value: "ADMIN",
+  //   label: "ADMIN",
+  // },
 ];
 
 export const headCount= [

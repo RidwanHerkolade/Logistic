@@ -6,6 +6,7 @@ import ErrorIcon from "@mui/icons-material/Error";
 import "./DriverForm.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const DriverForm = () => {
   const {
@@ -14,8 +15,21 @@ const DriverForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "https://truckapp-main-production.up.railway.app/api/v1/login", {
+             email: data.email,
+             password: data.passWord,
+        }
+      );
+      console.log("sign in successful:", response.data)
+    }
+    catch(error) {
+      console.error("error signin in user:", error);
+    }
+    
   };
 
   const navigate = useNavigate();
