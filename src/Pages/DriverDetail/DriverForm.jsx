@@ -46,7 +46,7 @@ const DriverForm = () => {
           </div>
           <span>MigRo</span>
         </div>
-        <form className="form__group" onSubmit={handleSubmit(onSubmit)}>
+        <form className="form__groups" onSubmit={handleSubmit(onSubmit)}>
           <div className="form__content ">
             <h3>the driver</h3>
             <div className="driver__forminput">

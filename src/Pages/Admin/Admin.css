@@ -43,14 +43,7 @@
     margin-top: 1rem;
     position: relative;
 }
-.errors {
-    position: relative;
-    top: 1rem;
-    font-weight: 300;
-    color: var(--color-red);
-    font-size: var(--font-logo);
-    text-transform: capitalize;
-}
+
 .forminput__input input {
     width: 100%;
     height: 1rem;
