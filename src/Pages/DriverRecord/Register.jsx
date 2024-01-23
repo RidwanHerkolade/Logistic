@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { TYPE } from "../../Constants/Constant";
 import axios from "axios";
-// import LinearProgress from '@mui/material/LinearProgress';
+import Loading from "../../LoadingOverlay/Loading";
+
 
 // Values for the validation from react-hook-form
 const Register = () => {
@@ -45,14 +46,15 @@ const Register = () => {
   };
   // Navigation Handler
   const navigate = useNavigate();
-  // usestate function for logic
-  const [loading, setLoading] = useState(false);
-  const [values, setValues] = useState("");
-  // Submit handler for the registration form
 
+  // loading effect
+  const [loading, setLoading] = useState(false);
+
+  // Submit handler for the registration form
   const onSubmit = async (data) => {
     try {
       setLoading(true)
+     
       const response = await axios.post(
         "https://truckapp-main-production.up.railway.app/api/v1/register",
         {
@@ -70,6 +72,9 @@ const Register = () => {
       console.error("Error registering user:", error);
 
     }
+  finally {
+    setLoading(false);
+  }
   };
 
   const handleSignIn = () => {
@@ -78,7 +83,7 @@ const Register = () => {
 
   return (
     <div className="record__divs">
-      <div className="record___divs">
+      <div className="record___divss">
         <div className="h4">Logistics</div>
         <div className="record__div">
           <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
@@ -87,6 +92,7 @@ const Register = () => {
               User already exists! Please log in or use a different email.
             </div>
           )} */}
+          {loading && <Loading/>}
             <div className="formdivs__record">
               <div className="record__ad">
                 <div className="record__inputs">

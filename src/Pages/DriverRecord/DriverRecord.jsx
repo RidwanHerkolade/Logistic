@@ -8,7 +8,7 @@ const DriverRecord = () => {
   return (
     <div className="record__divs">
       <div className="record___divs">
-      <div className="h4">Logistics</div>
+
        <div className="record__div">
         <div className="record__header">Add your Ad</div>
         <DriverRecordAd/>

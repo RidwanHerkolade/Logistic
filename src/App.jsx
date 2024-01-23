@@ -24,12 +24,12 @@ function App() {
     <>
       <AddContextProvider>
         <BrowserRouter>
-          {/* <Nav /> */}
 
           <Routes>
               <Route path="admin" element={<Admin />}></Route>
               <Route path="admin/dashboard" element={<AdminSharedLayout/>}>
-              <Route index element={<Dashboard />}></Route>
+                  <Route index element={<Dashboard />}></Route>
+                  <Route index element={<Customer />}></Route>
 
             </Route>
             <Route path="/" element={<ShareLayout />}>
@@ -45,18 +45,6 @@ function App() {
                 element={<ConfirmationPage />}
               ></Route>
             </Route>
-
-            {/* <Route path="addyouradd" element={<AddYourAdd />}></Route>
-            <Route path="announcement" element={<Announcement />}></Route>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="driverad" element={<DriverAd />}></Route>
-            <Route path="driverform" element={<DriverForm />}></Route>
-            <Route path="driverrecord" element={<DriverRecord />}></Route>
-            <Route path="register" element={<Register />}></Route>
-            <Route
-              path="confirmationpage"
-              element={<ConfirmationPage />}
-            ></Route> */}
           </Routes>
         </BrowserRouter>
       </AddContextProvider>
