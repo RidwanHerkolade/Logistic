@@ -8,7 +8,7 @@ import DriverRecord from "./Pages/DriverRecord/DriverRecord";
 // import DriverList from "./Pages/Admin/DriverList/DriverList";
 import Home from "./Pages/Homepage/Home";
 import Nav from "./Conponent/Navigation/Nav";
-import Register from "./Pages/DriverRecord/Register";
+import Register from "./Pages/DriverRegister/Register";
 import ConfirmationPage from "./Pages/Confirmation/ConfirmationPage";
 import AddYourAdd from "./Pages/Admin/AddYourAdd";
 import Dashboard from "./Pages/Admin/Dashboard";

@@ -10,6 +10,57 @@
     position: relative;
     background-color: var(--color-yellow);
 }
+record__divsAd {
+    width: 100%;
+    z-index: 15;
+    height: calc(100vh - 6.5rem);
+    position: relative;
+    background-color: var(--color-yellow);
+}
+.record__divsAdmin {
+    width: 100%;
+    z-index: 15;
+    height: calc(100vh - 6.5rem);
+    position: relative;
+    background-color: var(--color-yellow);
+    overflow: scroll;
+}
+.record___Admindivs {
+    width: 100%;
+    /* padding: 10rem 0rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.record___divss {
+    width: 100%;
+    height: 100%;
+    padding: 0rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.user__error {
+    font-size:(--font-small);
+    color: var(--color-red);
+}
+
+.record__div {
+    width: 80%;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    padding: 0rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    justify-content: center;
+}
+
+
+
+
 .record___divs {
     width: 100%;
     height: 100%;

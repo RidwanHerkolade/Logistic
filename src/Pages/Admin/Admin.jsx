@@ -6,6 +6,7 @@ import "./Admin.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import Loading from "../../LoadingOverlay/Loading";
 
 function Admin() {
   // GETTING THE INPUT VALUE
@@ -14,10 +15,14 @@ function Admin() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  //  Password effect
   const [showPassword, setShowPassword] = useState(false);
+  //  loading effect
+  const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate();
   const onSubmit = (data) => {
+    setLoading(true)
     navigate("/admin/dashboard", { state: { ...register } });
   };
   console.log("errors", errors);

@@ -37,7 +37,7 @@ const ConfirmationPage = () => {
     <div className="confirm__div">
       <div className="confirm__divs">
         <div className="verify__icon">
-          <EmailIcon className="verify__icons" />
+          <EmailIcon className="verify__icons" style={{fontSize: "5rem"}}  />
         </div>
         <h1>Email verification</h1>
         <div className="confirm__content">

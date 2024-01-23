@@ -3,7 +3,7 @@ import React, { useState, createContext } from 'react';
 export const AddContext = createContext(null);
 
 const AddContextProvider = (props) => {
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
   const [addYourAd, setAddYourAd] = useState(false);
 
   const handleAddYourAd = () => {
@@ -14,7 +14,7 @@ const AddContextProvider = (props) => {
     handleAddYourAd,
     setAddYourAd,
     addYourAd,
-    setLoading,
+    // setLoading,
   };
 
   return (

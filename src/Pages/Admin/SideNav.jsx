@@ -1,7 +1,7 @@
 import React from 'react'
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import "./Admin.css"
-import { Link, Outlet} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const SideNav = () => {
   return (

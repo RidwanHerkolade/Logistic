@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import AddYourAdd from './AddYourAdd';
 import {AddContext} from '../../Context/AddContext';
-import "./Admin.css"
+import "./Dashboard.css"
 import DriverList from './DriverList/DriverList';
 
 const AdminContent = () => {
@@ -19,7 +19,7 @@ const AdminContent = () => {
             </div>
             {addYourAd && <div className='move__ad'><AddYourAdd/></div>}
             
-             <DriverList/>
+             {/* <DriverList/> */}
 
             
 
