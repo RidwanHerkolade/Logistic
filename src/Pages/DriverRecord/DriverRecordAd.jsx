@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 // import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
@@ -23,12 +23,40 @@ const DriverRecordAd = () => {
   } = useForm({});
 
   const navigate = useNavigate();
-  API_ENDPOINT = "https://truckapp-main-production.up.railway.app/api/v1/register"
-
-  const onSubmit = (data) => {
-    navigate("/driverad", { state: { formData: data } });
+  
+  const onSubmit = async(data) => {
+    const dataFormat = {
+      "lastName": data.lastName,
+      "fistName": data.firstName,
+      "phoneNumber": data.phone,
+      "email": data.email,
+      "from_city": data.initialDestination.value,
+      "from_province": data.fromProvince,
+      "from_neighborhood": data.fromNeighborhood,
+      "to_city": data.finalDestination.value,
+      "to_province":data.toProvince,
+      "to_neighborhood": data.toNeighborhood,
+      "typeVehicle": data.vehicle.value,
+      "typeLoad": data.typeOfLoad
+    }
+    try {
+      const headers = {
+        'Content-Type': 'application/json'
+      }
+      const API_ENDPOINT = "https://truckapp-main-production.up.railway.app/api/ads/add"
+      const result = await axios.post(
+        API_ENDPOINT,
+        dataFormat,
+       headers
+        )
+      console.log(result.data)
+      navigate("/driverad", { state: { formData: data } });
+    } catch (error) {
+      console.error('Error:', error);
+    console.log('Response:', error.response);
+    }
   };
-  onSubmit()
+ 
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
@@ -46,9 +74,7 @@ const DriverRecordAd = () => {
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
-  useEffect(()=>{
-    cons
-  }, [])
+ 
   return (
     <div>
       <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
