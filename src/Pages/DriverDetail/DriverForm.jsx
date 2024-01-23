@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
 import LoginIcon from "@mui/icons-material/Login";
@@ -6,6 +6,7 @@ import ErrorIcon from "@mui/icons-material/Error";
 import "./DriverForm.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../LoadingOverlay/Loading";
 import axios from "axios";
 
 const DriverForm = () => {
@@ -15,9 +16,13 @@ const DriverForm = () => {
     formState: { errors },
   } = useForm();
 
+  // Loading efffect 
+  const [loading, setLoading] = useState(false);
 
+// Submit handler for the login form
   const onSubmit = async (data) => {
     try {
+      setLoading(true)
       const response = await axios.post(
         "https://truckapp-main-production.up.railway.app/api/v1/login", {
              email: data.email,
@@ -29,7 +34,9 @@ const DriverForm = () => {
     catch(error) {
       console.error("error signin in user:", error);
     }
-    
+    finally {
+      setLoading(false)
+    }
   };
 
   const navigate = useNavigate();
@@ -39,6 +46,7 @@ const DriverForm = () => {
 
   return (
     <div className="driverform__divs">
+       {loading && <Loading/>}
       <div className="driverform__grid">
         <div className="driverform__images">
           <div className="form__images">
