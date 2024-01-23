@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
@@ -22,10 +22,13 @@ const DriverRecordAd = () => {
   } = useForm({});
 
   const navigate = useNavigate();
+  API_ENDPOINT = "https://truckapp-main-production.up.railway.app/api/v1/register"
 
   const onSubmit = (data) => {
+    console.log(data)
     navigate("/driverad", { state: { formData: data } });
   };
+  onSubmit()
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
@@ -43,6 +46,9 @@ const DriverRecordAd = () => {
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
+  useEffect(()=>{
+    cons
+  }, [])
   return (
     <div>
       <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
