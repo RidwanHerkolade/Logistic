@@ -47,7 +47,7 @@ const DriverRecordAd = () => {
       const result = await axios.post(
         API_ENDPOINT,
         dataFormat,
-       headers
+        headers
         )
       console.log(result.data)
       navigate("/driverad", { state: { formData: data } });
