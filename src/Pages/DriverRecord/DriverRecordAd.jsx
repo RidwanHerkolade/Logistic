@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useContext, useEffect, useState} from "react";
 // import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
@@ -12,9 +12,12 @@ import Select from "react-select";
 import { vehicleType } from "../../Constants/Constant";
 import "./DriverRecord.css";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../LoadingOverlay/Loading";
+import { AddContext } from "../../Context/AddContext";
 import axios from "axios";
 
 const DriverRecordAd = () => {
+  const {setIsShow} = useContext(AddContext)
   const {
     register,
     control,
@@ -22,8 +25,13 @@ const DriverRecordAd = () => {
     formState: { errors },
   } = useForm({});
 
+
   const navigate = useNavigate();
+   // loading effect
+  const [loading, setLoading] = useState(false)
+
   
+  // Submit handler for the registration form
   const onSubmit = async(data) => {
     const dataFormat = {
       "lastName": data.lastName,
@@ -40,6 +48,7 @@ const DriverRecordAd = () => {
       "typeLoad": data.typeOfLoad
     }
     try {
+      setLoading(true)
       const headers = {
         'Content-Type': 'application/json'
       }
@@ -54,6 +63,14 @@ const DriverRecordAd = () => {
     } catch (error) {
       console.error('Error:', error);
     console.log('Response:', error.response);
+    }
+    finally {
+      setLoading(false)
+      if(submissionSuccessful) {
+          setIsShow(true)
+      }else {
+        return;
+      }
     }
   };
  
@@ -78,6 +95,7 @@ const DriverRecordAd = () => {
   return (
     <div>
       <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
+      {loading && <Loading/>}
         <div className="formdivs__record">
           <div className="record__ad">
             <div className="record__inputs">
@@ -260,29 +278,6 @@ const DriverRecordAd = () => {
                 </p>
               )}
             </div>
-
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconsize" />
-                <div className="record__input">
-                  <input
-                    type="text"
-                    placeholder="To Province"
-                    name="toProvince"
-                    {...register("toProvince", {
-                      required: "Please fill out the field",
-                    })}
-                  />
-                </div>
-              </div>
-              {errors.toProvince && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.toProvince.message}
-                </p>
-              )}
-            </div>
-
             <div className="record__inputs">
               <div className="record__divInp">
                 <LocationOnIcon className="iconloc" />
@@ -317,7 +312,6 @@ const DriverRecordAd = () => {
                 </p>
               )}
             </div>
-
             <div className="record__inputs">
               <div className="record__divInp">
                 <LocationOnIcon className="iconsize" />
@@ -339,6 +333,52 @@ const DriverRecordAd = () => {
                 </p>
               )}
             </div>
+
+
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="To Province"
+                    name="toProvince"
+                    {...register("toProvince", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.toProvince && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.toProvince.message}
+                </p>
+              )}
+            </div>
+            <div className="record__inputs">
+              <div className="record__divInp">
+                <LocationOnIcon className="iconsize" />
+                <div className="record__input">
+                  <input
+                    type="text"
+                    placeholder="From Neigborhood"
+                    name="fromNeighborhood"
+                    {...register("fromNeighborhood", {
+                      required: "Please fill out the field",
+                    })}
+                  />
+                </div>
+              </div>
+              {errors.fromNeighborhood && (
+                <p className="errors">
+                  <ErrorIcon className="error__icon" />
+                  {errors.fromNeighborhood.message}
+                </p>
+              )}
+            </div>
+           
+            
             <div className="record__inputs">
               <div className="record__divInp">
                 <LocationOnIcon className="iconsize" />
@@ -361,27 +401,7 @@ const DriverRecordAd = () => {
               )}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
-                <LocationOnIcon className="iconsize" />
-                <div className="record__input">
-                  <input
-                    type="text"
-                    placeholder="From Neigborhood"
-                    name="fromNeighborhood"
-                    {...register("fromNeighborhood", {
-                      required: "Please fill out the field",
-                    })}
-                  />
-                </div>
-              </div>
-              {errors.fromNeighborhood && (
-                <p className="errors">
-                  <ErrorIcon className="error__icon" />
-                  {errors.fromNeighborhood.message}
-                </p>
-              )}
-            </div>
+           
           </div>
         </div>
         <div className="record__btn">
