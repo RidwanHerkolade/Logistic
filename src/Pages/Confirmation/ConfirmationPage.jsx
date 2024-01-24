@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import "./confirmation.css";
 import EmailIcon from "@mui/icons-material/Email";
 import { useForm } from "react-hook-form";
@@ -12,6 +12,8 @@ const ConfirmationPage = () => {
     register,
     formState: { errors },
   } = useForm();
+
+  const [otploading, setOtpLoadin] = useState()
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -33,6 +35,27 @@ const ConfirmationPage = () => {
     }
   };
 
+
+  const resendOtp = async () => {
+    try {
+      
+      setOtpLoadin('otp sent to your email');
+      const api = `https://truckapp-main-production.up.railway.app/api/v1/otp/resend-otp?email=${emailParam}`;
+      const result = await axios.post(api);
+  
+      if (result.status === 200) {
+        console.log("Resent successfully");
+      }
+    } catch (error) {
+      console.error("Error during OTP resend:", error.message);
+    } finally {
+      setTimeout(()=>{
+        setOtpLoadin('');
+
+      }, 3000)
+    }
+  };
+  
   return (
     <div className="confirm__div">
       <div className="confirm__divs">
@@ -58,7 +81,8 @@ const ConfirmationPage = () => {
           <div className="btnss">
             <button type="submit">Verify</button>
           </div>
-          <small><span>resend</span> the otp code</small>
+          <small><span onClick={resendOtp}>resend</span> the otp code</small>
+          {otploading}
         </form>
       </div>
     </div>

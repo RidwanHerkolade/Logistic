@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useEffect} from "react";
+// import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
@@ -22,32 +23,40 @@ const DriverRecordAd = () => {
   } = useForm({});
 
   const navigate = useNavigate();
-
-  const onSubmit = async (data) => {
+  
+  const onSubmit = async(data) => {
+    const dataFormat = {
+      "lastName": data.lastName,
+      "fistName": data.firstName,
+      "phoneNumber": data.phone,
+      "email": data.email,
+      "from_city": data.initialDestination.value,
+      "from_province": data.fromProvince,
+      "from_neighborhood": data.fromNeighborhood,
+      "to_city": data.finalDestination.value,
+      "to_province":data.toProvince,
+      "to_neighborhood": data.toNeighborhood,
+      "typeVehicle": data.vehicle.value,
+      "typeLoad": data.typeOfLoad
+    }
     try {
-      const response = await axios.post(
-        "https://truckapp-main-production.up.railway.app/api/ads/add",
-        {
-          lastName: data.lastName,
-          fistName: data.firstName,
-          phoneNumber: data.phone,
-          email: data.email,
-          from_city: data.finalDestination,
-          from_province: data.fromProvince,
-          from_neighborhood: data.fromNeighborhood,
-          to_city: data.initialDestination,
-          to_province: data.toProvince,
-          to_neighborhood: data.toNeighborhood,
-          typeVehicle: data.vehicle,
-          typeLoad: data.typeOfLoad,
-        }
-      );
-      console.log("ad successfully posted:", response.data);
-      navigate("/driverad");
+      const headers = {
+        'Content-Type': 'application/json'
+      }
+      const API_ENDPOINT = "https://truckapp-main-production.up.railway.app/api/ads/add"
+      const result = await axios.post(
+        API_ENDPOINT,
+        dataFormat,
+        headers
+        )
+      console.log(result.data)
+      navigate("/driverad", { state: { formData: data } });
     } catch (error) {
-      console.log("ads not successfully posted:", error);
+      console.error('Error:', error);
+    console.log('Response:', error.response);
     }
   };
+ 
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
@@ -65,6 +74,7 @@ const DriverRecordAd = () => {
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
+ 
   return (
     <div>
       <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>

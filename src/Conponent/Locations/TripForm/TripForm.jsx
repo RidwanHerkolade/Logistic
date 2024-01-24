@@ -53,7 +53,7 @@ const TripForm = () => {
                     options={tripDestination}
                     placeholder="to"
                     isSearchable
-                    noOptionsMessage={() => 'no location found'}
+                    noOptionsMessage={() => 'no location found.'}
                     styles={customStyles}
                   />
                 )}
