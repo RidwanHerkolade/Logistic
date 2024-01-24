@@ -11,12 +11,12 @@ const Loading = () => {
         left: 0,
         width: "100%",
         height: "100%",
-        background: "rgba(255, 255, 255, 0.4)", // Adjust the color and opacity as needed
+        background: "rgba(255, 255, 255, 0.4)", 
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         zIndex: 9999,
-        backdropFilter: "blur(0.04px)", // Add blur effect
+        backdropFilter: "blur(0.04px)",
       }}
     >
       <CircularProgress style={{color: " rgb(255,224,138)"}}/>

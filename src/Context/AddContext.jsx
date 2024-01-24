@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 export const AddContext = createContext(null);
 
 const AddContextProvider = (props) => {
-  const [isShow, setIsShow] = useState(false)
+  const [submissionSuccessful, setSubmissionSuccessful] = useState(false)
+  const [submissionError, setSubmissionError] = useState(false)
   const [addYourAd, setAddYourAd] = useState(false);
   
 
@@ -12,17 +13,23 @@ const AddContextProvider = (props) => {
     setAddYourAd(!addYourAd);
   };
  
-  const handleSuccessPage =() => {
-     setIsShow(false)
+  const handleSubmissionPage =() => {
+     setSubmissionSuccessful(false)
   }
+  const handleSubmissionError =() => {
+    setSubmissionError(false)
+ }
 
   const contextValue = {
     handleAddYourAd,
     setAddYourAd,
     addYourAd,
-    setIsShow,
-    isShow,
-    handleSuccessPage,
+    setSubmissionSuccessful,
+    submissionSuccessful,
+    submissionError,
+    handleSubmissionPage ,
+    handleSubmissionError ,
+    setSubmissionError
     // setLoading,
   };
 
