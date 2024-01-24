@@ -96,8 +96,8 @@ const DriverRecordAd = () => {
         {loading && <Loading />}
         <div className="formdivs__record">
           <div className="record__ad">
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.fromProvince ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.fromProvince ? "error" : ""}`}>
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -110,16 +110,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.firstName && (
+              {/* {errors.firstName && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.firstName.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.lastName ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.lastName ? "error" : ""}`}>
                 <PersonIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -132,16 +132,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.lastName && (
+              {/* {errors.lastName && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.lastName.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.email ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.email ? "error" : ""}`}>
                 <MailIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -154,16 +154,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.email && (
+              {/* {errors.email && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.email.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.phone ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.phone ? "error" : ""}`}>
                 <CallIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -176,15 +176,15 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.phone && (
+              {/* {errors.phone && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.phone.message}
                 </p>
-              )}
+              )} */}
             </div>
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.typeOfLoad ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.typeOfLoad ? "error" : ""}`}>
                 <LuggageIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -197,16 +197,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.typeOfLoad && (
+              {/* {errors.typeOfLoad && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.typeOfLoad.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.typeOfLoad ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.vehicle ? "error" : ""}`}>
                 <LocalShippingIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
@@ -232,18 +232,18 @@ const DriverRecordAd = () => {
                   </div>
                 </div>
               </div>
-              {errors.vehicle && (
+              {/* {errors.vehicle && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.vehicle.message}
                 </p>
-              )}
+              )} */}
             </div>
           </div>
 
           <div className="record__location">
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.finalDestination ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.finalDestination ? "error" : ""}`}>
                 <LocationOnIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
@@ -269,15 +269,15 @@ const DriverRecordAd = () => {
                   </div>
                 </div>
               </div>
-              {errors.finalDestination && (
+              {/* {errors.finalDestination && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.finalDestination.message}
                 </p>
-              )}
+              )} */}
             </div>
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.initialDestination ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.initialDestination ? "error" : ""}`}>
                 <LocationOnIcon className="iconloc" />
                 <div className="record__input">
                   <div className="ss">
@@ -303,15 +303,15 @@ const DriverRecordAd = () => {
                   </div>
                 </div>
               </div>
-              {errors.initialDestination && (
+              {/* {errors.initialDestination && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.initialDestination.message}
                 </p>
-              )}
+              )} */}
             </div>
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.initialDestination ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.initialDestination ? "error" : ""}`}>
                 <LocationOnIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -324,16 +324,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.fromProvince && (
+              {/* {errors.fromProvince && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.fromProvince.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.toProvince ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.toProvince ? "error" : ""}`}>
                 <LocationOnIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -346,15 +346,15 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.toProvince && (
+              {/* {errors.toProvince && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.toProvince.message}
                 </p>
-              )}
+              )} */}
             </div>
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.toProvince ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.toProvince ? "error" : ""}`}>
                 <LocationOnIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -367,16 +367,16 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.fromNeighborhood && (
+              {/* {errors.fromNeighborhood && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.fromNeighborhood.message}
                 </p>
-              )}
+              )} */}
             </div>
 
-            <div className="record__inputs">
-              <div className="record__divInp">
+            <div className={`record__inputs ${errors.toNeighborhood ? "error" : ""}`}>
+              <div className={`record__divInp ${errors.toNeighborhood ? "error" : ""}`}>
                 <LocationOnIcon className="iconsize" />
                 <div className="record__input">
                   <input
@@ -389,12 +389,12 @@ const DriverRecordAd = () => {
                   />
                 </div>
               </div>
-              {errors.toNeighborhood && (
+              {/* {errors.toNeighborhood && (
                 <p className="errors">
                   <ErrorIcon className="error__icon" />
                   {errors.toNeighborhood.message}
                 </p>
-              )}
+              )} */}
             </div>
           </div>
         </div>

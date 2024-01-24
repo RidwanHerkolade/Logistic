@@ -50,6 +50,9 @@ const Register = () => {
   // loading effect
   const [loading, setLoading] = useState(false);
 
+  // USER ALREADY EXIST
+  const [userExist, setUserExist] = useState(false)
+
   // Submit handler for the registration form
   const onSubmit = async (data) => {
     try {
@@ -69,6 +72,9 @@ const Register = () => {
       const email = response.data.email || data.email;
       navigate(`/confirmationPage?email=${encodeURIComponent(email)}`);
     } catch (error) {
+      if(error.response && error.response.status === 409) {
+        setUserExist(true)
+      }
       console.error("Error registering user:", error);
 
     }
@@ -87,11 +93,11 @@ const Register = () => {
         <div className="h4">Logistics</div>
         <div className="record__div">
           <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
-            {/* {userExist && (
+            {userExist && (
             <div className="user__error">
               User already exists! Please log in or use a different email.
             </div>
-          )} */}
+          )}
           {loading && <Loading/>}
             <div className="formdivs__record">
               <div className="record__ad">
