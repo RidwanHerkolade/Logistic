@@ -316,7 +316,7 @@
   @media screen and (max-width: 480px) {
 
     .record__divs {
-        padding: 10rem 0rem;
+        /* padding: 10rem 0rem; */
         background: var(--color-yellow);
     }
     .record__div {
@@ -373,12 +373,12 @@
  
 @media  (min-width: 481px) and  (max-width: 768px) {
     .record__divs {
-        padding: 6rem 0rem;
+        /* padding: 6rem 0rem; */
        
     }
     .record__div {
         width: 100%;
-        padding: 3rem 0rem;
+        /* padding: 3rem 0rem; */
         border-radius: 0rem;
       
     }
@@ -405,7 +405,7 @@
 }
 @media  (min-width: 992px) and  (max-width: 1199px) {
     .record__divs {
-        padding: 4rem 0rem;
+        /* padding: 4rem 0rem; */
     }
     /* .record___div {
         width: 100%;
