@@ -30,6 +30,7 @@ const DriverForm = () => {
         }
       );
       console.log("sign in successful:", response.data)
+      navigate("/profilead", {state: {formData: data}})
     }
     catch(error) {
       console.error("error signin in user:", error);

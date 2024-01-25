@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const SideNav = () => {
   const location = useLocation();
-  const [selectedLink, setSelectedLink] = useState("");
+  const [selectedLink, setSelectedLink] = useState("driverlist");
   const handleLinkClick = (link) => {
     setSelectedLink(link);
   };

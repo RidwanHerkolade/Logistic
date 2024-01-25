@@ -1,6 +1,6 @@
 .record__divs {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh -  4.4rem);
     position: relative;
     display: flex;
     justify-content: center;
@@ -27,15 +27,17 @@
 }
 .record__divsAdmin {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 15;
-    height: calc(100vh - 6.5rem);
+    height: calc(100vh - 6.0rem);
     position: relative;
     background-color: var(--color-yellow);
     overflow: scroll;
 }
 .record___Admindivs {
     width: 100%;
-    /* padding: 10rem 0rem; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,14 +258,13 @@
 
  .success__div {
     display: flex;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
     padding: 6rem 5rem;
     margin: 0rem 1rem;
     background: var(--color-white);
-    box-shadow: var(--box-shadow);
     flex-direction: column;
  }
  .success__div h1 {

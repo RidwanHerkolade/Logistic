@@ -2,7 +2,11 @@ import React from 'react'
 import "./Profile.css"
 import ProfileContent from './ProfileContent'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useLocation } from 'react-router-dom';
 const Profile = () => {
+    const location = useLocation()
+    const formData = location.state?.formData || {};
   return (
       <section className='profile__sections'>
           <div className='profile__section'>
@@ -10,15 +14,16 @@ const Profile = () => {
                 <div className='profile__asideContent'>
                 <div className='menu__open'> <MenuOpenIcon/></div>     
                     <div className='profile__images'>
-                         <img src='../img/abiodun.png' alt=''/>
+                         <AccountCircleIcon style={{fontSize: "5rem"}}/>
                     </div>
-                    <h2 className='profile__name'>Ademola Lookman</h2>
-                    <small className='profile__email'>succexfullee@gmail.com</small>
+                    <div className='profile__discrip'>
+                         <h2 className='profile__name'>{formData.firstName} {formData.lastName}</h2>
+                         <small className='profile__email'>{formData.email}</small>
+                    </div> 
                 </div> 
               </aside>
               <div className='profilecon__bg' >
-                  <ProfileContent/>
-                  
+                  <ProfileContent/>   
               </div>
           </div>
       </section>

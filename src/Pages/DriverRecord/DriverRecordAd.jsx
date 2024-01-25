@@ -56,19 +56,16 @@ const DriverRecordAd = () => {
       const result = await axios.post(API_ENDPOINT, dataFormat, headers);
       console.log(result.data);
       navigate("/driverad", { state: { formData: data } });
+      setSubmissionSuccessful(true);
     }  catch (error) {
       console.error("Error:", error);
-      if (error.response.status === 409) {
+      if (error.response && error.response.status === 409) {
+        setSubmissionError(true);
+      } else {
         setSubmissionError(true);
       }
-    
     } finally {
       setLoading(false);
-      if (setSubmissionSuccessful) {
-        setSubmissionSuccessful(true);
-      } else {
-        return setSubmissionError(true);
-      }
     }
   };
 

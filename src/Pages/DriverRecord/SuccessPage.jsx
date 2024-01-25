@@ -7,7 +7,6 @@ const SuccessPage = () => {
   return (
     <section
       className="success__session"
-      
     >
       <div className="success__div">
         <div className="check">

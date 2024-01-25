@@ -1,7 +1,7 @@
 .tripform__div {
     margin: 4rem;
 }
-form {
+.tripform__div form{
     display: flex;
     gap: 1rem;
 }

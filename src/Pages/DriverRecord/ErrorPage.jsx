@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { AddContext } from '../../Context/AddContext';
 const ErrorPage = () => {
-    const {handleSuccessPage} = useContext(AddContext)
+    const {handleSubmissionError} = useContext(AddContext)
   return (
 
     <section className="success__session">
@@ -14,7 +14,7 @@ const ErrorPage = () => {
         </div>
         <h1>Error !!</h1>
         <p>Your Advert is not successfully placed</p>
-        <button className="success__btn" onClick={handleSuccessPage}>
+        <button className="success__btn" onClick={handleSubmissionError}>
           Done
         </button>
       </div>

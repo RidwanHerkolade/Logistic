@@ -1,14 +1,20 @@
 
 /* sidenav styles  */
-.aside {
+
+.aside .aside__navs {
+    margin-left: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    
+}
+.aside__navs .nav__logo {
+    margin: 1.5rem 2rem;
 }
 .aside__navs {
-    margin: 1.5rem 0rem;
+    margin: 0rem 0rem;
 }
 .aside__links {
-    margin: 4rem 0rem;
+    margin: 1rem 0rem;
 }
 .aside__links .li {
     display: flex;
@@ -17,7 +23,10 @@
     font-family: var(--font-family);
     color: var(--color-white);
     text-transform: capitalize;
-    padding: 0.6rem 1rem;
+    text-align: center;
+    margin: 2rem 0rem;
+    line-height: 1rem;
+    padding: 0.6rem 0rem;
     font-weight: 600;
 }
 #selected {
@@ -52,7 +61,8 @@
 }
 /* AdminContent */
 .admincontent__divs {
-    margin: 1.5rem 2rem;
+    padding: 0.9rem;
+    background: var(--color-nav);
     position: relative;
 
 }
@@ -80,7 +90,9 @@
 .move__ad {
     position: absolute;
     width: 100%;
-    top: 5rem;
+    right: 0rem;
+    height: 0rem;
+    top: 5.03rem;
 }
 
 /* AdminCount Divs */

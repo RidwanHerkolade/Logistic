@@ -3,6 +3,7 @@ import { TableHeader } from "../../../Constants/Constant";
 import { Link } from "react-router-dom";
 import { TableData } from "../../../Constants/Constant";
 import "./TableProfile.css"
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const TableProfile = () => {
   return (
@@ -20,9 +21,9 @@ const TableProfile = () => {
             return [
               <tr key={data.id}>
                 <td>
-                  <Link className="dev" to="">
+                  <Link className="dev" to="profilead">
                     <div className="dev__img">
-                      <img src={data.images} alt="" />
+                    <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                     </div>
                     <h3>{data.name}</h3>
                   </Link>
@@ -35,12 +36,7 @@ const TableProfile = () => {
                     0703277838286
                   </div>
                 </td>
-                {/* <td>
-                  <div className="del">
-                    <img src={data.delIcon} alt="" className="call" />
-                    <img src={data.editIcon} alt="" className="msg" />
-                  </div>
-                </td> */}
+              
               </tr>,
             ];
           })}

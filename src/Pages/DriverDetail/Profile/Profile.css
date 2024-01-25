@@ -11,11 +11,11 @@
     position: relative;
 }
 .profile__aside {
+    display: flex;
+    justify-content: center;
     padding: 1rem 0rem;
     background: var(--color-nav);
-   
 }
-
 .profile__images {
     display: flex;
     width: 100%;
@@ -30,15 +30,16 @@
 }
 .profile__asideContent {
     margin: 0rem 0rem;
-    
 }
 .profilecon__bg {
     background: var(--color-white);
 }
 .profile__name {
     font-size: var(--font-fold);
+    text-align: center;
     font-weight: 600;
     line-height: 30px;
+    margin: 1.5rem 0rem;
     font-family: var(--font-family);
     color: var(--color-grey);
 }
@@ -47,11 +48,18 @@
     color: var(--color-grey);
     margin: 1.5rem;
 }
+.profile__Adsss{
+    position: absolute;
+    width: 100%;
+    top: 0rem;
+
+}
 
 /* PROFILE CONTENT DIVS */
 .employee__div {
     background: var(--color-white);
     height: 100vh;
+    position: relative;
 }
 .employee__divs {
     background: var(--color-nav);

@@ -5,21 +5,20 @@ import Announcement from "./Pages/Announcement/Announcement";
 import Admin from "./Pages/Admin/Admin";
 import DriverForm from "./Pages/DriverDetail/DriverForm";
 import DriverRecord from "./Pages/DriverRecord/DriverRecord";
-// import DriverList from "./Pages/Admin/DriverList/DriverList";
 import Home from "./Pages/Homepage/Home";
 import Register from "./Pages/DriverRegister/Register";
 import ConfirmationPage from "./Pages/Confirmation/ConfirmationPage";
 import AddYourAdd from "./Pages/Admin/AddYourAdd";
 import Dashboard from "./Pages/Admin/Dashboard";
 import AddContextProvider from "./Context/AddContext";
-// import Customer from "./Pages/Admin/CustomerList/Customer";
 import AdsList from "./Pages/Admin/AdsList/AdsList";
 import Profile from "./Pages/DriverDetail/Profile/Profile";
 import "./App.css";
 import ShareLayout from "./sharedLayout/ShareLayout";
 import AdminSharedLayout from "./sharedLayout/AdminSharedLayout";
 import DriverList from "./Pages/Admin/DriverList/DriverList";
-// import AdsPreview from "./Pages/DriverDetail/Profile/AdsPreview";
+import AdsLists from "./Pages/Admin/AdsList/AdsLists";
+import ProfileAd from "./Pages/DriverDetail/Profile/ProfileAd";
 
 function App() {
   return (
@@ -31,6 +30,7 @@ function App() {
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
               <Route path="driverlist" element={<DriverList />} />
               <Route path="adslist" element={<AdsList />} />
+              <Route path="adslist/adslists" element={<AdsLists />} />
             </Route>
 
             <Route path="/" element={<ShareLayout />}>
@@ -46,8 +46,12 @@ function App() {
                 element={<ConfirmationPage />}
               ></Route>
             </Route>
-            <Route path="profile" element={<Profile />}></Route>
-            {/* <Route path="profile/:profileId" element={<AdsPreview />} /> */}
+            <Route path="profile" element={<Profile />}>
+            <Route path="profilead" element={<ProfileAd />}/>
+
+            </Route>
+            
+            
           </Routes>
         </BrowserRouter>
       </AddContextProvider>

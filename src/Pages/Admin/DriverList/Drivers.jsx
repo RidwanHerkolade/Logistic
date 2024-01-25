@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminCount from '../AdminCount'
 import { TableHeader } from '../../../Constants/Constant'
 import { TableData } from '../../../Constants/Constant'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Drivers = () => {
   return (
@@ -24,7 +24,7 @@ const Drivers = () => {
                 <td>
                   <div className="dev">
                     <div className="dev__img">
-                      <img src={data.images} alt="" />
+                    <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                     </div>
                     <h3>{data.name}</h3>
                   </div>

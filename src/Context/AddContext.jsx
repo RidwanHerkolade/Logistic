@@ -6,13 +6,15 @@ export const AddContext = createContext(null);
 const AddContextProvider = (props) => {
   const [submissionSuccessful, setSubmissionSuccessful] = useState(false)
   const [submissionError, setSubmissionError] = useState(false)
-  const [addYourAd, setAddYourAd] = useState(false);
+  const [addYourAd, setAddYourAd] = useState(false)
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  
   
 
   const handleAddYourAd = () => {
     setAddYourAd(!addYourAd);
   };
- 
+
   const handleSubmissionPage =() => {
      setSubmissionSuccessful(false)
   }
@@ -20,16 +22,29 @@ const AddContextProvider = (props) => {
     setSubmissionError(false)
  }
 
+//   initiation of the popup authoriz
+ const handleClosePopup = () => {
+
+   setIsPopupVisible(false);
+ };
+//  Handlers 
   const contextValue = {
     handleAddYourAd,
     setAddYourAd,
     addYourAd,
+    setAddYourAd,
     setSubmissionSuccessful,
     submissionSuccessful,
     submissionError,
     handleSubmissionPage ,
     handleSubmissionError ,
-    setSubmissionError
+    setSubmissionError,
+    handleClosePopup,
+    isPopupVisible,
+    setIsPopupVisible,
+    // handleLinkPopup
+    
+    
     // setLoading,
   };
 

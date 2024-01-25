@@ -11,7 +11,6 @@ import { TYPE } from "../../Constants/Constant";
 import axios from "axios";
 import Loading from "../../LoadingOverlay/Loading";
 
-
 // Values for the validation from react-hook-form
 const Register = () => {
   const {

@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableProfile from "./TableProfile";
 import "./Profile.css";
-
+import ProfileAd from "./ProfileAd";
+import { AddContext } from "../../../Context/AddContext";
 const ProfileContent = () => {
-   [search, setSearch] = useState("");
+  const {isPopupVisible} = useContext(AddContext)
+   const [search, setSearch] = useState("");
   function handleChange(event) {
     setSearch(event.target.value);
   }
   return (
+    
     <div className="employee__div">
       <div className="employee__divs">
         <div className="board__header">
-          <div className="greetings">EMPLOYEES</div>
+          <div className="greetings">Welcome !!! </div>
           <div className="search">
             <div className="label">
               <label htmlFor="search">search</label>
@@ -24,7 +27,10 @@ const ProfileContent = () => {
       </div>
       <div className="employees__detail">
         <TableProfile />
+        
       </div>
+      {isPopupVisible && <div className="profile__Adsss"><ProfileAd/></div>}
+     
     </div>
   );
 };

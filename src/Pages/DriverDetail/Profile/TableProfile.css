@@ -30,16 +30,6 @@ tbody td {
      gap: 1rem;
      align-items: center;
 }
-.dev__img {
-     width: 2rem;
-     height: 2rem;
-     
-}
-.dev__img img {
-     width: 100%;
-     height: 100%;
-     object-fit: contain;
-}
 .dev h3 {
      font-size: var(--font-smalls);
      color: var(--color-nav);
