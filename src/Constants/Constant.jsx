@@ -113,11 +113,80 @@ export const headCount= [
        icon: <PeopleIcon style={{fontSize: "2.7rem", color: "rgb(54,54,54)", opacity:"0.7"}}/>
 
   },
+  
+]
+export const TableHeader= [
   {
-       id: 3,
-       number: "44",
-       name: "Customer",
-       icon: <AirlineSeatReclineNormalIcon style={{fontSize: "2.7rem", color: "rgb(54,54,54)", opacity: "0.7"}}/>
+   id: 1,
+   name: "name"
+  },
+  {
+   id: 2,
+   name: "email"
+  },
+  {
+   id: 3,
+   name: "contact info"
+  },
+ 
+]
+
+export const TableData = [
+     
+  {
+       "id": 1,
+       "images": "./img/dessk.png",
+       "name": "slades desk",
+       "position": "ui/ux designer",
+       "callIcon": "./img/call.png",
+       "msgImg": "./img/msg.png",
+       "delIcon": "img/Delete.png",
+       "editIcon": "img/Edit.png",
+
+  },
+  {
+       "id": 2,
+       "images": "./img/feranmi.png",
+       "name": "feranmi ajayi",
+       "position": "HR",
+       "callIcon": "./img/call.png",
+       "msgImg": "./img/msg.png",
+       "delIcon": "img/Delete.png",
+       "editIcon": "img/Edit.png",
+
   },
 ]
 
+export const Details = [
+ 
+    {
+      "id": "1",
+      "staffName": "slades desk",
+      "staffImg": "../img/dessk.png",
+      "staffPosition": "ui/ux designer",
+      "nation": "Ghana",
+      "email": "khalidmaha123@gmail.com",
+      "dob": "18/09/1980",
+      "djoin": "12/12/2021",
+      "state": "Kumasi",
+      "add": "4, allen gate, kumasi ghana",
+      "staff":" 1212BD2021",
+      "number": "+267780897543"
+
+  },
+  {
+    "id": "2",
+    "staffName":"feranmi ajayi",
+    "staffImg":"../img/fer.png",
+    "staffPosition": "Hr",
+    "nation": "South Africa",
+    "email": "elenajone23@gmail.com",
+    "dob": "18/09/1989",
+    "djoin": "12/09/2021",
+    "state": "Pretoria",
+    "add": "4, allen gate, pretoria SA",
+    "staff":" 1209BD2021",
+    "number": "+267780897543"
+
+},
+]

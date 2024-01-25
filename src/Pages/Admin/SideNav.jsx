@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import "./Admin.css"
-import { Link} from 'react-router-dom';
+import "./Admin.css";
+import { Link, useLocation } from "react-router-dom";
 
 const SideNav = () => {
+  const location = useLocation();
+  const [selectedLink, setSelectedLink] = useState("");
+  const handleLinkClick = (link) => {
+    setSelectedLink(link);
+  };
   return (
-    <aside>
+    <aside className="aside">
       <nav className="aside__navs">
         <div className="nav__logo">
           <div className="logo__icon">
@@ -14,14 +19,24 @@ const SideNav = () => {
           <span>MigRo</span>
         </div>
         <ul className="aside__links">
-            <Link to="" className='li'>Driver</Link>
-            <Link to="customer" className='li'>Customer</Link>
+          <Link
+            to="driverlist"
+            className={`li ${selectedLink === "driverlist" ? "selected" : ""}`}
+            onClick={() => handleLinkClick("driverlist")}
+          >
+            Driver
+          </Link>
+          <Link
+            to="adslist"
+            className={`li ${selectedLink === "adslist" ? "selected" : ""}`}
+            onClick={() => handleLinkClick("adslist")}
+          >
+            Ads
+          </Link>
         </ul>
-       
-       
       </nav>
     </aside>
   );
-}
+};
 
-export default SideNav
+export default SideNav;

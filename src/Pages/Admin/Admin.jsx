@@ -23,7 +23,7 @@ function Admin() {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     setLoading(true)
-    navigate("/admin/dashboard", { state: { ...register } });
+    navigate("/admin/dashboard/driverlist", { state: { ...register } });
   };
   console.log("errors", errors);
 

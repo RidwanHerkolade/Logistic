@@ -1,0 +1,125 @@
+.profile__sections{
+    width: 100%;
+    position: relative;
+    font-family: var(--font-family);
+    height: 100%;
+}
+.profile__section {
+    display: grid;
+    grid-template-columns: 25% auto;
+    height: 100vh;
+    position: relative;
+}
+.profile__aside {
+    padding: 1rem 0rem;
+    background: var(--color-nav);
+   
+}
+
+.profile__images {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0rem;
+    align-items: center;
+    justify-content: center;
+}
+.profile__images img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+.profile__asideContent {
+    margin: 0rem 0rem;
+    
+}
+.profilecon__bg {
+    background: var(--color-white);
+}
+.profile__name {
+    font-size: var(--font-fold);
+    font-weight: 600;
+    line-height: 30px;
+    font-family: var(--font-family);
+    color: var(--color-grey);
+}
+.profile__email {
+    font-size: var(--font-logo);
+    color: var(--color-grey);
+    margin: 1.5rem;
+}
+
+/* PROFILE CONTENT DIVS */
+.employee__div {
+    background: var(--color-white);
+    height: 100vh;
+}
+.employee__divs {
+    background: var(--color-nav);
+    padding: 1.5rem;
+    
+}
+.board__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menuBtn {
+    display: none;
+
+}
+.greetings {
+    color: var(--color-white);
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: var(--font-fold);
+}
+.search {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+}
+.label {
+    display: flex;
+    gap: 0.6rem;
+    position: relative;
+    align-items: center;
+}
+.search label {
+    color: var(--color-white);
+    opacity: 0.4;
+    font-weight: 400;
+    font-size: var(--font-smallz);
+    text-transform: uppercase;
+}
+.search img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+.label img {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+    right: 1rem;
+}
+.label input {
+    width: 15rem;
+    font-family: var(--font-family);
+    font-size: var(--font-smalls);
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-nav);
+    color: var(--color-white);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    opacity: 0.1;
+    border-radius: 5rem;
+}
+.employees__detail {
+    padding: 0rem;
+    overflow-y: scroll;
+    /* height: 100%; */
+}

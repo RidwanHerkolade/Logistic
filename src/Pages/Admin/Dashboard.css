@@ -1,14 +1,14 @@
 
 /* sidenav styles  */
-aside {
+.aside {
     display: flex;
     justify-content: center;
 }
 .aside__navs {
-    margin: 2.8rem 0rem;
+    margin: 1.5rem 0rem;
 }
 .aside__links {
-    margin: 2rem 0rem;
+    margin: 4rem 0rem;
 }
 .aside__links .li {
     display: flex;
@@ -17,7 +17,25 @@ aside {
     font-family: var(--font-family);
     color: var(--color-white);
     text-transform: capitalize;
-    padding: 1rem 0rem;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+}
+#selected {
+    background: var(--color-white);
+    padding: 0.6rem 1.5rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    color: var(--color-nav);
+}
+#selected:hover {
+    background: var(--color-nav);
+}
+.selected {
+    background: var(--color-white);
+    padding: 0.6rem 1.5rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    color: var(--color-nav) !important;
 }
 .admin__section {
     display: flex;

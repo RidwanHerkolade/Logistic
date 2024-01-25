@@ -1,21 +1,23 @@
 import React from 'react'
-import TripCompleted from './TripCompleted'
-
+import "./Profile.css"
+import ProfileContent from './ProfileContent'
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 const Profile = () => {
   return (
-      <section>
+      <section className='profile__sections'>
           <div className='profile__section'>
-              <aside>
-                <div className='profile__sections'>
+              <aside className='profile__aside'>   
+                <div className='profile__asideContent'>
+                <div className='menu__open'> <MenuOpenIcon/></div>     
                     <div className='profile__images'>
                          <img src='../img/abiodun.png' alt=''/>
                     </div>
                     <h2 className='profile__name'>Ademola Lookman</h2>
                     <small className='profile__email'>succexfullee@gmail.com</small>
-                </div>
+                </div> 
               </aside>
-              <div className=''>
-                  <TripCompleted/>
+              <div className='profilecon__bg' >
+                  <ProfileContent/>
                   
               </div>
           </div>

@@ -7,31 +7,32 @@ import DriverForm from "./Pages/DriverDetail/DriverForm";
 import DriverRecord from "./Pages/DriverRecord/DriverRecord";
 // import DriverList from "./Pages/Admin/DriverList/DriverList";
 import Home from "./Pages/Homepage/Home";
-import Nav from "./Conponent/Navigation/Nav";
 import Register from "./Pages/DriverRegister/Register";
 import ConfirmationPage from "./Pages/Confirmation/ConfirmationPage";
 import AddYourAdd from "./Pages/Admin/AddYourAdd";
 import Dashboard from "./Pages/Admin/Dashboard";
 import AddContextProvider from "./Context/AddContext";
-import Customer from "./Pages/Admin/CustomerList/Customer";
-
+// import Customer from "./Pages/Admin/CustomerList/Customer";
+import AdsList from "./Pages/Admin/AdsList/AdsList";
+import Profile from "./Pages/DriverDetail/Profile/Profile";
 import "./App.css";
 import ShareLayout from "./sharedLayout/ShareLayout";
 import AdminSharedLayout from "./sharedLayout/AdminSharedLayout";
+import DriverList from "./Pages/Admin/DriverList/DriverList";
+// import AdsPreview from "./Pages/DriverDetail/Profile/AdsPreview";
 
 function App() {
   return (
     <>
       <AddContextProvider>
         <BrowserRouter>
-
           <Routes>
-              <Route path="admin" element={<Admin />}></Route>
-              <Route path="admin/dashboard" element={<AdminSharedLayout/>}>
-                  <Route index element={<Dashboard />}></Route>
-                  <Route index element={<Customer />}></Route>
-
+            <Route path="admin" element={<Admin />}></Route>
+            <Route path="admin/dashboard" element={<AdminSharedLayout />}>
+              <Route path="driverlist" element={<DriverList />} />
+              <Route path="adslist" element={<AdsList />} />
             </Route>
+
             <Route path="/" element={<ShareLayout />}>
               <Route path="addyouradd" element={<AddYourAdd />}></Route>
               <Route path="announcement" element={<Announcement />}></Route>
@@ -45,6 +46,8 @@ function App() {
                 element={<ConfirmationPage />}
               ></Route>
             </Route>
+            <Route path="profile" element={<Profile />}></Route>
+            {/* <Route path="profile/:profileId" element={<AdsPreview />} /> */}
           </Routes>
         </BrowserRouter>
       </AddContextProvider>
