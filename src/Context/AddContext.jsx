@@ -23,9 +23,10 @@ const AddContextProvider = (props) => {
  }
 
 //   initiation of the popup authoriz
+// const navigate = useNavigate()
  const handleClosePopup = () => {
-
-   setIsPopupVisible(false);
+   setIsPopupVisible(!isPopupVisible);
+  
  };
 //  Handlers 
   const contextValue = {

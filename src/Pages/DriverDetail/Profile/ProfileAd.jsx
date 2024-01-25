@@ -1,9 +1,11 @@
 import React from "react";
+import CloseIcon from '@mui/icons-material/Close';
 
 const ProfileAd = () => {
   return (
     <div style={{ position: "relative" }}>
       {/* <AdsTable/> */}
+      <CloseIcon style={{color: "red"}}/>
 
       <div className="Ads__list">
         <form className="form__adslist">

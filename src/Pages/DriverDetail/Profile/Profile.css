@@ -131,3 +131,15 @@
     overflow-y: scroll;
     /* height: 100%; */
 }
+@media screen and (max-width: 480px) {
+    .profile__sections{
+        width: 100%;
+        height: 100%;
+    }
+    .profile__section {
+        grid-template-columns: 100%;
+        height: auto;
+    }
+}
+@media  (min-width: 481px) and  (max-width: 768px) {}
+@media  (min-width: 992px) and  (max-width: 1199px) {

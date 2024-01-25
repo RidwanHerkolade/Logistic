@@ -1,5 +1,5 @@
 import React,{useContext} from "react";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import ErrorIcon from '@mui/icons-material/Error';
 import { AddContext } from '../../Context/AddContext';
 const ErrorPage = () => {
     const {handleSubmissionError} = useContext(AddContext)
@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <section className="success__session">
       <div className="success__div">
         <div className="check">
-          <CheckCircleIcon
+          <ErrorIcon
             style={{ fontSize: "5rem", color: "rgb(230,156,49)" }}
           />
         </div>

@@ -1,6 +1,6 @@
 .record__divs {
     width: 100%;
-    height: calc(100vh -  4.4rem);
+    height: calc(100vh -  4.3rem);
     position: relative;
     display: flex;
     justify-content: center;
@@ -301,12 +301,12 @@
         padding: 0rem 0rem;
     }
     .h4 {
-        margin-top:  6rem;
+        /* margin-top:  6rem; */
         
     }
     
     .record__div {
-        padding: 4rem 0rem;
+        /* padding: 4rem 0rem; */
         border-radius: 0rem;
       
     }
@@ -320,18 +320,15 @@
         background: var(--color-yellow);
     }
     .record__div {
-        width: 100%;
-        height: calc(100vh - 0rem) !important;
-        padding: 3rem 0rem;
         border-radius: 0rem;
       
     }
     .record__header {
-      margin-top: 5rem;
+      /* margin-top: 5rem; */
     }
     
     .form__recorddivs {
-        padding: 2rem 1rem;
+        padding: 0rem 0rem;
     }
     .formdivs__record {
         flex-direction: column;
@@ -356,7 +353,7 @@
         display: flex;
         flex-direction: column;
         border-radius: 0.4rem;
-        padding: 6rem 4rem;
+        padding: 0rem 4rem;
      }
 
      .success__div {
@@ -374,6 +371,7 @@
 @media  (min-width: 481px) and  (max-width: 768px) {
     .record__divs {
         /* padding: 6rem 0rem; */
+        background: var(--color-orange);
        
     }
     .record__div {
@@ -392,10 +390,10 @@
     .ad__div {
         flex-direction: column;
         border-radius: 0.4rem;
-        padding: 6rem 5rem;
+        /* padding: 6rem 5rem; */
      }
      .h4 {
-        margin-top:  6rem;
+        margin-top:  0rem;
         font-size: var(--font-header);
         color: var(--color-migro);
         font-weight: 700;

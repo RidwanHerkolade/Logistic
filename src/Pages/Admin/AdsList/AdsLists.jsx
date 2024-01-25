@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react'
 import { AddContext } from '../../../Context/AddContext'
+import CloseIcon from '@mui/icons-material/Close';
 
 const AdsLists = () => {
   const {handleClosePopup} = useContext(AddContext)
   return (
 
     <div style={{position: "relative"}}>
-        {/* <AdsTable/> */}
 
     <div className="Ads__list">
+    <CloseIcon style={{color: "rgb{54, 54, 54}",cursor: "pointer", position: "absolute", top:"2rem", right: "6rem"} } onClick={handleClosePopup}/>
     <form className="form__adslist">
     
     <div className="grid">
