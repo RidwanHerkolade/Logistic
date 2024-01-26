@@ -90,7 +90,7 @@ const Register = () => {
     <div className="record__divs">
       <div className="record___divss">
         <div className="h4">Logistics</div>
-        <div className="record__div">
+        <div className="registers__div">
           <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
             {userExist && (
             <div className="user__error">

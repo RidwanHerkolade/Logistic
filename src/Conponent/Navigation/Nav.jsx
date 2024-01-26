@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import HouseIcon from "@mui/icons-material/House";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -6,19 +6,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 // import Home from "../../Pages/Homepage/Home";
 import "./Nav.css";
+import { AddContext } from "../../Context/AddContext";
 
 const Nav = () => {
-  const [mobile, setMobile] = useState(false);
-  
-  const handleMobile = () => {
-    setMobile(false);
-  };
-  const handleClick = () => {
-    setMobile(!mobile);
-  };
-  const handleNavClick =() => {
-    setMobile(false)
-  }
+  const {mobile, handleNavClick, handleMobile, handleClick} = useContext(AddContext)
+ 
   return (
     <div className="nav__div">
       <nav className="nav">

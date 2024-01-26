@@ -8,8 +8,10 @@ const AddContextProvider = (props) => {
   const [submissionError, setSubmissionError] = useState(false)
   const [addYourAd, setAddYourAd] = useState(false)
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  // const [handleMenu, setHandleMenu] = useState(false)
+  const [mobile, setMobile] = useState(false);
   
-  
+
 
   const handleAddYourAd = () => {
     setAddYourAd(!addYourAd);
@@ -28,6 +30,15 @@ const AddContextProvider = (props) => {
    setIsPopupVisible(!isPopupVisible);
   
  };
+ const handleMobile = () => {
+  setMobile(false);
+};
+const handleNavClick =() => {
+  setMobile(false)
+}
+const handleClick = () => {
+  setMobile(!mobile);
+};
 //  Handlers 
   const contextValue = {
     handleAddYourAd,
@@ -43,6 +54,11 @@ const AddContextProvider = (props) => {
     handleClosePopup,
     isPopupVisible,
     setIsPopupVisible,
+    mobile,
+    setMobile,
+    handleMobile,
+    handleNavClick,
+    handleClick,
     // handleLinkPopup
     
     
