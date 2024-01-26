@@ -10,6 +10,7 @@ import Select from "react-select";
 import { TYPE } from "../../Constants/Constant";
 import axios from "axios";
 import Loading from "../../LoadingOverlay/Loading";
+import './Register.css'
 
 // Values for the validation from react-hook-form
 const Register = () => {
@@ -56,7 +57,6 @@ const Register = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true)
-     
       const response = await axios.post(
         "https://truckapp-main-production.up.railway.app/api/v1/register",
         {
@@ -81,11 +81,9 @@ const Register = () => {
     setLoading(false);
   }
   };
-
   const handleSignIn = () => {
     navigate("");
   };
-
   return (
     <div className="record__divs">
       <div className="record___divss">

@@ -10,7 +10,7 @@ const DriverRecord = () => {
 
   return (
     <div className="record__divs">
-      <div className="record___divs">
+      <div className="record___divss">
       {submissionError && !submissionSuccessful && (
           <div className="record__success">
             <ErrorPage />

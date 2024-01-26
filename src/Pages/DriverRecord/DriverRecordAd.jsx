@@ -86,7 +86,6 @@ const DriverRecordAd = () => {
     }),
     singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
   };
-
   return (
     <div>
       <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
