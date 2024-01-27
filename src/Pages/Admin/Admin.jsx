@@ -39,7 +39,7 @@ function Admin() {
         </div>
         <span style={{fontSize: "2rem"}}>MigRo</span>
       </div>
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="forms" onSubmit={handleSubmit(onSubmit)}>
         <h1>admin login</h1>
         {errors.userName && <p className="errors">{errors.userName.message}</p>}
         <div className="forminput__input">
