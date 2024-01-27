@@ -30,7 +30,7 @@ function App() {
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
               <Route path="driverlist" element={<DriverList />} />
               <Route path="adslist" element={<AdsList />} />
-              <Route path="adslist/adslists" element={<AdsLists />} />
+              {/* <Route path="adslist/adslists" element={<AdsLists />} /> */}
             </Route>
 
             <Route path="/" element={<ShareLayout />}>

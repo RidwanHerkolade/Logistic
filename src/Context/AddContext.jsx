@@ -30,6 +30,10 @@ const AddContextProvider = (props) => {
    setIsPopupVisible(!isPopupVisible);
   
  };
+ const handleClickPopup = () => {
+  setIsPopupVisible(true);
+ 
+};
  const handleMobile = () => {
   setMobile(false);
 };
@@ -52,6 +56,7 @@ const handleClick = () => {
     handleSubmissionError ,
     setSubmissionError,
     handleClosePopup,
+    handleClickPopup,
     isPopupVisible,
     setIsPopupVisible,
     mobile,

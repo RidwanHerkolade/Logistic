@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
 import LoginIcon from "@mui/icons-material/Login";
@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../LoadingOverlay/Loading";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const DriverForm = () => {
   const {
@@ -16,27 +17,26 @@ const DriverForm = () => {
     formState: { errors },
   } = useForm();
 
-  // Loading efffect 
+  // Loading efffect
   const [loading, setLoading] = useState(false);
 
-// Submit handler for the login form
+  // Submit handler for the login form
   const onSubmit = async (data) => {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await axios.post(
-        "https://truckapp-main-production.up.railway.app/api/v1/login", {
-             email: data.email,
-             password: data.passWord,
+        "https://truckapp-main-production.up.railway.app/api/v1/login",
+        {
+          email: data.email,
+          password: data.passWord,
         }
       );
-      console.log("sign in successful:", response.data)
-      navigate("/profilead", {state: {formData: data}})
-    }
-    catch(error) {
+      console.log("sign in successful:", response.data);
+      navigate("/profilead", { state: { formData: data } });
+    } catch (error) {
       console.error("error signin in user:", error);
-    }
-    finally {
-      setLoading(false)
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,7 +47,7 @@ const DriverForm = () => {
 
   return (
     <div className="driverform__divs">
-       {loading && <Loading/>}
+      {loading && <Loading />}
       <div className="driverform__grid">
         <div className="driverform__images">
           <div className="form__images">
@@ -106,6 +106,9 @@ const DriverForm = () => {
                 <LoginIcon className="iconsearch" />
               </span>
             </div>
+            <Link to="./" className="fgtPsw">
+              forgot password?
+            </Link>
             <div className="div">
               <small>Or</small>
               <div className="register" onClick={handleRegister}>

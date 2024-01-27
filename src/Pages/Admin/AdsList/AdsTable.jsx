@@ -3,8 +3,10 @@ import { TableHeader } from "../../../Constants/Constant";
 import { TableData } from "../../../Constants/Constant";
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { AddContext } from '../../../Context/AddContext';
 
 const AdsTable = () => {
+  const {handleClickPopup} = useContext(AddContext)
   return (
     <div className="table">
     <table>
@@ -20,7 +22,7 @@ const AdsTable = () => {
           return [
             <tr key={data.id}>
               <td>
-                <Link className="dev" to="adslists">
+                <Link className="dev" to="" onClick={handleClickPopup}>
                   <div className="dev__img">
                       <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                   </div>

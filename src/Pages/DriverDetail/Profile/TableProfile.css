@@ -11,7 +11,7 @@ thead th {
      border-collapse: collapse;
      padding: 2rem 1rem;
      font-weight: 700;
-     font-size: var(--font-bold);
+     font-size: var(--font-logo);
      color: var(--color-nav);
      text-transform: uppercase;
      width: 13.35rem;
@@ -21,6 +21,7 @@ tbody td {
      border-bottom: 0.5px solid  var(--color-grey);
      border-collapse: collapse;
      width: 13.35rem;
+
      padding: 1.5rem 0rem;
 }
 .dev {
@@ -48,12 +49,8 @@ tbody td {
      display: flex;
      justify-content: center;
      gap: 1rem;
+     font-size: var(--font-logo);
      cursor: pointer;
-}
-.media img {
-     gap: 1rem;
-     width: 1rem;
-     height: 1rem;
 }
 .del {
      display: flex;
@@ -64,4 +61,93 @@ tbody td {
 .del img {
      width: 1rem;
      height: 1rem;
+}
+@media screen and (max-width: 480px) {
+     .dev {
+          gap: 0.1rem;
+     }
+     .dev h3 {
+          font-size: var(--font-header);
+        
+     }
+     .data__position {
+          font-size: var(--font-header);
+          font-weight: 700;
+          padding-left: 3rem;
+     }
+     .media {
+          font-size: var(--font-header);
+          font-weight: 600;
+     }
+     .greetings {
+          color: var(--color-white);
+          font-weight: 600;
+          font-size: var(--font-headers);
+      }
+     thead th {
+          font-size: var(--font-header);
+          width: 20rem;
+     }
+     tbody td {
+          font-size: var(--font-header);
+          width: 20rem;
+          padding: 1.2rem 0rem;
+     }
+     .data__position {
+          font-size: var(--font-header);
+          font-weight: 700;
+          padding-left: 3rem;
+     }
+}
+@media  (min-width: 481px) and  (max-width: 768px) {
+     .dev h3 {
+          font-size: var(--font-header);
+        
+     }
+     tbody td {
+          font-size: var(--font-header);
+          width: 20rem;
+          padding: 1.2rem 0rem;
+     }
+     .data__position {
+          font-size: var(--font-header);
+          font-weight: 700;
+          padding-left: 3rem;
+     }
+     thead th {
+          font-size: var(--font-header);
+          width: 20rem;
+     }
+     .media {
+          font-size: var(--font-header);
+          font-weight: 600;
+     }
+    
+
+}
+@media  (min-width: 769px) and  (max-width: 992px) {
+     .dev h3 {
+          font-size: var(--font-header);
+        
+     }
+     tbody td {
+          font-size: var(--font-header);
+          width: 20rem;
+          padding: 1.5rem 0rem;
+     }
+     .data__position {
+          font-size: var(--font-header);
+          font-weight: 700;
+          padding-left: 3rem;
+     }
+     thead th {
+          font-size: var(--font-header);
+          width: 20rem;
+     }
+     .media {
+          font-size: var(--font-header);
+          font-weight: 600;
+     }
+    
+
 }

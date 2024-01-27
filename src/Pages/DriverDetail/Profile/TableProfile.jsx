@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TableHeader } from "../../../Constants/Constant";
 import { Link } from "react-router-dom";
 import { TableData } from "../../../Constants/Constant";
 import "./TableProfile.css"
+import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const TableProfile = () => {
+  const {handleClickPopup} = useContext(AddContext)
   return (
     <div className="table">
       <table>
@@ -21,7 +23,7 @@ const TableProfile = () => {
             return [
               <tr key={data.id}>
                 <td>
-                  <Link className="dev" to="profilead">
+                  <Link className="dev" to="" onClick={handleClickPopup}>
                     <div className="dev__img">
                     <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                     </div>

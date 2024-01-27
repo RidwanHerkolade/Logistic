@@ -3,11 +3,8 @@ import TableProfile from "./TableProfile";
 import "./Profile.css";
 import ProfileAd from "./ProfileAd";
 import { AddContext } from "../../../Context/AddContext";
-import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import CloseIcon from "@mui/icons-material/Close";
-
 const ProfileContent = () => {
-  const { isPopupVisible, mobile, handleClick } = useContext(AddContext);
+  const { isPopupVisible} = useContext(AddContext);
   const [search, setSearch] = useState("");
   function handleChange(event) {
     setSearch(event.target.value);
@@ -16,13 +13,7 @@ const ProfileContent = () => {
     <div className="employee__div">
       <div className="employee__divs">
         <div className="board__header">
-          <div className="men" onClick={handleClick}>
-            {mobile ? (
-              <CloseIcon style={{ color: "white" }} />
-            ) : (
-              <MenuOpenIcon style={{ color: "white" }} />
-            )}
-          </div>
+  
           <div className="greetings">New Ads </div>
           <div className="search">
             <div className="label">

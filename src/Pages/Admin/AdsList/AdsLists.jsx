@@ -9,7 +9,7 @@ const AdsLists = () => {
     <div style={{position: "relative"}}>
 
     <div className="Ads__list">
-    <CloseIcon style={{color: "rgb{54, 54, 54}",cursor: "pointer", position: "absolute", top:"2rem", right: "6rem"} } onClick={handleClosePopup}/>
+    <CloseIcon onClick={handleClosePopup} style={{color: "rgb{54, 54, 54}",cursor: "pointer", position: "absolute", top:"2rem", right: "6rem"} } />
     <form className="form__adslist">
     
     <div className="grid">

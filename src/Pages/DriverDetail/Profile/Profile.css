@@ -68,7 +68,7 @@
 .profile__email {
     font-size: var(--font-logo);
     color: var(--color-grey);
-    margin: 1.5rem;
+    margin: 1.5rem 0rem;
 }
 .profile__Adsss{
     position: absolute;
@@ -155,37 +155,67 @@
 }
 @media screen and (max-width: 480px) {
 
-    .profile__sections{
-        width: 100%;
+    .profile__section {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
         position: relative;
-        height: 100%;
+    }
+    .profile__asideContent .profile__logo {
+        margin: 0.9rem 2.75rem;
     }
     .profile__aside {
-        position: absolute;
-        z-index: 999;
-        /* display: none; */
-        right: 0rem;
-        top: 2rem;
-        width: 100%;
-        height: 100%;
-        
-        
+        padding: 7rem 0rem;
     }
+    .profile__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     .profile__section {
         grid-template-columns: 1fr;
         background-color: blue;
         height: 100%;
     }
+    
     .label input {
-        width: 100%;
+        width: 20rem;
         border-radius: 5rem;
+        padding: 0.6rem 1rem;
     }
+    .profile__name {
+        font-size: var(--font-new);
+        margin: 1.5rem 0rem;
+        font-family: var(--font-family);
+        color: var(--color-grey);
+    }
+    .profile__email {
+        font-size: var(--font-header);
+        color: var(--color-grey);
+        margin: 1.5rem;
+    }
+      .logo__icon .icons {
+        color: var(--color-white);
+        font-size: var(--font-header) !important;
+      }
+      .profile__logo span {
+        font-size: var(--font-headers);
+        color: var(--color-white);
+        font-weight: 500;
+      }
 }
 @media  (min-width: 481px) and  (max-width: 768px) {
     .profile__section {
-        grid-template-columns: 100%;
-        background-color: blue;
-        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        position: relative;
+    }
+    .profile__asideContent .profile__logo {
+        margin: 0.9rem 2.75rem;
+    }
+    .profile__aside {
+        padding: 7rem 0rem;
     }
     .label input {
         width: 100%;
@@ -193,4 +223,12 @@
     }
 
 }
-@media  (min-width: 992px) and  (max-width: 1199px) {}
+@media  (min-width: 769px) and  (max-width: 992px) {
+    .profile__section {
+        display: grid;
+        grid-template-columns: 40% auto;
+        height: 100vh;
+        position: relative;
+    }
+
+}
