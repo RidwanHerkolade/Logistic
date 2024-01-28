@@ -1,24 +1,21 @@
-import React,{useState} from 'react'
+import React, { useContext } from 'react'
+import { AddContext } from '../../../Context/AddContext'
 
 const DriverHead = () => {
-    const [search, setSearch] = useState("");
-    console.log(search)
-    function handleChange(event){
-         setSearch(event.target.value);
-    };
+  const {handleChange}=useContext(AddContext)
   return (
   
     <div>
       <div className="employee__divs">
         <div className="board__header">
-          <div className="greetings"> DRiVERS</div>
+          <div className="greetings"> DRIVERS</div>
           <div className="search">
             <div className="label">
-              <label htmlFor="search">search</label>
-              <input type="text" onChange={handleChange} />
+             
+              <input type="text" onChange={handleChange} placeholder='search' />
               <img src="./img/Search.png" alt="" />
             </div>
-            <img src="./img/Logout.png" alt="" />
+            {/* <img src="./img/Logout.png" alt="" /> */}
           </div>
         </div>
       </div>

@@ -137,15 +137,15 @@
 .label input {
     width: 15rem;
     font-family: var(--font-family);
-    font-size: var(--font-smalls);
+    font-size: var(--font-logo);
     border: none;
     outline: none;
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-nav);
-    color: var(--color-white);
+    color: var(--color-nav);
     background: var(--color-white);
     box-shadow: var(--box-shadow);
-    opacity: 0.1;
+    /* opacity: 0.1; */
     border-radius: 5rem;
 }
 .employees__detail {
@@ -165,7 +165,7 @@
         margin: 0.9rem 2.75rem;
     }
     .profile__aside {
-        padding: 7rem 0rem;
+        padding: 4rem 0rem;
     }
     .profile__logo {
         display: flex;

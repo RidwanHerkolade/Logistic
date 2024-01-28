@@ -4,16 +4,12 @@ import "./Profile.css";
 import ProfileAd from "./ProfileAd";
 import { AddContext } from "../../../Context/AddContext";
 const ProfileContent = () => {
-  const { isPopupVisible} = useContext(AddContext);
-  const [search, setSearch] = useState("");
-  function handleChange(event) {
-    setSearch(event.target.value);
-  }
+  const { isPopupVisible, handleChange} = useContext(AddContext);
+
   return (
     <div className="employee__div">
       <div className="employee__divs">
         <div className="board__header">
-  
           <div className="greetings">New Ads </div>
           <div className="search">
             <div className="label">
