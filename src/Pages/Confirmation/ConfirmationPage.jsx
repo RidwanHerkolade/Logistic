@@ -2,10 +2,13 @@ import React,{useEffect, useState} from "react";
 import "./confirmation.css";
 import EmailIcon from "@mui/icons-material/Email";
 import { useForm } from "react-hook-form";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
+import Loading from "../../LoadingOverlay/Loading";
 
 const ConfirmationPage = () => {
+
+  const navigate = useNavigate()
   // React hook form validation
   const {
     handleSubmit,
@@ -13,25 +16,36 @@ const ConfirmationPage = () => {
     formState: { errors },
   } = useForm();
 
+  const [loading, setLoading] = useState(false);
+
   const [otploading, setOtpLoadin] = useState()
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const emailParam = queryParams.get("email");
 
+
   useEffect(() => {
+    
   }, [emailParam]);
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("https://truckapp-main-production.up.railway.app/api/v1/verify-otp", {
-        email: emailParam,
-        otp: data.confirm,
+      setLoading(true)
+      console.log(data)
+      const response = await axios.post(`https://www.monasseq.online/api/v1/otp/verify-otp?email=${emailParam}&otp=${data.confirm}`,
+      {
+        headers:{
+          'Content-Type':'application/json'
+        }
       });
       console.log("OTP registration successfull:", response.data)
-     
+      navigate('/driverform')
+
     } catch (error) {
       console.error("Error during OTP verification:", error.message);
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -39,11 +53,12 @@ const ConfirmationPage = () => {
   const resendOtp = async () => {
     try {
       
-      setOtpLoadin('otp sent to your email');
-      const api = `https://truckapp-main-production.up.railway.app/api/v1/otp/resend-otp?email=${emailParam}`;
+      setOtpLoadin('otp will be sent to your email');
+      const api = `https://migro.onrender.com/api/v1/otp/resend-otp?email=${emailParam}`;
       const result = await axios.post(api);
   
       if (result.status === 200) {
+        setOtpLoadin("sent success")
         console.log("Resent successfully");
       }
     } catch (error) {
@@ -60,6 +75,7 @@ const ConfirmationPage = () => {
     <div className="confirm__div">
       <div className="confirm__divs">
         <div className="verify__icon">
+        {loading && <Loading/>}
           <EmailIcon className="verify__icons" style={{fontSize: "5rem"}}  />
         </div>
         <h1>Email verification</h1>

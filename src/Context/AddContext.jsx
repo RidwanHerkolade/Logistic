@@ -54,7 +54,6 @@ const handleChange = (event) => {
     handleAddYourAd,
     setAddYourAd,
     addYourAd,
-    setAddYourAd,
     setSubmissionSuccessful,
     submissionSuccessful,
     submissionError,

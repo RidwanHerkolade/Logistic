@@ -8,8 +8,7 @@ const DriverList = () => {
     <section className='admincontent__div'>
        <div className="employee__div">
        <DriverHead/>
-       <Drivers/>
-           
+       <Drivers/>    
        </div>
 
     </section>

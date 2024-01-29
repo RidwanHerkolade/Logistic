@@ -52,7 +52,7 @@ const DriverRecordAd = () => {
         "Content-Type": "application/json",
       };
       const API_ENDPOINT =
-        "https://truckapp-main-production.up.railway.app/api/ads/add";
+        "https://migro.onrender.com/api/ads/add";
       const result = await axios.post(API_ENDPOINT, dataFormat, headers);
       console.log(result.data);
       navigate("/driverad", { state: { formData: data } });

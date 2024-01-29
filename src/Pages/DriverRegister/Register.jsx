@@ -58,7 +58,7 @@ const Register = () => {
     try {
       setLoading(true)
       const response = await axios.post(
-        "https://truckapp-main-production.up.railway.app/api/v1/register",
+        "https://migro.onrender.com/api/v1/register",
         {
           phoneNumber: data.phone,
           email: data.email,
@@ -66,7 +66,12 @@ const Register = () => {
           type: data.TYPE.value,
           firstName: data.firstName,
           lastName: data.lastName,
+        },
+      {
+        headers:{
+          'Content-Type': 'application/json'
         }
+      }
       );
       const email = response.data.email || data.email;
       navigate(`/confirmationPage?email=${encodeURIComponent(email)}`);

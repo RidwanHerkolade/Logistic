@@ -29,7 +29,7 @@ const Profile = () => {
                 {formData.firstName} {formData.lastName}
               </h2>
               <small className="profile__email">
-                migro876@gmail.com{formData.email}
+                {formData.email}
               </small>
             </div>
           </div>
