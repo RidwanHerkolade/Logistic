@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import { AddContext } from "../../../Context/AddContext";
+import axios from "axios";
 
 const ProfileAd = () => {
   const {handleClosePopup} = useContext(AddContext)
+
   return (
     <div style={{ position: "relative" }}>
       <div className="Ads__list">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Profile.css";
 import ProfileContent from "./ProfileContent";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 const Profile = () => {
   const location = useLocation();
   const formData = location.state?.formData || {};
+  useEffect(()=>{
+
+  },[])
   return (
     <section className="profile__sections">
       <div className="profile__section">
