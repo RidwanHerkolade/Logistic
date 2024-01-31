@@ -28,25 +28,26 @@ const DriverRecordAd = () => {
 
   const navigate = useNavigate();
   // loading effect
-  const [loading, setLoading] = useState(false);
-
+  
   // Submit handler for the registration form
+  const [loading, setLoading] = useState(false);
   const onSubmit = async (data) => {
     const dataFormat = {
       lastName: data.lastName,
-      fistName: data.firstName,
-      phoneNumber: data.phone,
+      firstName: data.firstName,
       email: data.email,
+      phone: data.phone,
       from_city: data.initialDestination.value,
       from_province: data.fromProvince,
       from_neighborhood: data.fromNeighborhood,
       to_city: data.finalDestination.value,
       to_province: data.toProvince,
       to_neighborhood: data.toNeighborhood,
-      typeVehicle: data.vehicle.value,
-      typeLoad: data.typeOfLoad,
+      truck_type: data.vehicle.value,
+      type_of_load: data.typeOfLoad,
     };
     try {
+      console.log(data)
       setLoading(true);
       const headers = {
         "Content-Type": "application/json",
