@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./Profile.css";
 import ProfileContent from "./ProfileContent";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
+  const {  handleId} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
   useEffect(()=>{
@@ -20,7 +22,7 @@ const Profile = () => {
               <div className="logo__icon">
                 <LocalShippingIcon className="icons" />
               </div>
-              <Link to="/"><span>MigRo</span></Link>
+              <Link to="/"><span>MigRo {handleId}</span></Link>
               
             </div>
             <div className="profile__images">

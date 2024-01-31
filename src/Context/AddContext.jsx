@@ -10,6 +10,7 @@ const AddContextProvider = (props) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [handleInput, setHandleInput] = useState("")
   const [mobile, setMobile] = useState(false);
+  const [handleId, setHandleId] = useState()
   
 
 
@@ -44,6 +45,9 @@ const handleClick = () => {
   setMobile(!mobile);
 };
 
+const handIdSubmition = (id)=>{
+  setHandleId(id)
+}
 // 
 const handleChange = (event) => {
     const {value} = event.target
@@ -69,7 +73,9 @@ const handleChange = (event) => {
     handleMobile,
     handleNavClick,
     handleClick,
-    handleChange
+    handleChange,
+    handIdSubmition,
+    handleId,
     // handleLinkPopup
     
     

@@ -8,10 +8,12 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
 import { useState } from "react";
 
+
 const TableProfile = () => {
   const [loading, setLoading] = useState()
   const [ads, setAds] = useState([])
-  const {handleClickPopup} = useContext(AddContext)
+  const [id, setId] = useState()
+  const {handleClickPopup, handIdSubmition} = useContext(AddContext)
   useEffect(()=>{
     fetchAds()
    },[])
@@ -32,6 +34,12 @@ const TableProfile = () => {
       setLoading(false)
      }
    }
+
+   const selectId = (id)=>{
+    setId(id)
+    
+    console.log(id)
+   }
   return (
     <div className="table">
       {loading ? "Loading..." : "Done loading"}
@@ -47,7 +55,7 @@ const TableProfile = () => {
         <tbody>
           {ads.map((data) => {
             return [
-              <tr key={data.id}>
+              <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
                 <td>
                   <Link className="dev" to="" onClick={handleClickPopup}>
                     <div className="dev__img">
