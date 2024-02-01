@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../../LoadingOverlay/Loading";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 
 const DriverForm = () => {
   const {
@@ -53,7 +53,7 @@ const DriverForm = () => {
 
   return (
     <div className="driverform__divs">
-     <ToastContainer /> 
+     {/* <ToastContainer />  */}
       {loading && <Loading />}
       <div className="driverform__grid">
         <div className="driverform__images">
