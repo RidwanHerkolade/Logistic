@@ -106,7 +106,7 @@ const DriverForm = () => {
                 <LoginIcon className="iconsearch" />
               </span>
             </div>
-            <Link to="./" className="fgtPsw">
+            <Link to="/driverform/forgetpassword" className="fgtPsw">
               forgot password?
             </Link>
             <div className="div">

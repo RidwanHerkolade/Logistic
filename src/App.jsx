@@ -9,7 +9,6 @@ import Home from "./Pages/Homepage/Home";
 import Register from "./Pages/DriverRegister/Register";
 import ConfirmationPage from "./Pages/Confirmation/ConfirmationPage";
 import AddYourAdd from "./Pages/Admin/AddYourAdd";
-import Dashboard from "./Pages/Admin/Dashboard";
 import AddContextProvider from "./Context/AddContext";
 import AdsList from "./Pages/Admin/AdsList/AdsList";
 import Profile from "./Pages/DriverDetail/Profile/Profile";
@@ -17,7 +16,8 @@ import "./App.css";
 import ShareLayout from "./sharedLayout/ShareLayout";
 import AdminSharedLayout from "./sharedLayout/AdminSharedLayout";
 import DriverList from "./Pages/Admin/DriverList/DriverList";
-import AdsLists from "./Pages/Admin/AdsList/AdsLists";
+import ForgetPassword from "./Pages/DriverDetail/ForgetPassWord/ForgetPassword";
+import ResetPassword from "./Pages/DriverDetail/ForgetPassWord/ResetPassword";
 import ProfileAd from "./Pages/DriverDetail/Profile/ProfileAd";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
               <Route path="driverlist" element={<DriverList />} />
               <Route path="adslist" element={<AdsList />} />
-              {/* <Route path="adslist/adslists" element={<AdsLists />} /> */}
+
             </Route>
 
             <Route path="/" element={<ShareLayout />}>
@@ -38,7 +38,11 @@ function App() {
               <Route path="announcement" element={<Announcement />}></Route>
               <Route index element={<Home />}></Route>
               <Route path="driverad" element={<DriverAd />}></Route>
-              <Route path="driverform" element={<DriverForm />}></Route>
+              <Route path="/driverform" element={<DriverForm />}>
+                   
+
+              </Route>
+              
               <Route path="driverrecord" element={<DriverRecord />}></Route>
               <Route path="register" element={<Register />}></Route>
               <Route
@@ -47,9 +51,12 @@ function App() {
               ></Route>
             </Route>
             <Route path="profile" element={<Profile />}>
-            <Route path="profilead" element={<ProfileAd />}/>
+
+            {/* <Route path="profilead" element={<ProfileAd />}/> */}
 
             </Route>
+            <Route path="/driverform/forgetpassword" element={<ForgetPassword/>}></Route>
+            <Route path="/driverform/forgetpassword/resetpassword" element={<ResetPassword/>}></Route>
             
             
           </Routes>

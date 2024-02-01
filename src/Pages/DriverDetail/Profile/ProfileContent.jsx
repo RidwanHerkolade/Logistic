@@ -3,6 +3,7 @@ import TableProfile from "./TableProfile";
 import "./Profile.css";
 import ProfileAd from "./ProfileAd";
 import { AddContext } from "../../../Context/AddContext";
+import Menu from '@mui/icons-material/Menu';
 const ProfileContent = () => {
   const { isPopupVisible, handleChange} = useContext(AddContext);
 
@@ -10,7 +11,8 @@ const ProfileContent = () => {
     <div className="employee__div">
       <div className="employee__divs">
         <div className="board__header">
-          <div className="greetings">New Ads </div>
+          
+          <div className="greetings"> <Menu style={{fontSize: "2rem", color: "white"}}/>New Ads </div>
           <div className="search">
             <div className="label">
               <input type="text" onChange={handleChange} placeholder="search" />
