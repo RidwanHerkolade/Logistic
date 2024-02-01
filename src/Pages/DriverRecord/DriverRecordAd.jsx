@@ -28,31 +28,32 @@ const DriverRecordAd = () => {
 
   const navigate = useNavigate();
   // loading effect
-  const [loading, setLoading] = useState(false);
-
+  
   // Submit handler for the registration form
+  const [loading, setLoading] = useState(false);
   const onSubmit = async (data) => {
     const dataFormat = {
       lastName: data.lastName,
-      fistName: data.firstName,
-      phoneNumber: data.phone,
+      firstName: data.firstName,
       email: data.email,
+      phone: data.phone,
       from_city: data.initialDestination.value,
       from_province: data.fromProvince,
       from_neighborhood: data.fromNeighborhood,
       to_city: data.finalDestination.value,
       to_province: data.toProvince,
       to_neighborhood: data.toNeighborhood,
-      typeVehicle: data.vehicle.value,
-      typeLoad: data.typeOfLoad,
+      truck_type: data.vehicle.value,
+      type_of_load: data.typeOfLoad,
     };
     try {
+      console.log(data)
       setLoading(true);
       const headers = {
         "Content-Type": "application/json",
       };
       const API_ENDPOINT =
-        "https://truckapp-main-production.up.railway.app/api/ads/add";
+        "https://migro.onrender.com/api/ads/add";
       const result = await axios.post(API_ENDPOINT, dataFormat, headers);
       console.log(result.data);
       navigate("/driverad", { state: { formData: data } });

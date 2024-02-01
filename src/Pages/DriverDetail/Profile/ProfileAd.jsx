@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import { AddContext } from "../../../Context/AddContext";
+import axios from "axios";
 
 const ProfileAd = () => {
   const {handleClosePopup} = useContext(AddContext)
+
   return (
     <div style={{ position: "relative" }}>
       <div className="Ads__list">
-      <CloseIcon style={{cursor: "pointer", color: "black", position: "absolute", top: "1rem", right: "2rem"}} onClick={handleClosePopup}/>
+      <CloseIcon style={{cursor: "pointer", color: "red", position: "absolute", top: "1rem", right: "2rem"}} onClick={handleClosePopup}/>
         <form className="form__adslist">
           <div className="grid">
             <div className="value__name">

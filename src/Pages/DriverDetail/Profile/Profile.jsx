@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import "./Profile.css";
 import ProfileContent from "./ProfileContent";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
+  const {  handleId} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
+  useEffect(()=>{
+
+  },[])
   return (
     <section className="profile__sections">
       <div className="profile__section">
@@ -17,7 +22,7 @@ const Profile = () => {
               <div className="logo__icon">
                 <LocalShippingIcon className="icons" />
               </div>
-              <Link to="/"><span>MigRo</span></Link>
+              <Link to="/"><span>MigRo {handleId}</span></Link>
               
             </div>
             <div className="profile__images">
@@ -29,7 +34,7 @@ const Profile = () => {
                 {formData.firstName} {formData.lastName}
               </h2>
               <small className="profile__email">
-                migro876@gmail.com{formData.email}
+                {formData.email}
               </small>
             </div>
           </div>
