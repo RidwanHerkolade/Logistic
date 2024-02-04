@@ -30,7 +30,7 @@ const Profile = () => {
             </div>
             <div className="profile__discrip">
               <h2 className="profile__name">
-                Lasisi Ridwan
+                {/* Lasisi Ridwan */}
                 {formData.firstName} {formData.lastName}
               </h2>
               <small className="profile__email">

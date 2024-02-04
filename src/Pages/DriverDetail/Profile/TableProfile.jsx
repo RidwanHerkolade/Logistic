@@ -8,6 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
 import { useState } from "react"
 import Loading from '../../../LoadingOverlay/Loading'
+import {BeatLoader} from 'react-spinners'
 
 
 const TableProfile = () => {
@@ -21,9 +22,9 @@ const TableProfile = () => {
    const fetchAds = async()=>{
      const api = "https://migro.onrender.com/api/ads/getAds"
      try {
-       const result = await axios.get(api)
        setLoading(true)
-       if(result.status === 200 ){
+       const result = await axios(api)
+       if(result.status === 200){
         setAds(result.data)
          console.log(result.data)
        }
@@ -40,7 +41,6 @@ const TableProfile = () => {
    }
   return (
     <div className="table">
-      {loading && <Loading />}
       <table>
         <thead>
           <tr>
@@ -50,6 +50,7 @@ const TableProfile = () => {
           </tr>
         </thead>
         <tbody>
+        {loading && <BeatLoader style={{marginLeft:'auto', marginRight:'auto',}} />}
           {ads.map((data) => {
             return [
               <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
