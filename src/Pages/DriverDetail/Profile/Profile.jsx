@@ -22,7 +22,7 @@ const Profile = () => {
               <div className="logo__icon">
                 <LocalShippingIcon className="icons" />
               </div>
-              <Link to="/"><span>MigRo {handleId}</span></Link>
+              <Link to="/"><span>MigRo</span></Link>
               
             </div>
             <div className="profile__images">
