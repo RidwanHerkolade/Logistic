@@ -6,11 +6,12 @@ import "./TableProfile.css"
 import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
-import { useState } from "react";
+import { useState } from "react"
+import Loading from '../../../LoadingOverlay/Loading'
 
 
 const TableProfile = () => {
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(false)
   const [ads, setAds] = useState([])
   const [id, setId] = useState()
   const {handleClickPopup, handIdSubmition} = useContext(AddContext)
@@ -24,12 +25,10 @@ const TableProfile = () => {
        setLoading(true)
        if(result.status === 200 ){
         setAds(result.data)
-        console.log(typeof(result.data))
          console.log(result.data)
        }
      } catch (error) {
        console.error(error)
-       console.log(error)
      }finally{
       setLoading(false)
      }
@@ -37,13 +36,11 @@ const TableProfile = () => {
 
    const selectId = (id)=>{
     setId(id)
-    
     console.log(id)
    }
   return (
     <div className="table">
-      {loading ? "Loading..." : "Done loading"}
-
+      {loading && <Loading />}
       <table>
         <thead>
           <tr>

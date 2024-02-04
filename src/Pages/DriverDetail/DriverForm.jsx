@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../../LoadingOverlay/Loading";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const DriverForm = () => {
   const {
     register,
@@ -36,10 +36,11 @@ const DriverForm = () => {
         console.log("sign in successful:", response.data);
         toast.success("registration created!");
         navigate("/profile", { state: { formData: data } });
-      }else if(response.status === 403){
+      }else{
         toast.error("password or email not correct");
       }
     } catch (error) {
+      toast.error("password or email not correct");
       console.error("error signin in user:", error);
     } finally {
       setLoading(false);
@@ -53,8 +54,8 @@ const DriverForm = () => {
 
   return (
     <div className="driverform__divs">
-     {/* <ToastContainer />  */}
       {loading && <Loading />}
+      <ToastContainer /> 
       <div className="driverform__grid">
         <div className="driverform__images">
           <div className="form__images">

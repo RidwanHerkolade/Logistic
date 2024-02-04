@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
-  const {  handleId} = useContext(AddContext);
+  const {handleId} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
   useEffect(()=>{
