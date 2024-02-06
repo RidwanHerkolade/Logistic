@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
-  const {  handleId, mobile, handleNavClick} = useContext(AddContext);
+  const {  handleId} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
   useEffect(()=>{
@@ -22,7 +22,7 @@ const Profile = () => {
               <div className="logo__icon">
                 <LocalShippingIcon className="icons" />
               </div>
-              <Link to="/"><span>MigRo {handleId}</span></Link>
+              <Link to="/"><span>MigRo</span></Link>
               
             </div>
             <div className="profile__images">
@@ -30,7 +30,7 @@ const Profile = () => {
             </div>
             <div className="profile__discrip">
               <h2 className="profile__name">
-                Lasisi Ridwan
+                {/* Lasisi Ridwan */}
                 {formData.firstName} {formData.lastName}
               </h2>
               <small className="profile__email">

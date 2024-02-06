@@ -2,6 +2,9 @@ import React from "react";
 import "./ForgetPassWord.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgetPassword = () => {
   const {
@@ -11,13 +14,29 @@ const ForgetPassword = () => {
   } = useForm();
 
   const navigate = useNavigate()
-  const onSubmit = (data) => {
-      console.log(data)
-      navigate("/driverform/forgetpassword/resetpassword")
+  const onSubmit = async(data) => {
+    try {
+      const result = await axios.post('https://migro.onrender.com/api/v1/forgot-password',data)
+      console.log(data);
+      if(result.status === 200){
+        toast.success('email verified!')
+        setTimeout(()=>{
+        navigate("/driverform/forgetpassword/resetpassword")
+        }, 3000)
+      }
+    } catch (error) {
+      if (error.request.status === 409) {
+      toast.error("Email not found!")
+    }else if(error.code == 'ERR_NETWORK'){
+      toast.error("no internet connection or server error!")
+      }
+      console.log(error)
       
+    } 
   }
   return (
     <div className="forgetPassWord__div">
+      <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2 style={{ display: "flex", color: " rgb(54,54,54)", justifyContent: "center", fontSize: "1.5rem", fontFamily: "Montserrat", margin: "2rem 0rem", fontWeight: "600"}}>Forget Password</h2>
         {errors.email && (

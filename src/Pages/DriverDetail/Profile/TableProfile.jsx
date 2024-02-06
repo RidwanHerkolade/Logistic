@@ -7,13 +7,10 @@ import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
 import { useState } from "react";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 const TableProfile = () => {
   const [loading, setLoading] = useState()
-  const [pages, setPages] = useState(1);
   const [ads, setAds] = useState([])
   const [id, setId] = useState()
   const {handleClickPopup, handIdSubmition} = useContext(AddContext)
@@ -23,16 +20,14 @@ const TableProfile = () => {
    const fetchAds = async()=>{
      const api = "https://migro.onrender.com/api/ads/getAds"
      try {
-       const result = await axios.get(api)
        setLoading(true)
-       if(result.status === 200 ){
+       const result = await axios(api)
+       if(result.status === 200){
         setAds(result.data)
-        console.log(typeof(result.data))
          console.log(result.data)
        }
      } catch (error) {
        console.error(error)
-       console.log(error)
      }finally{
       setLoading(false)
      }
@@ -40,7 +35,6 @@ const TableProfile = () => {
 
    const selectId = (id)=>{
     setId(id)
-    
     console.log(id)
    }
 
@@ -59,7 +53,7 @@ const TableProfile = () => {
     }
   };
   return (
-    <div className="profile_table">
+    <div className="table">
       {loading ? "Loading..." : "Done loading"}
 
       <table>
@@ -72,7 +66,7 @@ const TableProfile = () => {
           </tr>
         </thead>
         <tbody>
-        {ads.slice(startIndex, endIndex).map((data) => {
+          {ads.map((data) => {
             return [
               <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
                 <td>
