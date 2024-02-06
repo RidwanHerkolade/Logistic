@@ -77,8 +77,8 @@ tbody td {
 @media screen and (max-width: 480px) {
      thead th {
           font-size: var(--font-fold);
+          width: 15rem;
           overflow-x: auto;
-          width: calc(50rem / 3);
           padding: 1.5rem 0rem;
      }
      .dev {
@@ -97,12 +97,16 @@ tbody td {
      }
      tbody td {
           font-size: var(--font-fold);
-          width: calc(100rem / 3);
+          width: 15rem;
+          overflow-x: auto;
           padding: 1.5rem 0rem;
 
      }
      .pagination {
-          width: 50rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /* width: rem; */
       }
       .media {
           font-size: var(--font-header);
@@ -119,7 +123,8 @@ tbody td {
      thead th {
           font-size: var(--font-fold);
           overflow-x: auto;
-          width: calc(50rem / 3);
+          width: 15rem;
+          overflow-x: auto;
           padding: 1.5rem 0rem;
      }
      .dev {
@@ -129,7 +134,6 @@ tbody td {
      .data__position {
           font-size: var(--font-fold);
           font-weight: 700;
-          overflow-x: auto;
           padding-left: 0rem;
      }
      .dev h3 {
@@ -138,12 +142,16 @@ tbody td {
      }
      tbody td {
           font-size: var(--font-fold);
-          width: calc(100rem / 3);
+          width: 15rem;
           padding: 1.5rem 0rem;
-          border: 1px solid red;
+          overflow-x: auto;
+          /* border: 1px solid red; */
      }
      .pagination {
-          width: 50rem;
+          /* width: 10rem; */
+          display: flex;
+          justify-content: center ;
+          align-items: center;
       }
      
 }
@@ -172,7 +180,8 @@ tbody td {
           font-size: var(--font-fold);
           width: calc(100rem / 3);
           padding: 2rem 0rem;
-          border: 1px solid red;
+          border: 1px solid var(--color-grey);
+          overflow-x: auto;
      }
      
      .media {

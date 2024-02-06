@@ -90,10 +90,11 @@ const Register = () => {
     navigate("");
   };
   return (
-    <div className="record__divs">
-      <div className="record___divss">
+    <div className="driverregister__div">
+      <div className="driverregister__divss">
+       
+        <div className="driverregisters__div">
         <div className="h4">Logistics</div>
-        <div className="registers__div">
           <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
             {userExist && (
             <div className="user__error">

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import DriverHead from "../DriverList/DriverHead";
 import AdsLists from "./AdsLists";
 import AdsTable from "./AdsTable";
 import { AddContext } from "../../../Context/AddContext";

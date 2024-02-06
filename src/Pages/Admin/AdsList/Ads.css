@@ -1,14 +1,38 @@
+
+.record__divsAdmin {
+    /* width: 100%; */
+   
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    z-index: 15;
+    height: calc(100vh - 5.0rem);
+    position: relative;
+    background-color: var(--color-yellow);
+}
+.record___Admindivs {
+    width: 100%;
+    height: 100%;
+    margin: 0rem;padding: 0rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-white);
+    align-items: center;
+}
+.recordadminpop {
+    width: 100%;
+
+}
 .Ads__list {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: -1rem;
     z-index: 999;
     background: var(--color-white);
-    /* display: none; */
     align-items: center;
     width: 100%;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 3rem);
     
 }
 .form__adslist{
@@ -38,7 +62,7 @@
      border-radius: 0.4rem;
      font-style: normal;
     font-size: var(--font-logo);
-     padding: 1rem 0rem;
+     padding: 0.3rem 0rem;
 }
 
 .authorize {
@@ -75,6 +99,23 @@
     .form__adslist{
         margin: 0rem 1.5rem;
      }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .Ads__list {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: -1rem;
+        z-index: 999;
+        background: var(--color-white);
+        align-items: center;
+        width: 100%;
+        /* height: calc(vh - 3rem); */
+        
+    }
+    
 
 }
 
