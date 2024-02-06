@@ -40,16 +40,7 @@
     font-size: var(--font-logo);
      padding: 1rem 0rem;
 }
-/* .value__input .record__inputValue input {
-    width: 100%;
-    border: 1px solid var(--color-yellow);
-    outline: none;
-    padding: 0.5rem 0rem;
-    border-radius: 0.2rem;
-    font-style: normal;
-    font-size: var(--font-logo);
 
-} */
 .authorize {
     border: none;
     outline: none;
@@ -58,5 +49,32 @@
     font-weight: 600;
     border-radius: 0.1rem;
     background: var(--color-yellow);
+}
+@media (min-width: 280px) and (max-width: 380px) {
+    .Ads__list .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .form__adslist{
+        margin: 0rem 1.5rem;
+     }
+    .Ads__list {
+        height: calc(100vh - 0rem);
+        padding: 6rem 0rem;
+        top: 0rem;
+        
+    }
+}
+@media (min-width: 381px) and (max-width: 480px) {
+    .Ads__list .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .Ads__list {
+        width: 100%;
+        height: calc(100vh - 0rem);
+    }
+    .form__adslist{
+        margin: 0rem 1.5rem;
+     }
+
 }
 

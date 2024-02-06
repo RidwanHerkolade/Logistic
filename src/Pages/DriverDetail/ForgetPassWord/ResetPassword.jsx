@@ -33,6 +33,20 @@ const ResetPassword = () => {
         >
           Reset Password
         </h2>
+        <label htmlFor="otp" className="fgt__label">
+          OTP:
+        </label>
+        {errors.otp && <p className="errors">{errors.otp.message}</p>}
+        <div className="fgtpassword__div">
+          <input
+            type="text"
+            placeholder=""otp
+            name="otp"
+            {...register("otp", {
+              required: "Please enter your otp",
+            })}
+          />
+        </div>
         {errors.passWord && <p className="errors">{errors.passWord.message}</p>}
         <label htmlFor="password" className="fgt__label">
           New Password:

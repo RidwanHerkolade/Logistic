@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
-  const {handleId} = useContext(AddContext);
+  const {  handleId} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
   useEffect(()=>{
@@ -16,7 +16,7 @@ const Profile = () => {
   return (
     <section className="profile__sections">
       <div className="profile__section">
-        <aside className="profile__aside">
+        <aside className={mobile ? "profile__aside-mobile" : "profile__aside"}>
           <div className="profile__asideContent">
             <div className="profile__logo">
               <div className="logo__icon">

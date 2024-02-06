@@ -1,3 +1,8 @@
+.profile_table {
+     overflow-y: auto;
+     height: calc(100vh - 5.4rem);
+     
+}
 table {
      width: 100%;
      table-layout: fixed;
@@ -21,7 +26,6 @@ tbody td {
      border-bottom: 0.5px solid  var(--color-grey);
      border-collapse: collapse;
      width: 13.35rem;
-
      padding: 1.5rem 0rem;
 }
 .dev {
@@ -62,92 +66,140 @@ tbody td {
      width: 1rem;
      height: 1rem;
 }
+.pagination {
+     padding: 0.7rem 0rem;
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+     align-items: center;
+ }
+ 
 @media screen and (max-width: 480px) {
-     .dev {
-          gap: 0.1rem;
-     }
-     .dev h3 {
-          font-size: var(--font-header);
-        
-     }
-     .data__position {
-          font-size: var(--font-header);
-          font-weight: 700;
-          padding-left: 3rem;
-     }
-     .media {
-          font-size: var(--font-header);
-          font-weight: 600;
-     }
-     .greetings {
-          color: var(--color-white);
-          font-weight: 600;
-          font-size: var(--font-headers);
-      }
      thead th {
-          font-size: var(--font-header);
-          width: 20rem;
-     }
-     tbody td {
-          font-size: var(--font-header);
-          width: 20rem;
-          padding: 1.2rem 0rem;
-     }
-     .data__position {
-          font-size: var(--font-header);
-          font-weight: 700;
-          padding-left: 3rem;
-     }
-}
-@media  (min-width: 481px) and  (max-width: 768px) {
-     .dev h3 {
-          font-size: var(--font-header);
-        
-     }
-     tbody td {
-          font-size: var(--font-header);
-          width: 20rem;
-          padding: 1.2rem 0rem;
-     }
-     .data__position {
-          font-size: var(--font-header);
-          font-weight: 700;
-          padding-left: 3rem;
-     }
-     thead th {
-          font-size: var(--font-header);
-          width: 20rem;
-     }
-     .media {
-          font-size: var(--font-header);
-          font-weight: 600;
-     }
-    
-
-}
-@media  (min-width: 769px) and  (max-width: 992px) {
-     .dev h3 {
-          font-size: var(--font-header);
-        
-     }
-     tbody td {
-          font-size: var(--font-header);
-          width: 20rem;
+          font-size: var(--font-fold);
+          overflow-x: auto;
+          width: calc(50rem / 3);
           padding: 1.5rem 0rem;
      }
+     .dev {
+          padding-left: 1rem;
+          gap: 0.1rem;   
+     }
      .data__position {
-          font-size: var(--font-header);
+          font-size: var(--font-fold);
           font-weight: 700;
-          padding-left: 3rem;
+          overflow-x: auto;
+          padding-left: 0rem;
      }
-     thead th {
+     .dev h3 {
+          font-size: var(--font-fold);
+        
+     }
+     tbody td {
+          font-size: var(--font-fold);
+          width: calc(100rem / 3);
+          padding: 1.5rem 0rem;
+
+     }
+     .pagination {
+          width: 50rem;
+      }
+      .media {
           font-size: var(--font-header);
-          width: 20rem;
+          font-weight: 500;
      }
+     
+    
+}
+@media  (min-width: 481px) and  (max-width: 767px) {
      .media {
-          font-size: var(--font-header);
+          font-size: var(--font-fold);
           font-weight: 600;
      }
-    
-
+     thead th {
+          font-size: var(--font-fold);
+          overflow-x: auto;
+          width: calc(50rem / 3);
+          padding: 1.5rem 0rem;
+     }
+     .dev {
+          padding-left: 1rem;
+          gap: 0.1rem;   
+     }
+     .data__position {
+          font-size: var(--font-fold);
+          font-weight: 700;
+          overflow-x: auto;
+          padding-left: 0rem;
+     }
+     .dev h3 {
+          font-size: var(--font-fold);
+        
+     }
+     tbody td {
+          font-size: var(--font-fold);
+          width: calc(100rem / 3);
+          padding: 1.5rem 0rem;
+          border: 1px solid red;
+     }
+     .pagination {
+          width: 50rem;
+      }
+     
+}
+@media  (min-width: 768px) and  (max-width: 991px) {
+     thead th {
+          font-size: var(--font-fold);
+          overflow-x: auto;
+          width: calc(50rem / 3);
+          padding: 2rem 0rem;
+     }
+     .dev {
+          padding-left: 1rem;
+          gap: 0.1rem;   
+     }
+     .data__position {
+          font-size: var(--font-fold);
+          font-weight: 700;
+          overflow-x: auto;
+          padding-left: 0rem;
+     }
+     .dev h3 {
+          font-size: var(--font-fold);
+        
+     }
+     tbody td {
+          font-size: var(--font-fold);
+          width: calc(100rem / 3);
+          padding: 2rem 0rem;
+          border: 1px solid red;
+     }
+     
+     .media {
+          font-size: var(--font-fold);
+          font-weight: 600;
+     }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+     thead th {
+          font-size: var(--font-fold);
+          overflow-x: auto;
+          width: calc(50rem / 3);
+          padding: 2rem 0rem;
+     }
+     .media {
+          font-size: var(--font-fold);
+          font-weight: 600;
+     }
+     .data__position {
+          font-size: var(--font-fold);
+          font-weight: 700;
+          overflow-x: auto;
+          padding-left: 0rem;
+     }
+     .dev h3 {
+          font-size: var(--font-fold);
+        
+     }
+     
 }
