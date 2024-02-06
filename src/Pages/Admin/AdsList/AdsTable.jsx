@@ -1,12 +1,37 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect} from 'react'
 import { TableHeader } from "../../../Constants/Constant";
 import { TableData } from "../../../Constants/Constant";
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AddContext } from '../../../Context/AddContext';
+import {BeatLoader} from 'react-spinners'
+import axios from 'axios';
 
 const AdsTable = () => {
-  const {handleClickPopup} = useContext(AddContext)
+  const [loading, setLoading] = useState(false)
+  const [ads, setAds] = useState([])
+  const [id, setId] = useState()
+  const {handleClickPopup,handIdSubmition} = useContext(AddContext)
+ 
+  useEffect(()=>{
+    fetchAds()
+   },[])
+   const fetchAds = async()=>{
+     const api = "https://migro.onrender.com/api/ads/getAds"
+     try {
+       setLoading(true)
+       const result = await axios(api)
+       if(result.status === 200){
+        setAds(result.data)
+         console.log(result.data)
+       }
+     } catch (error) {
+       console.error(error)
+     }finally{
+      setLoading(false)
+     }
+   }
+
   return (
     <div className="table">
     <table>
@@ -18,37 +43,34 @@ const AdsTable = () => {
         </tr>
       </thead>
       <tbody>
-        {TableData.map((data) => {
+      {loading && <BeatLoader style={{marginLeft:'auto', marginRight:'auto',}} />}
+        {ads.map((data) => {
           return [
-            <tr key={data.id}>
+            <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
               <td>
                 <Link className="dev" to="" onClick={handleClickPopup}>
                   <div className="dev__img">
-                      <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
+                  <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                   </div>
-                  <h3>{data.name}</h3>
+                  <h3>`{data.firstname} {data.lastname}`</h3>
                 </Link>
               </td>
               <td>
-                <small className="data__position">nelson02345@ymail.com</small>
+                <small className="data__position">{data.email}</small>
               </td>
               <td>
                 <div className="media">
-                  0703277838286
+                  {data.phone}
                 </div>
               </td>
-              {/* <td>
-                <div className="del">
-                  <img src={data.delIcon} alt="" className="call" />
-                  <img src={data.editIcon} alt="" className="msg" />
-                </div>
-              </td> */}
+            
             </tr>,
           ];
         })}
       </tbody>
     </table>
-    </div>
+  </div>
+
   )
 }
 

@@ -7,6 +7,7 @@ import "./Dashboard.css";
 
 const AdminContent = () => {
   const { handleAddYourAd, addYourAd } = useContext(AddContext);
+
   return (
     <section className="admincontent__div">
       <div className="admincontent__divs">
