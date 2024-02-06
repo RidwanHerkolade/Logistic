@@ -15,7 +15,7 @@ const DriverHead = () => {
               <input type="text" onChange={handleChange} placeholder='search' />
               <img src="./img/Search.png" alt="" />
             </div>
-            {/* <img src="./img/Logout.png" alt="" /> */}
+            
           </div>
         </div>
       </div>

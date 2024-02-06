@@ -5,12 +5,15 @@ import { TableData } from "../../../Constants/Constant";
 import "./TableProfile.css"
 import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import axios from "axios";
 import { useState } from "react";
 
 
 const TableProfile = () => {
   const [loading, setLoading] = useState()
+  const [pages, setPages] = useState(1);
   const [ads, setAds] = useState([])
   const [id, setId] = useState()
   const {handleClickPopup, handIdSubmition} = useContext(AddContext)
