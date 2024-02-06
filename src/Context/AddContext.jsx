@@ -11,6 +11,7 @@ const AddContextProvider = (props) => {
   const [handleInput, setHandleInput] = useState("")
   const [mobile, setMobile] = useState(false);
   const [handleId, setHandleId] = useState()
+  const [profileNav, setProfileNav] = useState()
   
 
 

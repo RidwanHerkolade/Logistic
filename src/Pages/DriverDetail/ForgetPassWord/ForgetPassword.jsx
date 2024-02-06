@@ -31,7 +31,7 @@ const ForgetPassword = () => {
         </label>
         <div className="fgtpassword__div">
           <input
-            type="text"
+            type="email"
             placeholder="E-mail"
             name="email"
             {...register("email", {

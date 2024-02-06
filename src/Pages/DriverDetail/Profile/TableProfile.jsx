@@ -7,10 +7,13 @@ import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from "axios";
 import { useState } from "react";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 const TableProfile = () => {
   const [loading, setLoading] = useState()
+  const [pages, setPages] = useState(1);
   const [ads, setAds] = useState([])
   const [id, setId] = useState()
   const {handleClickPopup, handIdSubmition} = useContext(AddContext)
@@ -40,12 +43,28 @@ const TableProfile = () => {
     
     console.log(id)
    }
+
+  //  pagination
+  const itemsPerPage = 5;
+  const startIndex = (pages - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const nextPage = () => {
+    setPages(pages + 1);
+  };
+
+  const prevPage = () => {
+    if (pages > 1) {
+      setPages(pages - 1);
+    }
+  };
   return (
-    <div className="table">
+    <div className="profile_table">
       {loading ? "Loading..." : "Done loading"}
 
       <table>
         <thead>
+      
           <tr>
             {TableHeader.map((dataHead) => {
               return [<th>{dataHead.name}</th>];
@@ -53,7 +72,7 @@ const TableProfile = () => {
           </tr>
         </thead>
         <tbody>
-          {ads.map((data) => {
+        {ads.slice(startIndex, endIndex).map((data) => {
             return [
               <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
                 <td>
@@ -73,11 +92,22 @@ const TableProfile = () => {
                   </div>
                 </td>
               
-              </tr>,
+              </tr>
             ];
           })}
+          
+          
         </tbody>
+
       </table>
+      <div className="pagination">
+        <button className="pagination-btn" onClick={prevPage} disabled={pages === 1} style={{padding: "0.2rem 0.5rem", borderRadius: "1rem", border:"none", outline: "none", backgroundColor: "rgb(54,54,54)", color: "white"}}>
+            <ArrowBackIosIcon style={{fontSize: "0.5rem", }}/>
+        </button>
+        <button className="pagination-btn" onClick={nextPage} disabled={ads.length <= endIndex} style={{padding: "0.2rem 0.5rem", borderRadius: "1rem", border:"none", outline: "none", backgroundColor: "rgb(54,54,54)", color: "white"}}>
+         <ArrowForwardIosIcon style={{fontSize: "0.5rem"}}/>
+        </button>
+      </div>
     </div>
   );
 };
