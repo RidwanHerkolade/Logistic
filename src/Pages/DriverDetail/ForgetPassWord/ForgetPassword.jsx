@@ -33,7 +33,6 @@ const ForgetPassword = () => {
       toast.error("no internet connection or server error!")
       }
       console.log(error)
-      
     } finally{
       setIsLoading(false)
     }
@@ -56,6 +55,7 @@ const ForgetPassword = () => {
         <div className="fgtpassword__div">
           <input
             type="email"
+            autoComplete="off"
             placeholder="E-mail"
             name="email"
             {...register("email", {

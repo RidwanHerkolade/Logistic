@@ -7,19 +7,17 @@ import { AddContext } from "../../Context/AddContext";
 
 const DriverRecord = () => {
   const { submissionSuccessful, submissionError } = useContext(AddContext);
-
   return (
     <div className="record__divs">
-      <div className="record___divss">
+      <div className="driverrecord-divss">
       {submissionError && !submissionSuccessful && (
           <div className="record__success">
             <ErrorPage />
           </div>
         )}
       {submissionSuccessful && !submissionError && <div className="record__success"><SuccessPage/> </div>}
-       <div className="record__div">
+       <div className="driverrecordform__div">
         <div className="record__header">Add your Ad</div>
-
          <DriverRecordAd/>
       </div>
       </div>

@@ -73,6 +73,7 @@
 }
 .profile__Adsss{
     position: absolute;
+    background: var(--color-orange);
     width: 100%;
     top: 5.5rem;
 
@@ -182,7 +183,7 @@
         height: calc(100vh - 4rem);
         width: 100%;
         padding: 0rem 0rem;
-        top: 4.9rem;
+        top: 4.5rem;
         background-color: var(--color-nav);
         position: absolute;
         z-index: 9999;
@@ -249,10 +250,10 @@
         display: none;
     }
     .profile__aside-mobile {
-        height: calc(100vh - 4rem);
+        height: calc(100vh - 3rem);
         width: 50%;
         padding: 0rem 0rem;
-        top: 5.2rem;
+        top: 4.5rem;
         background-color: var(--color-nav);
         position: absolute;
         z-index: 9999;

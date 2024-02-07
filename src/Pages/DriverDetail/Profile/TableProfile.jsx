@@ -5,12 +5,15 @@ import { TableData } from "../../../Constants/Constant";
 import "./TableProfile.css"
 import { AddContext } from "../../../Context/AddContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import axios from "axios";
 import { useState } from "react";
 
 
 const TableProfile = () => {
   const [loading, setLoading] = useState()
+  const [pages, setPages] = useState(1);
   const [ads, setAds] = useState([])
   const [id, setId] = useState()
   const {handleClickPopup, handIdSubmition} = useContext(AddContext)
@@ -55,7 +58,6 @@ const TableProfile = () => {
   return (
     <div className="table">
       {loading ? "Loading..." : "Done loading"}
-
       <table>
         <thead>
       
@@ -74,7 +76,7 @@ const TableProfile = () => {
                     <div className="dev__img">
                     <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                     </div>
-                    <h3>`{data.firstname} {data.lastname}`</h3>
+                    <h3>{data.firstname} {data.lastname}</h3>
                   </Link>
                 </td>
                 <td>

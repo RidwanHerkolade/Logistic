@@ -1,4 +1,277 @@
+.record__divs {
+    height: calc(100vh - 4.28rem);
+    background-color: var(--color-yellow);
+}
+.driverrecord-divss {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.driverrecordform__div {
+    background-color: var(--color-white);
+    width: 100%;
+    margin: 0rem 10rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+/* input */
+.record__divInp.error {
+    border: 1px solid rgb(145, 14, 14);
+  }
+.record__inputs .record__input input {
+    font-size: var(--font-small);
+    width: 100%;
+    border: none;
+    outline: none;
+    position: relative;
+    padding: 0.6rem 0rem;
+  }
+  .record__inputs span {
+    position: absolute;
+    font-size: 0rem;
+    left: 0.5rem;
+    top: 0.75rem;
+  } 
+  .record__inputs .iconsize {
+    font-size: 1rem;
+    color: var(--color-icon);
+ }
+ .record__inputs .iconloc {
+    font-size: 1rem;
+    color: var(--color-icon);
+ }
+ .record__btn button{
+   
+    padding: 0.7rem 1rem;
+    color: var(--color-nav);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    margin: 1rem 0rem;
+    border: none;
+    background: var(--color-yellow);
+    font-size: var(--font-small);
+    outline: 0rem;
+ } 
+ .record__ad {
+    width: 100%;
+}
+.record__location {
+    width: 100%;    
+} 
+ .formdivs__record {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.form__recorddivs {
+    display: flex;
+    flex-direction: column;
+}
+ .record__divInp {
+    display: flex !important;
+    background: var(--color-white);
+    align-items: center;
+    gap: 0.55rem;
+    position: relative;
+    border: 1px solid var(--color-icon);
+    padding: 0rem 0.57rem;
+    margin:  0.6rem 0rem;
+    border-radius: 0.2rem;
+   
+}  
+.record__input {
+    width: calc(100% - 0rem);
+   
+}
+.record__input .ss {
+    width: 100% !important;
+}
+.record__divInp .record__input .ss  {
+    width: 100% !important;
+  
+}
+.record__divInp.error {
+    border: 1px solid rgb(145, 14, 14);
+  }
+  .record__header {
+    font-size: var(--font-folds);
+     display: flex;
+     justify-content: center;
+    line-height: 50px;
+}
+/* SUCCESS PAGE  */
+  .success__session {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      backdrop-filter: blur(0.04px);
+    
+ }
 
+ .success__div {
+    display: flex;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    padding: 6rem 5rem;
+    margin: 0rem 1rem;
+    background: var(--color-white);
+    flex-direction: column;
+ }
+ .success__div h1 {
+    font-size: var(--font-fold);
+    color: var(--color-nav);
+ } 
+ .success__div p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+     font-size: var(--font-logo);
+     color: var(--color-nav);
+
+ }
+ .success__div .success__btn{
+    border: 1px solid var(--color-orange);
+    padding: 0.35rem 2rem;
+    background: transparent;
+    color: var(--color-nav);
+    font-weight: 500;
+    text-align: center;
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+ }
+ .success__div .success__btn:hover {
+    background: var(--color-orange);
+    color: var(--color-white);
+ }
+ .record__success {
+    position: absolute;
+   bottom: 5rem;
+    z-index: 999;
+}
+.user__error {
+    font-size:(--font-small);
+    color: var(--color-red);
+}
+
+
+@media (min-width: 992px) and (max-width: 1100px) {
+    .driverrecordform__div {
+        margin: 0rem 4rem;
+        padding: 1rem;
+
+    }
+
+    
+}
+@media (min-width: 768px) and (max-width: 991px)  {
+    .driverrecordform__div {
+        margin: 0rem 2rem;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .driverrecordform__div {
+        margin: 0rem 4rem;
+        padding: 0rem;
+        position: absolute;
+        top: 7rem;
+    }
+    
+    .formdivs__record {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .form__recorddivs {
+        margin: 1rem;
+    }
+
+}
+@media (min-width: 391px) and (max-width: 480px) {
+    .driverrecordform__div {
+        margin: 0rem 5rem;
+        padding: 0rem;
+        position: absolute;
+        top: 3rem
+    }
+    
+    .formdivs__record {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .form__recorddivs {
+        margin: 1rem;
+    }
+    .record__divs {
+        background-color: red;
+        padding: 0rem !important;
+        position: relative;
+        height: calc(100vh - 0rem);
+    }
+    .record__ad {
+        width: 100%;
+    }
+
+}
+@media (min-width: 281px) and (max-width: 390px) {
+    .driverrecordform__div {
+        margin: 0rem 4rem;
+        padding: 0rem;
+        position: absolute;
+        border-radius: 0rem;
+        top: 3rem
+    }
+    
+    .formdivs__record {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .form__recorddivs {
+        margin: 1rem;
+    }
+    .record__divs {
+        background-color: red;
+        padding: 5rem 10rem !important;
+        position: relative;
+        height: calc(100vh - 0rem);
+    }
+    .record__ad {
+        width: 100%;
+    }
+    
+}
+@media screen and (width: 280px) {
+    .formdivs__record {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .driverrecordform__div {
+        margin: 0rem 5rem;
+        padding: 0rem;
+        position: absolute;
+        top: 6rem;
+        border-radius: 0rem;
+    }
+    .form__recorddivs {
+        margin: 1rem;
+    }
+
+}
+
+
+
+/* 
 
 .recordAds__divs {
     width: 100%;
@@ -88,12 +361,12 @@
     width: 100%;
     height: 100%;
     /* padding: 2rem 0rem; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.user__error {
+} */
+/* .user__error {
     font-size:(--font-small);
     color: var(--color-red);
 }
@@ -124,12 +397,11 @@
 .record__location {
     width: 100%;    
     /* border: 2px solid red; */
-}
+/* } */
 
-.formdivs__record {
+/* .formdivs__record {
     display: flex;
     gap: 1rem;
-    /* border: 2px solid yellow; */
     width: 100%;
 
 }
@@ -148,9 +420,9 @@
     margin:  0.6rem 0rem;
     border-radius: 0.2rem;
    
-}
+}  */
 
-.record__input {
+/* .record__input {
     width: calc(100% - 0rem);
    
 }
@@ -193,10 +465,10 @@
     background: var(--color-yellow);
     font-size: var(--font-small);
     outline: 0rem;
- }
+ } */
  /* REGISTER */
 
- .register__btn{
+ /* .register__btn{
     padding: 0.5rem ;
     text-align: center;
     border-radius: 0.3rem;
@@ -214,10 +486,10 @@
  .register__btn:hover {
     background: var(--color-reg);
     color: var(--color-white);
- }
+ } */
 
  /* ADS DIVS */
- .ad__divs {
+ /* .ad__divs {
     width: 100%;
     height: calc(100vh - 5rem);
     display: flex;
@@ -246,9 +518,9 @@
     color: var(--color-yellow);
     margin: 0rem;
     padding: 0rem;
- }
+ } */
  /* SUCCESS PAGE  */
- .success__session {
+ /* .success__session {
       position: fixed;
       top: 0;
       left: 0;
@@ -302,8 +574,8 @@
     background: var(--color-orange);
     color: var(--color-white);
 
- }
- @media screen and (width: 280px) {
+ } */
+ /* @media screen and (width: 280px) {
     .record__divs {
         padding: 0rem 0rem;
     }
@@ -311,26 +583,18 @@
         margin: 0rem 0.5rem;
     }
 
- }
- @media  (min-width: 320px) and  (max-width: 400px) {
+ } */
+ /* @media  (min-width: 320px) and  (max-width: 400px) {
     .recordAds__divs {
         width: 100%;
         position: absolute;
         top: 9rem;
         background-color: var(--color-white);
         box-shadow: var(--box-shadow);
-        /* padding: 5rem 0rem; */
-    }
-    /* .record___divss {
-        padding: 3rem 0rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    } */
-
- }
-  @media screen and (max-width: 480px) {
+        
+   
+ } */
+  /* @media screen and (max-width: 480px) {
 
     .recordAds__divs {
         background: var(--color-yellow);
@@ -353,13 +617,11 @@
         border-radius: 0rem;
       
     }
-    .record__header {
-      /* margin-top: 5rem; */
-    }
+  
     
     .form__recorddivs {
         padding: 0rem 0rem;
-        /* padding: 1rem 0rem; */
+
     }
   
     .formdivs__record {
@@ -396,8 +658,8 @@
         box-shadow: var(--box-shadow);
         flex-direction: column;
      }
-  }
-@media  (min-width: 481px) and  (max-width: 768px) {
+  } */
+/* @media  (min-width: 481px) and  (max-width: 768px) {
     .recordAds__divs {
         width: 100%;
         height: 100vh;
@@ -428,8 +690,8 @@
         padding: 0rem 0rem;
     }
    
-}
-@media  (min-width: 992px) and  (max-width: 1199px) {
+} */
+/* @media  (min-width: 992px) and  (max-width: 1199px) {
     .formdivs__record {
         gap: 0.5rem;
     }
@@ -440,15 +702,6 @@
       .registers__div {
         padding: 1rem 2rem;
     }
-}
-@media  (min-width: 1200px) and  (max-width: 1919px) {
-    
-  
-    
-}
-@media (min-width: 1920px) 
-{
-    
-
-}
+} 
+} */
 

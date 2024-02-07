@@ -29,15 +29,7 @@ const ProfileContent = () => {
           <ProfileAd />
         </div>
       )}
-      {/* <div className="pagination">
-        <button onClick={prevPage} disabled={pages === 1}>
-          Previous
-        </button>
-        <span>{pages}</span>
-        <button onClick={nextPage} disabled={ads.length <= pages * 10}>
-          Next
-        </button>
-      </div> */}
+  
     </div>
   );
 };
