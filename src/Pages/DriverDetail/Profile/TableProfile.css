@@ -1,10 +1,84 @@
-.profile_table {
-     overflow-y: auto;
-     height: calc(100vh - 5.4rem);
-     
+.table {
+     overflow-x: auto;
+     height: calc(100vh - 7rem );
 }
 table {
      width: 100%;
+     border-collapse: collapse;
+     overflow-y: auto;
+   
+}
+th, td {
+     padding: 1rem 1rem;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
+     text-transform: uppercase;
+     font-weight: 700;
+     font-size: var(--font-logo);
+     color: var(--color-nav);
+   }
+
+
+.dev {
+     padding-left: 0rem;
+     cursor: pointer;
+     display: flex;
+     gap: 0.5rem;
+     align-items: center;
+}
+.dev h3 {
+     font-size: var(--font-logo);
+     color: var(--color-nav);
+     text-transform: capitalize;
+     font-weight: 600;
+   
+}
+.data__position {
+     text-transform: capitalize;
+     color: var(--color-nav);
+     font-size: var(--font-logo);
+     font-weight: 600;
+}
+.media {
+     display: flex;
+     gap: 1rem;
+     font-size: var(--font-logo);
+     cursor: pointer;
+     font-weight: 600;
+}
+.pagination {
+     padding: 0.5rem 0rem;
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+@media screen and (max-width: 600px) {
+     table {
+          overflow-x: auto;
+          height: calc(100vh - 0rem );
+     }
+     th, td {
+       padding: 1rem;
+       font-size: 12px;
+     }
+   }
+   @media screen and (max-width: 400px) {
+     th, td {
+          padding: 1rem;
+       font-size: 12px;
+     }
+   }
+
+/* table */
+/* .profile_table {
+     overflow-y: auto;
+     height: calc(100vh - 5.4rem);
+
+}
+table {
+     max-width: 100%;
      table-layout: fixed;
      border-collapse: collapse;
      justify-items: center;
@@ -75,6 +149,10 @@ tbody td {
  }
  
 @media screen and (max-width: 480px) {
+     .table {
+          max-width: 100%;
+          overflow-x: auto;
+     }
      thead th {
           font-size: var(--font-fold);
           width: 15rem;
@@ -106,7 +184,7 @@ tbody td {
           display: flex;
           justify-content: center;
           align-items: center;
-          /* width: rem; */
+          width: rem;
       }
       .media {
           font-size: var(--font-header);
@@ -145,10 +223,9 @@ tbody td {
           width: 15rem;
           padding: 1.5rem 0rem;
           overflow-x: auto;
-          /* border: 1px solid red; */
      }
      .pagination {
-          /* width: 10rem; */
+          width: 10rem;
           display: flex;
           justify-content: center ;
           align-items: center;
@@ -208,7 +285,5 @@ tbody td {
      }
      .dev h3 {
           font-size: var(--font-fold);
-        
-     }
-     
+     }     
 }

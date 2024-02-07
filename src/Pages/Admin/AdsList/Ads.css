@@ -1,7 +1,5 @@
 
 .record__divsAdmin {
-    /* width: 100%; */
-   
     display: flex; 
     justify-content: center;
     align-items: center; 
@@ -27,12 +25,12 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: -1rem;
+    top: 0rem;
     z-index: 999;
     background: var(--color-white);
     align-items: center;
     width: 100%;
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 6.8rem);
     
 }
 .form__adslist{
@@ -58,11 +56,11 @@
 }
 .value__input .record__inputValue {
      width: 100%;
-     border: 1px solid var(--color-yellow);
-     border-radius: 0.4rem;
+     border: 1px solid var(--color-icon);
+     border-radius: 0.3rem;
      font-style: normal;
     font-size: var(--font-logo);
-     padding: 0.3rem 0rem;
+     padding: 0.7rem 0rem !important;
 }
 
 .authorize {
@@ -74,7 +72,7 @@
     border-radius: 0.1rem;
     background: var(--color-yellow);
 }
-@media (min-width: 280px) and (max-width: 380px) {
+@media (min-width: 280px) and (max-width: 390px) {
     .Ads__list .grid {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -83,18 +81,21 @@
      }
     .Ads__list {
         height: calc(100vh - 0rem);
-        padding: 6rem 0rem;
+        padding: 8rem 0rem;
+        top: -0.5rem;
         top: 0rem;
         
     }
 }
-@media (min-width: 381px) and (max-width: 480px) {
+@media (min-width: 391px) and (max-width: 480px) {
     .Ads__list .grid {
         grid-template-columns: repeat(1, 1fr);
     }
     .Ads__list {
         width: 100%;
         height: calc(100vh - 0rem);
+        top: -0.5rem;
+        padding: 6rem 0rem;
     }
     .form__adslist{
         margin: 0rem 1.5rem;

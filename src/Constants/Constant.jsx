@@ -118,15 +118,21 @@ export const headCount= [
 export const TableHeader= [
   {
    id: 1,
-   name: "name"
+   name: "name",
+   minWidth: 170,
   },
   {
    id: 2,
-   name: "email"
+   name: "email",
+   minWidth: 170,
+  align: 'right',
   },
   {
    id: 3,
-   name: "contact info"
+   name: "contact info",
+   minWidth: 170,
+    align: 'right',
+    format: (value) => value.toFixed(2),
   },
  
 ]

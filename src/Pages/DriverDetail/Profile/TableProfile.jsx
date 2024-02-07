@@ -58,7 +58,6 @@ const TableProfile = () => {
   return (
     <div className="table">
       {loading ? "Loading..." : "Done loading"}
-
       <table>
         <thead>
       
@@ -77,7 +76,7 @@ const TableProfile = () => {
                     <div className="dev__img">
                     <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                     </div>
-                    <h3>`{data.firstname} {data.lastname}`</h3>
+                    <h3>{data.firstname} {data.lastname}</h3>
                   </Link>
                 </td>
                 <td>

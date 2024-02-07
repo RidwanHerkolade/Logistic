@@ -81,6 +81,10 @@
     border-radius: 0.2rem;
    
 }  
+.record__input {
+    width: calc(100% - 0rem);
+   
+}
 .record__input .ss {
     width: 100% !important;
 }

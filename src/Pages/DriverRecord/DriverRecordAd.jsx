@@ -85,7 +85,7 @@ const DriverRecordAd = () => {
       border: "0rem",
       boxShadow: "none",
     }),
-    singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A" }),
+    singleValue: (defaultStyles) => ({ ...defaultStyles, color: " #14161A", }),
   };
   return (
     <div>

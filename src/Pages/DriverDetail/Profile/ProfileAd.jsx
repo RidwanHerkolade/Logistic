@@ -132,9 +132,9 @@ const ProfileAd = () => {
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "end" }}>
-            <button className="authorize" disabled style={{ opacity: "0.8" }}>
+            {/* <button className="authorize" disabled style={{ opacity: "0.8" }}>
               Authorize
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

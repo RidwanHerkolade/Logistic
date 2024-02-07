@@ -7,7 +7,6 @@ import { AddContext } from "../../Context/AddContext";
 
 const DriverRecord = () => {
   const { submissionSuccessful, submissionError } = useContext(AddContext);
-
   return (
     <div className="record__divs">
       <div className="driverrecord-divss">
@@ -19,7 +18,6 @@ const DriverRecord = () => {
       {submissionSuccessful && !submissionError && <div className="record__success"><SuccessPage/> </div>}
        <div className="driverrecordform__div">
         <div className="record__header">Add your Ad</div>
-
          <DriverRecordAd/>
       </div>
       </div>
