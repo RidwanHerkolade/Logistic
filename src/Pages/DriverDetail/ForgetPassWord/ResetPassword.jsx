@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import Loading from "../../../LoadingOverlay/Loading";
+import {ToastContainer, toast} from 'react-toastify'
 
 const ResetPassword = () => {
   const {
@@ -9,16 +12,51 @@ const ResetPassword = () => {
     formState: { errors },
     watch,
   } = useForm();
+  const[isLoading, setIsLoading] = useState(false)
+  const location = useLocation();
+  const userEmail = location.state?.formData || {};
 
-  const navigate = useNavigate
-  const onSubmit= ()=> {
+  
+  
+  const navigate = useNavigate()
+
+  const onSubmit= async(data)=> {
+    try {
       console.log(data)
-      navigate("/driverform")
-      
+      console.log(userEmail,'fromreset')
+      setIsLoading(true)
+      const api = 'https://migro.onrender.com/api/v1/reset-password'
+      const result = await axios.post('https://migro.onrender.com/api/v1/reset-password',
+      {
+        "email":userEmail.email,
+        "otp": data?.otp,
+        "newPassword": data?.passWord
+      },
+        {
+          headers:{'Content-Type': 'application/json'}
+        }
+      )
+      if(result.status === 200){
+        console.log(data)
+        toast.success("password reset succefully")
+        setTimeout(()=>{
+          navigate("/driverform")
+          
+        },3000)
+      }
+    } catch (error) {
+      toast.error("unable to reset password")
+      console.log(error)
+    }finally{
+      setIsLoading(false)
+    }
+   
   }
 
   return (
     <div className="forgetPassWord__div">
+       {isLoading && <Loading />}
+       <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2
           style={{

@@ -1,10 +1,11 @@
-import React from "react";
+import React ,{useState}from "react";
 import "./ForgetPassWord.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../../../LoadingOverlay/Loading";
 
 const ForgetPassword = () => {
   const {
@@ -12,16 +13,17 @@ const ForgetPassword = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const[isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const onSubmit = async(data) => {
     try {
+      setIsLoading(true)
       const result = await axios.post('https://migro.onrender.com/api/v1/forgot-password',data)
       console.log(data);
       if(result.status === 200){
-        toast.success('email verified!')
+        toast.success('email verified otp sent!')
         setTimeout(()=>{
-        navigate("/driverform/forgetpassword/resetpassword")
+        navigate("/driverform/forgetpassword/resetpassword", { state: { formData: data } })
         }, 3000)
       }
     } catch (error) {
@@ -32,10 +34,13 @@ const ForgetPassword = () => {
       }
       console.log(error)
       
-    } 
+    } finally{
+      setIsLoading(false)
+    }
   }
   return (
     <div className="forgetPassWord__div">
+      {isLoading && <Loading />}
       <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2 style={{ display: "flex", color: " rgb(54,54,54)", justifyContent: "center", fontSize: "1.5rem", fontFamily: "Montserrat", margin: "2rem 0rem", fontWeight: "600"}}>Forget Password</h2>
