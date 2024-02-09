@@ -95,7 +95,13 @@ const ResetPassword = () => {
             placeholder="Password"
             name="passWord"
             {...register("passWord", {
+              maxLength: { value: 7, message: "you exceed the max length" },
+              minLength: 6,
               required: "Please enter your new password",
+              pattern: {
+                value: /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,7}$/,
+                message: "Password must contain at least one digit, and one special character",
+              },
             })}
           />
         </div>

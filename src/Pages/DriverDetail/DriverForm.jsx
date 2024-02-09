@@ -101,6 +101,7 @@ const DriverForm = () => {
                   name="passWord"
                   {...register("passWord", {
                     required: "Please fill out the field",
+                    
                   })}
                 />
               </div>
