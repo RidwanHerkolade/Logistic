@@ -23,70 +23,52 @@ const AdsLists = () => {
     }
   }
 
-
   return (
-    <div style={{position: "relative"}}>
-    <div className="Ads__list">
-    <CloseIcon onClick={handleClosePopup} style={{color: "rgb{54, 54, 54}",cursor: "pointer", position: "absolute", top:"2rem", right: "6rem"} } />
+    <div className='' style={{position:"relative"}}>
+    <div className="Ads__list"  >
+    <CloseIcon onClick={handleClosePopup} style={{color: "white",cursor: "pointer", position: "absolute", top:"0rem", right: "0rem"} } />
     <form className="form__adslist">
     <div className="grid">
         <div className="value__name">
-      <div className="grids">
+      {/* <div className="grids">
         <div className="value__input">
           <label htmlFor="firstName">first name</label>
           <div className="record__inputValue">
-          <input value={adsInfo?.firstname} />
+          {adsInfo?.firstname}
           </div>
         </div>
-      </div>
-      <div className="grids">
+      </div> */}
+      {/* <div className="grids">
         <div className="value__input">
           <label htmlFor="lastName">last name</label>
           <div className="record__inputValue">
-          <input value={adsInfo?.lastname} />
+          {adsInfo?.lastname}
+          
           </div>
         </div>
-      </div>
-      <div className="grids">
+      </div> */}
+      {/* <div className="grids">
         <div className="value__input">
           <label htmlFor="email">email</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.email} />
+          {adsInfo?.email}
           </div>
         </div>
-      </div>
-      <div className="grids">
+      </div> */}
+      {/* <div className="grids">
         <div className="value__input">
           <label htmlFor="phone">Phone num</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.phone} />
+          {adsInfo?.phone}
+           
           </div>
         </div>
-      </div>
-      <div className="grids">
-        <div className="value__input">
-          <label htmlFor="vehicle">Type of vehicle</label>
-          <div className="record__inputValue">
-            <input value={adsInfo?.truck_type} />
-          </div>
-        </div>
-      </div>
-      <div className="grids">
-        <div className="value__input">
-          <label htmlFor="type of load">type of load</label>
-          <div className="record__inputValue">
-            <input value={adsInfo?.type_of_load} />
-          </div>
-        </div>
-      </div>
-      </div>
-     
-      <div className="value__location">
-      <div className="grids">
+      </div> */}
+       <div className="grids">
         <div className="value__input">
           <label htmlFor="from city">from city</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.from_city} />
+          {adsInfo?.from_city}
           </div>
         </div>
       </div>
@@ -94,17 +76,37 @@ const AdsLists = () => {
         <div className="value__input">
           <label htmlFor="to city">to city</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.to_city} />
+          {adsInfo?.to_city}
           </div>
         </div>
       </div>
+      <div className="grids">
+        <div className="value__input">
+          <label htmlFor="vehicle">Type of vehicle</label>
+          <div className="record__inputValue">
+          {adsInfo?.truck_type}
+          </div>
+        </div>
+      </div>
+      <div className="grids">
+        <div className="value__input">
+          <label htmlFor="type of load">type of load</label>
+          <div className="record__inputValue">
+          {adsInfo?.type_of_load}
+          </div>
+        </div>
+      </div>
+      </div>
+     
+      <div className="value__location">
+     
      
      
       <div className="grids">
         <div className="value__input">
           <label htmlFor="province">from province</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.from_province} />
+          {adsInfo?.from_province}
           </div>
         </div>
       </div>
@@ -112,7 +114,7 @@ const AdsLists = () => {
         <div className="value__input">
           <label htmlFor="to province">to province</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.to_province} />
+          {adsInfo?.to_province}
           </div>
         </div>
       </div>
@@ -120,7 +122,7 @@ const AdsLists = () => {
         <div className="value__input">
           <label htmlFor="from neighborhood">from neighborhood</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.from_neighborhood} />
+          {adsInfo?.from_neighborhood}
           </div>
         </div>
       </div>
@@ -128,7 +130,7 @@ const AdsLists = () => {
         <div className="value__input">
           <label htmlFor="to neighborhood">to neigborhood</label>
           <div className="record__inputValue">
-            <input value={adsInfo?.to_neighborhood} />
+          {adsInfo?.to_neighborhood}
           </div>
         </div>
       </div>

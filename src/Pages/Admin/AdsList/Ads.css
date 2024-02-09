@@ -21,22 +21,34 @@
     width: 100%;
 
 }
-.Ads__list {
+
+.ads__modifys{
     display: flex;
+    align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0rem;
-    z-index: 999;
-    background: var(--color-white);
-    align-items: center;
+    background: rgba(255, 255, 255, 0.4); 
     width: 100%;
-    height: calc(100vh - 6.8rem);
-    
+    height: calc(100vh - 10rem);
+    top: 0rem;
+
 }
+.ads__modifiess {
+    width: 100%;
+    border-radius: 0.3rem;
+    padding: 2rem 1rem;
+    z-index: 999;
+    height: 100vh;
+    color: var(--color-nav);
+    background-color: var(--color-white);
+}
+  
+
+/* 
 .form__adslist{
    width: 100%;
    margin: 0rem 5rem;
-}
+} */
 .Ads__list .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -49,18 +61,40 @@
     flex-direction: column;
     margin: 0.7rem;
 }
+.grids .value__inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 0.7rem;
+}
 .grids .value__input label {
+    color: var(--color-white);
+    font-variant: --font-small;
+    text-transform: capitalize;
+}
+.grids .value__inputs label {
     color: var(--color-nav);
     font-variant: --font-small;
     text-transform: capitalize;
 }
 .value__input .record__inputValue {
      width: 100%;
-     border: 1px solid var(--color-icon);
-     border-radius: 0.3rem;
+     border-bottom: 1px solid var(--color-icon);
+     border-radius: 0rem;
+     color: var(--color-white);
+     opacity: 0.7;
      font-style: normal;
     font-size: var(--font-logo);
      padding: 0.7rem 0rem !important;
+}
+.value__input .record__inputValues {
+    width: 100%;
+    border-bottom: 1px solid var(--color-icon);
+    border-radius: 0rem;
+    color: var(--color-nav);
+    opacity: 0.7;
+    font-style: normal;
+   font-size: var(--font-logo);
+    padding: 0.7rem 0rem !important;
 }
 
 .authorize {
@@ -93,7 +127,7 @@
     }
     .Ads__list {
         width: 100%;
-        height: calc(100vh - 0rem);
+        height: calc(100vh - 3rem);
         top: -0.5rem;
         padding: 6rem 0rem;
     }
