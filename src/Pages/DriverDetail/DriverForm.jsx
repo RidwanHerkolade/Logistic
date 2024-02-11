@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import MailIcon from "@mui/icons-material/Mail";
 import LockIcon from "@mui/icons-material/Lock";
 import LoginIcon from "@mui/icons-material/Login";
@@ -11,6 +11,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AddContext } from "../../Context/AddContext";
+import { useContext } from "react";
 const DriverForm = () => {
   const {
     register,
@@ -20,6 +22,7 @@ const DriverForm = () => {
 
   // Loading efffect
   const [loading, setLoading] = useState(false);
+  const {handleLoggedIn, setUserEmail} = useContext(AddContext)
 
   // Submit handler for the login form
   const onSubmit = async (data) => {
@@ -33,7 +36,10 @@ const DriverForm = () => {
         }
       );
       if (response.status === 200){
-        console.log("sign in successful:", response.data);
+        sessionStorage.setItem("userData", JSON.stringify(response.data.data.accessToken));
+        handleLoggedIn()
+        setUserEmail(response.data.data.email)
+        console.log("sign in successful:", response.data.data.accessToken);
         toast.success("registration created!");
         navigate("/profile", { state: { formData: data } });
       }else{
@@ -46,6 +52,12 @@ const DriverForm = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    const userData = sessionStorage.getItem("userData");
+    if (userData) {
+      navigate("/profile");
+    }
+  }, []);
 
   const navigate = useNavigate();
   const handleRegister = () => {

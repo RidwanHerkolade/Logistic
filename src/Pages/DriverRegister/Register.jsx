@@ -73,6 +73,7 @@ const Register = () => {
         }
       }
       );
+      console.log(response)
       const email = response.data.email || data.email;
       navigate(`/confirmationPage?email=${encodeURIComponent(email)}`);
     } catch (error) {

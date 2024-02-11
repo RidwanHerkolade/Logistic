@@ -4,15 +4,23 @@ import ProfileContent from "./ProfileContent";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AddContext } from "../../../Context/AddContext";
 const Profile = () => {
-  const {  handleId, mobile} = useContext(AddContext);
+  const {  handleId, mobile, userEmail} = useContext(AddContext);
   const location = useLocation();
   const formData = location.state?.formData || {};
-  useEffect(()=>{
-
-  },[])
+  const navigate = useNavigate()
+  useEffect(() => {
+    const userData = sessionStorage.getItem("userData");
+    if (userData) {
+      // Consider the user as authenticated and redirect to the profile page
+      navigate("/profile");
+    }else{
+      navigate('/driverform')
+    }
+  }, [userEmail]);
+  console.log(userEmail);
   return (
     <section className="profile__sections">
       <div className="profile__section">
@@ -34,7 +42,7 @@ const Profile = () => {
                 {formData.firstName} {formData.lastName}
               </h2>
               <small className="profile__email">
-                {formData.email}
+                {userEmail}
               </small>
             </div>
           </div>

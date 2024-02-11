@@ -9,7 +9,7 @@ import "./Nav.css";
 import { AddContext } from "../../Context/AddContext";
 
 const Nav = () => {
-  const {mobile, handleNavClick, handleMobile, handleClick} = useContext(AddContext)
+  const {mobile, handleNavClick, handleMobile, handleClick,loggedIn} = useContext(AddContext)
  
   return (
     <div className="nav__div">
@@ -43,7 +43,7 @@ const Nav = () => {
                   Add your ad
                 </Link>
                 <Link to="driverform" className="drive__logins" onClick={handleNavClick}>
-                  Drivers login{" "}
+                  {loggedIn? "Logged in!":"Driver Login"}
                 </Link>
               </div>
             </div>

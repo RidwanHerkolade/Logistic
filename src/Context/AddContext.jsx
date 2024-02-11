@@ -12,6 +12,8 @@ const AddContextProvider = (props) => {
   const [mobile, setMobile] = useState(false);
   const [handleId, setHandleId] = useState()
   const [profileNav, setProfileNav] = useState()
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [userEmail, setUserEmail] = useState('')
   
 
 
@@ -54,6 +56,10 @@ const handleChange = (event) => {
     const {value} = event.target
     setHandleInput(value)
 }
+
+const handleLoggedIn = ()=>{
+  setLoggedIn(true)
+}
 //  Handlers 
   const contextValue = {
     handleAddYourAd,
@@ -77,6 +83,10 @@ const handleChange = (event) => {
     handleChange,
     handIdSubmition,
     handleId,
+    handleLoggedIn,
+    loggedIn,
+    setUserEmail,
+    userEmail
     // handleLinkPopup
     
     
