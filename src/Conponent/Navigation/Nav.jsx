@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import HouseIcon from "@mui/icons-material/House";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,7 +9,15 @@ import "./Nav.css";
 import { AddContext } from "../../Context/AddContext";
 
 const Nav = () => {
-  const {mobile, handleNavClick, handleMobile, handleClick,loggedIn} = useContext(AddContext)
+  const {mobile, handleNavClick, handleMobile, handleClick,loggedIn,handleLoggedIn} = useContext(AddContext)
+  useEffect(() => {
+    const storedLoggedIn = sessionStorage.getItem("userData");
+
+    if (storedLoggedIn !== null) {
+      handleLoggedIn()
+    }
+  }, []);
+
  
   return (
     <div className="nav__div">
@@ -43,7 +51,7 @@ const Nav = () => {
                   Add your ad
                 </Link>
                 <Link to="driverform" className="drive__logins" onClick={handleNavClick}>
-                  {loggedIn? "Logged in!":"Driver Login"}
+                  {loggedIn? "view profile":"Driver Login"}
                 </Link>
               </div>
             </div>
