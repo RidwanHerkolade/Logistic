@@ -4,7 +4,7 @@ import { TableData } from "../../../Constants/Constant";
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AddContext } from '../../../Context/AddContext';
-import {BeatLoader} from 'react-spinners'
+import BeatLoaderOverLay from '../../../LoadingOverlay/BeatLoaderOverLay';
 import axios from 'axios';
 
 const AdsTable = () => {
@@ -43,7 +43,7 @@ const AdsTable = () => {
         </tr>
       </thead>
       <tbody>
-      {loading && <BeatLoader style={{marginLeft:'auto', marginRight:'auto',}} />}
+      {loading && <BeatLoaderOverLay/>}
         {ads.map((data) => {
           return [
             <tr key={data.id} onClick={()=>handIdSubmition(data.id)}>
@@ -52,7 +52,7 @@ const AdsTable = () => {
                   <div className="dev__img">
                   <AccountCircleIcon style={{fontSize: "3rem", color: "rgb(54,54,54)"}}/>
                   </div>
-                  <h3>`{data.firstname} {data.lastname}`</h3>
+                  <h3>{data.firstname} {data.lastname}</h3>
                 </Link>
               </td>
               <td>

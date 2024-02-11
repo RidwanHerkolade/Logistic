@@ -8,9 +8,13 @@ import AdminContent from "../AdminContent";
 const AdsList = () => {
   const {isPopupVisible} = useContext(AddContext)
   return (
-    <div>
+    <div style={{position: "relative"}}>
       <AdminContent />
-      {isPopupVisible && <AdsLists/>}
+      {isPopupVisible &&
+      <div className="ads__modify">
+        <div className="ads__modifies">  <AdsLists/></div>
+      </div>
+      }
       <AdsTable/>
 
      

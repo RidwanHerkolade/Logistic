@@ -48,7 +48,14 @@ function Admin() {
             placeholder="username"
             name="userName"
             autoComplete="off"
-            {...register("userName", { required: "username is required" })}
+
+            {...register("userName", {
+                required: "username is required",
+                pattern: {
+                value: /^[a-zA-Z]+$/,
+                message: "Username must contain only letters.",
+              }
+               })}
           />
           <img src="./img/vector4.png" alt="" />
         </div>
@@ -62,7 +69,11 @@ function Admin() {
             {...register("passWord", {
               required: "password is required",
               maxLength: { value: 7, message: "you exceed the max length" },
-              minLength: 4,
+              minLength: 6,
+              pattern: {
+                value: /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,7}$/,
+                message: "Password must contain at least one digit, and one special character",
+              },
             })}
           />
           <img src="./img/vector6.png" alt="" />

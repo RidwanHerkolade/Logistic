@@ -29,42 +29,43 @@ const ProfileAd = () => {
         <CloseIcon
           style={{
             cursor: "pointer",
-            color: "rgb(54,54,54)",
+            color: "white",
             position: "absolute",
             top: "1rem",
-            right: "2rem",
+          right: "2rem",
+          zIndex: "999"
           }}
           onClick={handleClosePopup}
         />
         <form className="form__adslist">
           <div className="grid">
             <div className="value__name">
-              <div className="grids">
+              {/* <div className="grids">
                 <div className="value__input">
                   <label htmlFor="firstName">first name</label>
                   <div className="record__inputValue">
                   {adsInfo?.firstname}
                   </div>
                 </div>
-              </div>
-              <div className="grids">
+              </div> */}
+              {/* <div className="grids">
                 <div className="value__input">
                   <label htmlFor="lastName">last name</label>
                   <div className="record__inputValue">{adsInfo?.lastname}</div>
                 </div>
-              </div>
-              <div className="grids">
+              </div> */}
+              {/* <div className="grids">
                 <div className="value__input">
                   <label htmlFor="email">email</label>
                   <div className="record__inputValue">{adsInfo?.email}</div>
                 </div>
-              </div>
-              <div className="grids">
+              </div> */}
+              {/* <div className="grids">
                 <div className="value__input">
                   <label htmlFor="phone">Phone</label>
                   <div className="record__inputValue">{adsInfo?.phone}</div>
                 </div>
-              </div>
+              </div> */}
               <div className="grids">
                 <div className="value__input">
                   <label htmlFor="vehicle">Type of vehicle</label>
@@ -81,9 +82,6 @@ const ProfileAd = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="value__location">
               <div className="grids">
                 <div className="value__input">
                   <label htmlFor="from city">from city</label>
@@ -96,6 +94,9 @@ const ProfileAd = () => {
                   <div className="record__inputValue">{adsInfo?.to_city}</div>
                 </div>
               </div>
+            </div>
+
+            <div className="value__location">
 
               <div className="grids">
                 <div className="value__input">

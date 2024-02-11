@@ -10,7 +10,7 @@ import Select from "react-select";
 import { TYPE } from "../../Constants/Constant";
 import axios from "axios";
 import Loading from "../../LoadingOverlay/Loading";
-import './Register.css'
+import "./Register.css";
 
 // Values for the validation from react-hook-form
 const Register = () => {
@@ -51,12 +51,12 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
 
   // USER ALREADY EXIST
-  const [userExist, setUserExist] = useState(false)
+  const [userExist, setUserExist] = useState(false);
 
   // Submit handler for the registration form
   const onSubmit = async (data) => {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await axios.post(
         "https://migro.onrender.com/api/v1/register",
         {
@@ -67,25 +67,23 @@ const Register = () => {
           firstName: data.firstName,
           lastName: data.lastName,
         },
-      {
-        headers:{
-          'Content-Type': 'application/json'
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-      }
       );
       console.log(response)
       const email = response.data.email || data.email;
       navigate(`/confirmationPage?email=${encodeURIComponent(email)}`);
     } catch (error) {
-      if(error.response && error.response.status === 409) {
-        setUserExist(true)
+      if (error.response && error.response.status === 409) {
+        setUserExist(true);
       }
       console.error("Error registering user:", error);
-
+    } finally {
+      setLoading(false);
     }
-  finally {
-    setLoading(false);
-  }
   };
   const handleSignIn = () => {
     navigate("");
@@ -93,16 +91,15 @@ const Register = () => {
   return (
     <div className="driverregister__div">
       <div className="driverregister__divss">
-       
         <div className="driverregisters__div">
-        <div className="h4">Logistics</div>
+          <div className="h4">Logistics</div>
           <form className="form__recorddivs" onSubmit={handleSubmit(onSubmit)}>
             {userExist && (
-            <div className="user__error">
-              User already exists! Please log in or use a different email.
-            </div>
-          )}
-          {loading && <Loading/>}
+              <div className="user__error">
+                User already exists! Please log in or use a different email.
+              </div>
+            )}
+            {loading && <Loading />}
             <div className="formdivs__record">
               <div className="record__ad">
                 <div className="record__inputs">
@@ -115,6 +112,10 @@ const Register = () => {
                         name="firstName"
                         {...register("firstName", {
                           required: "Please fill out the field",
+                          pattern: {
+                            value: /^[a-zA-Z]+$/,
+                            message: "Username must contain only letters.",
+                          },
                         })}
                       />
                     </div>
@@ -137,6 +138,10 @@ const Register = () => {
                         name="lastName"
                         {...register("lastName", {
                           required: "Please fill out the field",
+                          pattern: {
+                            value: /^[a-zA-Z]+$/,
+                            message: "Username must contain only letters.",
+                          },
                         })}
                       />
                     </div>
@@ -159,6 +164,11 @@ const Register = () => {
                         name="email"
                         {...register("email", {
                           required: "Please fill out the field",
+                          pattern: {
+                            value:
+                              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                            message: "Please enter a valid email",
+                          },
                         })}
                       />
                     </div>
@@ -211,10 +221,15 @@ const Register = () => {
                     <div className="record__input">
                       <input
                         type="tel"
-                        placeholder="Phone"
+                        placeholder="phone"
                         name="phone"
                         {...register("phone", {
                           required: "Please fill out the field",
+
+                          pattern: {
+                            value: /^\+?\d+$/,
+                            message: "Please enter a valid phone number",
+                          },
                         })}
                       />
                     </div>
@@ -237,6 +252,15 @@ const Register = () => {
                         name="passWord"
                         {...register("passWord", {
                           required: "Please fill out the field",
+                          pattern: {
+                            value:
+                              /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/,
+                            message:
+                              "Password must contain at least one digit, and one special character",
+                          },
+                          validate: (value) =>
+                            value.toLowerCase() !== "password" ||
+                            "Password cannot be 'password'",
                         })}
                       />
                     </div>
