@@ -65,7 +65,7 @@ const TripForm = () => {
               />
             </div>
             </div>
-            {errors.initialDestination && (<p className="errors">{errors.initialDestination.message}</p>)}
+            {errors.initialDestination && (<p className="errors_trip">{errors.initialDestination.message}</p>)}
           </div>
         </div>
 
@@ -95,7 +95,7 @@ const TripForm = () => {
               />
             </div>
             </div>
-            {errors.finalDestination && (<p className="errors">{errors.finalDestination.message}</p>)}
+            {errors.finalDestination && (<p className="errors_trip">{errors.finalDestination.message}</p>)}
           </div>
         </div>
 
@@ -123,7 +123,7 @@ const TripForm = () => {
               />
             </div>
             </div>
-            {errors.vehicle && (<p className="errors">{errors.vehicle.message}</p>)}
+            {errors.vehicle && (<p className="errors_trip">{errors.vehicle.message}</p>)}
           </div>
         </div>
 
