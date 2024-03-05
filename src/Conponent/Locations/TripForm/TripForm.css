@@ -67,6 +67,16 @@
     font-size: 1rem;
     color: var(--color-nav);
 }
+.errors_trip{
+    display: flex;
+    gap: 0; 
+    line-height: 0rem;
+    margin-top: 0.7rem;
+    position: relative;
+    font-size: var(--font-smallz);
+    color: var(--color-orange);
+    align-items: center;
+}
 .errors{
     display: flex;
     gap: 0; 

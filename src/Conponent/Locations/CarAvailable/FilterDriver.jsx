@@ -64,7 +64,7 @@ const FilterDriver = () => {
               
             </div>
             </div>
-            {errors.initialDestination && (<p className="errors">{errors.initialDestination.message}</p>)}
+            {errors.initialDestination && (<p className="errors_trip">{errors.initialDestination.message}</p>)}
             {/* <input
               type="text"
               placeholder="to"
@@ -111,7 +111,7 @@ const FilterDriver = () => {
               />
             </div>
             </div>
-            {errors.finalDestination && (<p className="errors">{errors.finalDestination.message}</p>)}
+            {errors.finalDestination && (<p className="errors_trip">{errors.finalDestination.message}</p>)}
             {/* <input
               type="text"
               placeholder="from"
