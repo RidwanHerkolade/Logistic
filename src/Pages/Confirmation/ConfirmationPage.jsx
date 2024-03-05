@@ -32,8 +32,8 @@ const ConfirmationPage = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true)
-      console.log(data)
-      const response = await axios.post(`https://www.monasseq.online/api/v1/otp/verify-otp?email=${emailParam}&otp=${data.confirm}`,
+      console.log("otp here",data)
+      const response = await axios.post(`https://migro.onrender.com/api/v1/otp/verify-otp?email=${emailParam}&otp=${data.confirm}`,
       {
         headers:{
           'Content-Type':'application/json'
