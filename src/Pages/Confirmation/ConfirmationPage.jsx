@@ -76,7 +76,7 @@ const ConfirmationPage = () => {
       <div className="confirm__divs">
         <div className="verify__icon">
         {loading && <Loading/>}
-          <EmailIcon className="verify__icons" style={{fontSize: "5rem"}}  />
+          <EmailIcon className="verify__icons" style={{fontSize: "3rem"}}  />
         </div>
         <h1>Email verification</h1>
         <div className="confirm__content">
@@ -89,7 +89,7 @@ const ConfirmationPage = () => {
               placeholder=""
               name="confirm"
               {...register("confirm", {
-                required: "Please fill out the field",
+                required: "Please fill in the field",
               })}
             />
           </div>
