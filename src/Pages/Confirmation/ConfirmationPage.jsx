@@ -49,7 +49,6 @@ const ConfirmationPage = () => {
     }
   };
 
-
   const resendOtp = async () => {
     try {
       
@@ -104,5 +103,4 @@ const ConfirmationPage = () => {
     </div>
   );
 };
-
 export default ConfirmationPage;
