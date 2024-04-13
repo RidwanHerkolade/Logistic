@@ -9,6 +9,7 @@
    --font-familys: 'Poppins', sans-serif;
    --font-fold: 21px;
    --font-smalleys: 20px;
+   --font-smalley: 18px;
    --font-folds: 23px;
    --font-smallz: 9px;
    --font-smalls: 11px;
@@ -54,6 +55,7 @@
    --color-logos: #127D60;
    --box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
    --box-shadows: 25px 24px 48px rgba(0, 0, 0, 0.04);
+   --background: linear-gradient(150.15deg, rgba(193, 193, 203, 0.24) 0%, rgba(193, 193, 203, 0.06) 98.64%);
 }
 html {
   scroll-behavior: smooth;

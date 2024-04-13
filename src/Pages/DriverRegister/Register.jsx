@@ -86,7 +86,7 @@ const Register = () => {
     }
   };
   const handleSignIn = () => {
-    navigate("");
+    navigate("/driverform");
   };
   return (
     <div className="driverregister__div">
