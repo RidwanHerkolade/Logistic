@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import "./confirmation.css";
-import EmailIcon from "@mui/icons-material/Email";
+import CallIcon from "@mui/icons-material/Call";
 import { useForm } from "react-hook-form";
 import { useLocation, useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
@@ -75,14 +75,18 @@ const ConfirmationPage = () => {
       <div className="confirm__divs">
         <div className="verify__icon">
         {loading && <Loading/>}
-          <EmailIcon className="verify__icons" style={{fontSize: "3rem"}}  />
+          <CallIcon className="verify__icons" style={{fontSize: "2rem"}}  />
         </div>
-        <h1>Email verification</h1>
+        <div className="confirm__divss">
+        <h1>Phone verification</h1>
         <div className="confirm__content">
-          enter the 4 digit code we sent to your <span>{emailParam}</span>
+          input the otp sent to your number <span>{emailParam}</span>
+        </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="confirm__form">
+        {errors.confirm && <p className="errors">{errors.confirm.message}</p>}
           <div className="confirm__input">
+         
             <input
               type="text"
               placeholder=""
@@ -92,7 +96,7 @@ const ConfirmationPage = () => {
               })}
             />
           </div>
-          {errors.confirm && <p className="errors">{errors.confirm.message}</p>}
+          
           <div className="btnss">
             <button type="submit">Verify</button>
           </div>

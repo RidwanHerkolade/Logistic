@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-family);
-     width: 100%;
-     height: calc(100vh - 4.28rem);
+    width: 100%;
+    height: calc(100vh - 4.28rem);
 }
 .confirm__divs {
     display: flex;
@@ -12,7 +12,7 @@
     background: var(--background);
     border-radius: 0.3rem;
     box-shadow: var(--box-shadow);
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 0.8rem 1rem;
     align-items: center;
     flex-direction: column;
 }
@@ -23,10 +23,10 @@
     height: 100%;
 }
 .confirm__input {
-    margin: 0.7rem 0rem;;
+    margin: 0.5rem 0rem 0rem 0rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    /* width: 60%; */
 }
 .confirm__input input{
     outline: none;
@@ -50,6 +50,7 @@
 }
 .confirm__form {
     outline: none;
+    margin: 1.5rem 0rem;
     width: 100%;
 }
 .confirm__div h1 {
@@ -68,14 +69,22 @@
     margin: 0.3rem 0rem;
     text-align: center;
 }
-.verify__icon {
-    border-radius: 5rem;
-    padding: 1.5rem 1.5rem;
+.confirm__divs .confirm__divss {
+    margin: 0rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2.5rem;
-    width: 2.5rem;
+    flex-direction: column;
+}
+.verify__icon {
+    border-radius: 5rem;
+    padding: 1.2rem 1.2rem;
+    margin: 0.5rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.2rem;
+    width: 2.2rem;
     background-color: var(--color-orange);
     box-shadow: var(--box-shadow);
 }
@@ -84,12 +93,38 @@
     font-size: var(--font-smalley);
     color: var(--color-nav);
     font-weight: 600;
-    /* margin: 0.7rem 0rem; */
 }
 .confirm__form  small span {
     color: var(--color-orange);
     cursor: pointer;
 }
+@media (min-width: 768px) and (max-width: 992px) {
+    .confirm__divs {
+        padding: 2rem 2rem 0.8rem 2rem;
+        align-items: center;
+        flex-direction: column;
+    }
+    .confirm__divs .confirm__content {
+        font-size: var(--font-smalleys);
+    }
+    .confirm__input input{
+        font-size: var(--font-header);
+        padding: 0.3rem 0rem;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1024px) {
+    .confirm__divs {
+        padding: 2rem 2rem 0.8rem 2rem;
+        align-items: center;
+        flex-direction: column;
+    }
+    .confirm__divs .confirm__content {
+        font-size: var(--font-smalleys);
+    }
+
+}
+
 @media (min-width: 481px) and (max-width: 767px) {
     .confirm__div h1 {
         font-size: var(--font-smalley);
@@ -97,7 +132,16 @@
     .confirm__div {
          height: calc(100vh - 3.5rem);
     }
-
+    .confirm__divs .confirm__content {
+        font-size: var(--font-smalley);
+        margin: 0.6rem 0rem;
+    }
+    .verify__icon {
+        padding: 1rem 1rem;
+        margin: 0.5rem 0rem;
+        height: 1rem;
+        width: 1rem;
+    }   
 }
 
 @media (min-width: 391px) and (max-width: 480px) {
@@ -110,7 +154,12 @@
     .confirm__divs {
         margin: 0rem 2rem;
     }
-
+    .verify__icon {
+        padding: 1rem 1rem;
+        margin: 0.5rem 0rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 }
 @media (min-width: 281px) and (max-width: 390px) {
     .confirm__divs {
@@ -122,13 +171,23 @@
     .confirm__div {
          height: calc(100vh - 3.5rem);
     }
+    .confirm__divs .confirm__content {
+        font-size: var(--font-small);
+        margin: 0.3rem 0rem;
+    }
 
+    .verify__icon {
+        padding: 1rem 1rem;
+        margin: 0.5rem 0rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 }
 
 @media screen and (width: 280px) {
     .confirm__divs {
         margin: 0rem 1rem;
-        padding: 2rem 0rem;
+        padding: 2rem 0.8rem 0.8rem 0.8rem;
     }
     .confirm__div h1 {
         font-size: var(--font-smalley);
@@ -137,136 +196,14 @@
          height: calc(100vh - 3.5rem);
     }
 
-}
-/* .confirm__form  small {
-    text-align: center;
-    font-size: var(--font-fold);
-    color: var(--color-nav);
-    font-weight: 600;
-   
-} */
-/* .confirm__div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     width: 100%;
-     height: 100vh;
-}
-.confirm__divs {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.confirm__form {
-    display: flex;
-    
-    flex-direction: column;
-}
-.verify__icon {
-    border-radius: 5rem;
-    padding: 2rem 2rem;
-    height: 3rem;
-    width: 3rem;
-    background-color: var(--color-orange);
-    box-shadow: var(--box-shadow);
-}
-.verify__icons {
-    color: var(--color-white);
-}
-.confirm__divs .confirm__content {
-    font-size: var(--font-fold);
-    color: var(--color-nav);
-    font-weight: 500;
-    margin: 0.9rem 0rem;
-    font-weight: 500;
-    text-align: center;
-}
-.confirm__div h1 {
-    font-size: var(--font-headers);
-    font-weight: 700;
-    margin: 0.6rem 0rem;
-}
-.confirm__divs .confirm__content span {
-    color: var(--color-orange);
-    font-weight:  700;
-
-}
-.confirm__input {
-    width: 100%;
-    margin: 0.7rem 0rem;
-     border: 1px solid var(--color-orange);
-    background: var(--color-white);
-    border-radius: 2rem;
-    padding: 0.3rem 0rem;
-    
-}
-.confirm__input input {
-    border-radius: 2rem;
-    border: transparent;
-    margin: 0rem 1rem;
-    background: transparent;
-    background: var(--color-white);
-    font-size: var(--font-fold);
-    outline: none;
-}
-.confirm__form .btnss {
-    width: 100%;
-    height: 100%;
-    margin: 0.3rem 0rem;
-}
-.confirm__form .btnss button {
-    outline: none;
-    width: 100%;
-   border-radius: 2rem;
-   margin: 0.7rem 0rem;
-   padding: 0.7rem;
-   border: none;
-   color: var(--color-white);
-   background: var(--color-orange);
-   
-}
-
-.confirm__form  small {
-    text-align: center;
-    font-size: var(--font-fold);
-    color: var(--color-nav);
-    font-weight: 600;
-    margin: 0.7rem 0rem;
-}
-.confirm__form  small span {
-    color: var(--color-orange);
-    cursor: pointer;
-}
-@media screen and (width: 280px) {
-    .confirm__div h1 {
-        font-size: var(--font-smalleys);
-    }
     .confirm__divs .confirm__content {
-        font-size: var(--font-logos);
-        color: var(--color-nav);
-        font-weight: 500;
+        font-size: var(--font-small);
+        margin: 0.3rem 0rem;
+    }
+    .verify__icon {
+        padding: 1rem 1rem;
         margin: 0.5rem 0rem;
-        font-weight: 500;
-        text-align: center;
+        height: 1.5rem;
+        width: 1.5rem;
     }
-    .confirm__form .btnss button {
-       margin: 0.7rem 0rem;
-       padding: 0.7rem 0.5rem;
-
-       
-    }
-    .confirm__input input {
-        margin: 0rem 0.2rem;
-    }
-    .confirm__form small {
-        text-align: center;
-        font-size: var(--font-smalleys);
-        color: var(--color-nav);
-        font-weight: 600;
-        margin: 0.6rem 0rem;
-    }
-    
 }
- */
