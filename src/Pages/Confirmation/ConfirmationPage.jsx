@@ -33,7 +33,7 @@ const ConfirmationPage = () => {
     try {
       setLoading(true)
       console.log("otp here",data)
-      const response = await axios.post(`https://migro.onrender.com/api/v1/otp/verify-otp?email=${emailParam}&otp=${data.confirm}`,
+      const response = await axios.post(`https://migro.onrender.com/api/v1/otp/verify-otp`,{email:emailParam,otp:data.confirm},
       {
         headers:{
           'Content-Type':'application/json'
