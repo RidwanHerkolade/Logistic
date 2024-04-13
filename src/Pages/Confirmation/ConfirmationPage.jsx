@@ -22,12 +22,13 @@ const ConfirmationPage = () => {
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
+  const phoneParam = queryParams.get("phone");
   const emailParam = queryParams.get("email");
 
 
   useEffect(() => {
     
-  }, [emailParam]);
+  }, [phoneParam]);
 
   const onSubmit = async (data) => {
     try {
@@ -48,7 +49,6 @@ const ConfirmationPage = () => {
       setLoading(false)
     }
   };
-
   const resendOtp = async () => {
     try {
       
@@ -80,7 +80,7 @@ const ConfirmationPage = () => {
         <div className="confirm__divss">
         <h1>Phone verification</h1>
         <div className="confirm__content">
-          input the otp sent to your number <span>{emailParam}</span>
+          input the otp sent to your number <span>{phoneParam}</span>
         </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="confirm__form">
