@@ -130,7 +130,7 @@
         font-size: var(--font-smalley);
     }
     .confirm__div {
-         height: calc(100vh - 3.5rem);
+         height: calc(100vh - 3.49rem);
     }
     .confirm__divs .confirm__content {
         font-size: var(--font-smalley);
