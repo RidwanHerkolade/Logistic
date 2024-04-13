@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import "./confirmation.css";
+import "./Confirmation.css";
 import CallIcon from "@mui/icons-material/Call";
 import { useForm } from "react-hook-form";
 import { useLocation, useParams, useNavigate} from "react-router-dom";
