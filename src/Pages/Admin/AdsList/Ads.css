@@ -125,12 +125,12 @@
 }
 @media (min-width: 768px) and (max-width: 992px) {
     .Ads__list {
-        display: flex;
+        /* display: flex; */
         justify-content: center;
-        position: absolute;
+        /* position: absolute; */
         top: -1rem;
         z-index: 999;
-        background: var(--color-white);
+        /* background: var(--color-white); */
         align-items: center;
         width: 100%;
     }
