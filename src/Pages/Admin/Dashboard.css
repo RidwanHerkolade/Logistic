@@ -1,11 +1,8 @@
-
 /* sidenav styles  */
-
 .aside .aside__navs {
     margin-left: 2rem;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;  
 }
 .aside__navs .nav__logo {
     margin: 1.5rem 2rem;
@@ -64,7 +61,6 @@
     padding: 0.9rem;
     background: var(--color-nav);
     position: relative;
-
 }
 .greeting__divs {
     display: flex;
@@ -85,7 +81,6 @@
     border-radius: 2rem;
     color: var(--color-nav);
     background-color: var(--color-yellow);
-    
 }
 .move__ad {
     position: absolute;
@@ -94,7 +89,6 @@
     height: 0rem;
     top: 5.03rem;
 }
-
 /* AdminCount Divs */
 .count__divs {
     display: grid;
@@ -103,7 +97,6 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 1.5rem;
 }
-
 .count {
       width: 100%;
       box-shadow: var(--box-shadow);
@@ -116,32 +109,12 @@
 .count__num h2  {
     font-size: var(--font-fold);
     opacity: 0.8;
-    
 }
 .count__num h3  {
     font-size: var(--font-fold);
-    opacity: 0.8;
-    
+    opacity: 0.8;   
 }
-
 .form {
         width: 45%;
         padding: 2rem;
    }
-   /* @media screen and (max-width: 480px) {
-    .admin__section {
-        flex-direction: column-reverse; 
-        height: auto; 
-    }
-
-    .admin__content1,
-    .admin__content2 {
-        flex: 1; 
-        width: 100%; 
-    }
-    
-   }
-
-   @media  (min-width: 992px) and  (max-width: 1199px) {
-
-   } */

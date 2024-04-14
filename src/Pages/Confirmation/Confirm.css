@@ -57,7 +57,6 @@
     font-size: var(--font-folds);
     font-weight: 600;
 }
-
 .confirm__divs .confirm__content span {
     color: var(--color-orange);
     font-weight:  600;
@@ -111,7 +110,6 @@
         font-size: var(--font-header);
         padding: 0.3rem 0rem;
     }
-
 }
 @media (min-width: 993px) and (max-width: 1024px) {
     .confirm__divs {
@@ -122,9 +120,7 @@
     .confirm__divs .confirm__content {
         font-size: var(--font-smalleys);
     }
-
 }
-
 @media (min-width: 481px) and (max-width: 767px) {
     .confirm__div h1 {
         font-size: var(--font-smalley);
@@ -174,7 +170,6 @@
         font-size: var(--font-small);
         margin: 0.3rem 0rem;
     }
-
     .verify__icon {
         padding: 1rem 1rem;
         margin: 0.5rem 0rem;
@@ -182,7 +177,6 @@
         width: 1.5rem;
     }
 }
-
 @media screen and (width: 280px) {
     .confirm__divs {
         margin: 0rem 1rem;
@@ -194,7 +188,6 @@
     .confirm__div {
          height: calc(100vh - 3.5rem);
     }
-
     .confirm__divs .confirm__content {
         font-size: var(--font-small);
         margin: 0.3rem 0rem;

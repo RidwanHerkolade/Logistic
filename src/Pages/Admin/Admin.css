@@ -43,7 +43,6 @@
     margin-top: 1rem;
     position: relative;
 }
-
 .forminput__input input {
     width: 100%;
     height: 1rem;
@@ -79,7 +78,6 @@
     bottom: 0.4rem;
 }
 .submit__btn {
-
     background: var(--color-white);
     font-weight: 700;
     color: var(--color-nav);
@@ -102,7 +100,6 @@
      color: var(--color-nav);
      opacity: 0.5;
      text-transform: capitalize;
-
 }
 @media screen and (max-width: 480px) {
     .forms {
@@ -122,20 +119,16 @@
         width: 60%;
         border-radius: 0.5rem;
    }
-
 }
 @media  (min-width: 769px) and  (max-width: 1198px) {
     .forms {
         width: 60%;
         border-radius: 0.5rem;
    }
-
 }
-
 @media screen and (width: 280px) {
     .forms {
          width: 90%;
          padding: 2rem 1rem;
     }
-    
 }

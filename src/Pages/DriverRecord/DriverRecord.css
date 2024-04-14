@@ -16,7 +16,6 @@
     border-radius: 0.5rem;
     padding: 1rem;
 }
-/* input */
 .record__divInp.error {
     border: 1px solid rgb(145, 14, 14);
   }
@@ -43,7 +42,6 @@
     color: var(--color-icon);
  }
  .record__btn button{
-   
     padding: 0.7rem 1rem;
     color: var(--color-nav);
     font-weight: 500;
@@ -79,18 +77,15 @@
     padding: 0rem 0.57rem;
     margin:  0.6rem 0rem;
     border-radius: 0.2rem;
-   
 }  
 .record__input {
     width: calc(100% - 0rem);
-   
 }
 .record__input .ss {
     width: 100% !important;
 }
 .record__divInp .record__input .ss  {
-    width: 100% !important;
-  
+    width: 100% !important; 
 }
 .record__divInp.error {
     border: 1px solid rgb(145, 14, 14);
@@ -114,9 +109,7 @@
       align-items: center;
       z-index: 9999;
       backdrop-filter: blur(0.04px);
-    
  }
-
  .success__div {
     display: flex;
     border-radius: 0.5rem;
@@ -139,7 +132,6 @@
     align-items: center;
      font-size: var(--font-logo);
      color: var(--color-nav);
-
  }
  .success__div .success__btn{
     border: 1px solid var(--color-orange);
@@ -165,16 +157,11 @@
     font-size:(--font-small);
     color: var(--color-red);
 }
-
-
 @media (min-width: 992px) and (max-width: 1100px) {
     .driverrecordform__div {
         margin: 0rem 4rem;
         padding: 1rem;
-
-    }
-
-    
+    }    
 }
 @media (min-width: 768px) and (max-width: 991px)  {
     .driverrecordform__div {
@@ -188,7 +175,6 @@
         position: absolute;
         top: 7rem;
     }
-    
     .formdivs__record {
         flex-direction: column;
         gap: 0rem;
@@ -196,7 +182,6 @@
     .form__recorddivs {
         margin: 1rem;
     }
-
 }
 @media (min-width: 391px) and (max-width: 480px) {
     .driverrecordform__div {
@@ -222,7 +207,6 @@
     .record__ad {
         width: 100%;
     }
-
 }
 @media (min-width: 281px) and (max-width: 390px) {
     .driverrecordform__div {
@@ -248,8 +232,7 @@
     }
     .record__ad {
         width: 100%;
-    }
-    
+    }   
 }
 @media screen and (width: 280px) {
     .formdivs__record {
@@ -266,442 +249,4 @@
     .form__recorddivs {
         margin: 1rem;
     }
-
 }
-
-
-
-/* 
-
-.recordAds__divs {
-    width: 100%;
-    height: calc(100vh -  4.3rem);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-yellow);
-
-}
-.recordAd___divs {
-    width: 100%;
-    padding: 0rem 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-}
-.record__divsAd {
-    width: 100%;
-    z-index: 15;
-    height: calc(100vh - 6.5rem);
-    position: relative;
-    background-color: var(--color-yellow);
-}
-.record__divsAdmin {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 15;
-    height: calc(100vh - 6.0rem);
-    position: relative;
-    background-color: var(--color-yellow);
-    overflow: scroll;
-}
-.record___Admindivs {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.record__success {
-    position: absolute;
-   bottom: 5rem;
-    z-index: 999;
-}
-.user__error {
-    font-size:(--font-small);
-    color: var(--color-red);
-}
-
-.record__div {
-    width: 80%;
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow);
-    padding: 0rem 2rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.3rem;
-    justify-content: center;
-}
-.registers__div {
-    width: 80%;
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow);
-    padding: 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.3rem;
-    justify-content: center;
-}
-
-.record___divs {
-    width: 100%;
-    padding: 1rem 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.record___divss {
-    width: 100%;
-    height: 100%;
-    /* padding: 2rem 0rem; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
-/* .user__error {
-    font-size:(--font-small);
-    color: var(--color-red);
-}
-
-.record__div {
-    width: 80%;
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow);
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.3rem;
-    justify-content: center;
-}
-.record__divAd {
-    display: flex;
-    flex-direction: column;
-}
-.record__header {
-    font-size: var(--font-folds);
-     display: flex;
-     justify-content: center;
-    line-height: 50px;
-}
-.record__ad {
-    width: 100%;
-}
-.record__location {
-    width: 100%;    
-    /* border: 2px solid red; */
-/* } */
-
-/* .formdivs__record {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-
-}
-.form__recorddivs {
-    display: flex;
-    flex-direction: column;
-}
- .record__divInp {
-    display: flex !important;
-    background: var(--color-white);
-    align-items: center;
-    gap: 0.55rem;
-    position: relative;
-    border: 1px solid var(--color-icon);
-    padding: 0rem 0.57rem;
-    margin:  0.6rem 0rem;
-    border-radius: 0.2rem;
-   
-}  */
-
-/* .record__input {
-    width: calc(100% - 0rem);
-   
-}
-.record__input .ss {
-    width: 100%;
-}
-.record__divInp.error {
-    border: 1px solid rgb(145, 14, 14);
-  }
-.record__inputs .record__input input {
-    font-size: var(--font-small);
-    width: 100%;
-    border: none;
-    outline: none;
-    position: relative;
-    padding: 0.6rem 0rem;
-  }
-  .record__inputs span {
-    position: absolute;
-    font-size: 0rem;
-    left: 0.5rem;
-    top: 0.75rem;
-  } 
-  .record__inputs .iconsize {
-    font-size: 1rem;
-    color: var(--color-icon);
- }
- .record__inputs .iconloc {
-    font-size: 1rem;
-    color: var(--color-icon);
- }
- .record__btn button{
-   
-    padding: 0.7rem 1rem;
-    color: var(--color-nav);
-    font-weight: 500;
-    border-radius: 0.3rem;
-    margin: 1rem 0rem;
-    border: none;
-    background: var(--color-yellow);
-    font-size: var(--font-small);
-    outline: 0rem;
- } */
- /* REGISTER */
-
- /* .register__btn{
-    padding: 0.5rem ;
-    text-align: center;
-    border-radius: 0.3rem;
-    width: 6rem;
-    color: var(--color-reg);
-    cursor: pointer;
-    font-weight: 500;
-    border: 1px solid var(--color-reg);
-    outline: none;
-    background: transparent;
-    margin: 0.5rem 0rem;
-    font-size: var(--font-small);
-
- }
- .register__btn:hover {
-    background: var(--color-reg);
-    color: var(--color-white);
- } */
-
- /* ADS DIVS */
- /* .ad__divs {
-    width: 100%;
-    height: calc(100vh - 5rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- .ad__div {
-    display: flex;
-    border-radius: 0.4rem;
-    padding: 6rem;
-    justify-content: flex-start;
-    align-items: start ;
-    background: var(--color-white);
-    box-shadow: var(--box-shadow);
- }
- .ads__content {
-    font-size: var(--font-small);
-    padding: 0.5rem 1rem;
-    text-transform: capitalize;
-    font-family: var(--font-family);
- }
- .ad__div p {
-    font-family: var(--font-family);
-    font-size: var(--font-header);
-    font-weight: 600;
-    color: var(--color-yellow);
-    margin: 0rem;
-    padding: 0rem;
- } */
- /* SUCCESS PAGE  */
- /* .success__session {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      backdrop-filter: blur(0.04px);
-    
- }
-
- .success__div {
-    display: flex;
-    border-radius: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-family);
-    padding: 6rem 5rem;
-    margin: 0rem 1rem;
-    background: var(--color-white);
-    flex-direction: column;
- }
- .success__div h1 {
-    font-size: var(--font-fold);
-    color: var(--color-nav);
- } 
- .success__div p {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-     font-size: var(--font-logo);
-     color: var(--color-nav);
-
- }
- .success__div .success__btn{
-    border: 1px solid var(--color-orange);
-    padding: 0.35rem 2rem;
-    background: transparent;
-    color: var(--color-nav);
-    font-weight: 500;
-    text-align: center;
-    border-radius: 1rem;
-    outline: none;
-    cursor: pointer;
- }
- .success__div .success__btn:hover {
-    background: var(--color-orange);
-    color: var(--color-white);
-
- } */
- /* @media screen and (width: 280px) {
-    .record__divs {
-        padding: 0rem 0rem;
-    }
-    .form__recorddivs {
-        margin: 0rem 0.5rem;
-    }
-
- } */
- /* @media  (min-width: 320px) and  (max-width: 400px) {
-    .recordAds__divs {
-        width: 100%;
-        position: absolute;
-        top: 9rem;
-        background-color: var(--color-white);
-        box-shadow: var(--box-shadow);
-        
-   
- } */
-  /* @media screen and (max-width: 480px) {
-
-    .recordAds__divs {
-        background: var(--color-yellow);
-    }
-    .recordAds__divs {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 7rem;
-        padding: 0rem 0rem;
-    }
-    .form__recorddivs {
-        margin: 0rem 1rem;
-    }
-    .driver__forminput span {
-        left: 0.5rem;
-        top: 0.75rem;
-    } 
-    .record__div {
-        border-radius: 0rem;
-      
-    }
-  
-    
-    .form__recorddivs {
-        padding: 0rem 0rem;
-
-    }
-  
-    .formdivs__record {
-        flex-direction: column;
-        gap: 0rem;
-    }
-    .register{
-
-        width: 5rem;
-    
-     }
-     .record__input .ss {
-        padding: 0rem 0rem;
-    }
-     .record__inputs .record__input input {
-        padding: 0.55rem 0rem;
-        position: relative;
-      }
-     .record__input input:placeholder {
-        padding: 0rem 1rem;
-      }
-      .ad__div {
-        display: flex;
-        flex-direction: column;
-        border-radius: 0.4rem;
-        padding: 0rem 4rem;
-     }
-
-     .success__div {
-        display: flex;
-        border-radius: 0.5rem;
-        padding: 3rem 4rem;
-        background: var(--color-white);
-        box-shadow: var(--box-shadow);
-        flex-direction: column;
-     }
-  } */
-/* @media  (min-width: 481px) and  (max-width: 768px) {
-    .recordAds__divs {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 8rem;
-        padding: 0rem 0rem;
-    }
-    .recordAd___divs {
-        border: 2px solid red;
-    }
-    .form__recorddivs {
-        padding: 0rem 2rem;
-    }
-    .formdivs__record {
-        display: flex;
-        flex-direction: column;
-    }
-    .ad__div {
-        flex-direction: column;
-        border-radius: 0.4rem;
-     }
-
-    .recordAd__divs {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 5rem;
-        padding: 0rem 0rem;
-    }
-   
-} */
-/* @media  (min-width: 992px) and  (max-width: 1199px) {
-    .formdivs__record {
-        gap: 0.5rem;
-    }
-     .record__inputs .record__input input {
-        padding: 0.55rem 0rem;
-        position: relative;
-      }
-      .registers__div {
-        padding: 1rem 2rem;
-    }
-} 
-} */
-

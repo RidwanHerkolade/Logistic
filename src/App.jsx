@@ -30,7 +30,6 @@ function App() {
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
               <Route path="driverlist" element={<DriverList />} />
               <Route path="adslist" element={<AdsList />} />
-
             </Route>
 
             <Route path="/" element={<ShareLayout />}>
