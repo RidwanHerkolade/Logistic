@@ -130,7 +130,7 @@
         font-size: var(--font-smalley);
     }
     .confirm__div {
-         height: calc(100vh - 3.49rem);
+         height: calc(100vh - 3.5rem);
     }
     .confirm__divs .confirm__content {
         font-size: var(--font-smalley);
@@ -143,7 +143,6 @@
         width: 1rem;
     }   
 }
-
 @media (min-width: 391px) and (max-width: 480px) {
     .confirm__div h1 {
         font-size: var(--font-smalley);
