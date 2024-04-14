@@ -113,7 +113,7 @@
     }
 
 }
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 993px) and (max-width: 1024px) {
     .confirm__divs {
         padding: 2rem 2rem 0.8rem 2rem;
         align-items: center;
