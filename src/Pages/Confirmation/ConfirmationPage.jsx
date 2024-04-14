@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate} from "react-router-dom";
 import axios from "axios";
 import Loading from "../../LoadingOverlay/Loading";
-// import "./Confirm.css"
+import "./Confirm.css"
 
 const ConfirmationPage = () => {
 
