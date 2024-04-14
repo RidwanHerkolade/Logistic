@@ -28,11 +28,11 @@ const DriverForm = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post(
-        // "https://migro.onrender.com/api/v1/login",
+      const response = await axios.post("https://migro.onrender.com/api/v1/login",{email: data.email,password: data.passWord},
         {
-          email: data.email,
-          password: data.passWord,
+          headers:{
+            'Content-Type':'application/json'
+          }
         }
       );
       if (response.status === 200){
@@ -42,11 +42,11 @@ const DriverForm = () => {
         console.log("sign in successful:", response.data.data.accessToken);
         toast.success("registration created!");
         navigate("/profile", { state: { formData: data } });
-      }else{
-        toast.error("password or email not correct");
       }
     } catch (error) {
-      toast.error("password or email not correct");
+      if (error.response.status === 409) {
+        toast.error("INVALID_CREDENTIALS OR ACTIVATE YOUR ACCOUNT"); 
+      }
       console.error("error signin in user:", error);
     } finally {
       setLoading(false);
