@@ -66,6 +66,7 @@ const Register = () => {
           type: data.TYPE.value,
           firstName: data.firstName,
           lastName: data.lastName,
+          createdDate:'',
         },
         {
           headers: {
