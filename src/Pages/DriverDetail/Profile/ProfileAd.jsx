@@ -6,7 +6,6 @@ import axios from "axios";
 const ProfileAd = () => {
   const { handleClosePopup, handleId } = useContext(AddContext);
   const [adsInfo, setAdsInfo] = useState({});
-
   useEffect(() => {
     displayAdsInfo();
   }, [handleId]);
@@ -40,32 +39,6 @@ const ProfileAd = () => {
         <form className="form__adslist">
           <div className="grid">
             <div className="value__name">
-              {/* <div className="grids">
-                <div className="value__input">
-                  <label htmlFor="firstName">first name</label>
-                  <div className="record__inputValue">
-                  {adsInfo?.firstname}
-                  </div>
-                </div>
-              </div> */}
-              {/* <div className="grids">
-                <div className="value__input">
-                  <label htmlFor="lastName">last name</label>
-                  <div className="record__inputValue">{adsInfo?.lastname}</div>
-                </div>
-              </div> */}
-              {/* <div className="grids">
-                <div className="value__input">
-                  <label htmlFor="email">email</label>
-                  <div className="record__inputValue">{adsInfo?.email}</div>
-                </div>
-              </div> */}
-              {/* <div className="grids">
-                <div className="value__input">
-                  <label htmlFor="phone">Phone</label>
-                  <div className="record__inputValue">{adsInfo?.phone}</div>
-                </div>
-              </div> */}
               <div className="grids">
                 <div className="value__input">
                   <label htmlFor="vehicle">Type of vehicle</label>
