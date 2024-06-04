@@ -22,44 +22,52 @@ const DriverForm = () => {
 
   // Loading efffect
   const [loading, setLoading] = useState(false);
-  const {handleLoggedIn, setUserEmail} = useContext(AddContext)
+  const {handleLoggedIn, setUserEmail} = useContext(AddContext);
+  const navigate = useNavigate();
 
-  // Submit handler for the login form
-  const onSubmit = async (data) => {
+  // **Login function to handle user login after registration**
+  const loginUser = async (data) => {
     try {
-      setLoading(true);
-      const response = await axios.post("https://migro.onrender.com/api/v1/login",{email: data.email,password: data.passWord},
+      const response = await axios.post(
+        "https://migro.onrender.com/api/v1/login",
+        { email: data.email, password: data.passWord },
         {
-          headers:{
-            'Content-Type':'application/json'
+          headers: {
+            'Content-Type': 'application/json'
           }
         }
       );
-      if (response.status === 200){
+
+      if (response.status === 200) {
         sessionStorage.setItem("userData", JSON.stringify(response.data.data.accessToken));
-        handleLoggedIn()
-        setUserEmail(response.data.data.email)
+        handleLoggedIn();
+        setUserEmail(response.data.data.email);
         console.log("sign in successful:", response.data.data.accessToken);
         toast.success("registration created!");
         navigate("/profile", { state: { formData: data } });
       }
     } catch (error) {
       if (error.response.status === 409) {
-        toast.error("INVALID_CREDENTIALS OR ACTIVATE YOUR ACCOUNT"); 
+        toast.error("INVALID_CREDENTIALS OR ACTIVATE YOUR ACCOUNT");
       }
       console.error("error signin in user:", error);
     } finally {
       setLoading(false);
     }
   };
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+    await loginUser(data);
+  };
+
   useEffect(() => {
     const userData = sessionStorage.getItem("userData");
     if (userData) {
       navigate("/profile");
     }
-  }, []);
+  }, [navigate]);
 
-  const navigate = useNavigate();
   const handleRegister = () => {
     navigate("/register");
   };

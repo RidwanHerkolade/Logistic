@@ -74,10 +74,9 @@ const Register = () => {
           },
         }
       );
-      console.log(response)
-      const phone = response.data.phoneNumber || data.phone;
-      const email = response.data.email || data.email;
-      navigate(`/confirmationPage?phone=${encodeURIComponent(phone)}`);
+      if (response.status === 201) {
+        navigate("/driverform");
+      }
     } catch (error) {
       if (error.response && error.response.status === 409) {
         setUserExist(true);
