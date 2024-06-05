@@ -7,7 +7,6 @@ import DriverForm from "./Pages/DriverDetail/DriverForm";
 import DriverRecord from "./Pages/DriverRecord/DriverRecord";
 import Home from "./Pages/Homepage/Home";
 import Register from "./Pages/DriverRegister/Register";
-import ConfirmationPage from "./Pages/Confirmation/ConfirmationPage";
 import AddYourAdd from "./Pages/Admin/AddYourAdd";
 import AddContextProvider from "./Context/AddContext";
 import AdsList from "./Pages/Admin/AdsList/AdsList";
@@ -44,10 +43,6 @@ function App() {
               
               <Route path="driverrecord" element={<DriverRecord />}></Route>
               <Route path="register" element={<Register />}></Route>
-              <Route
-                path="confirmationpage"
-                element={<ConfirmationPage />}
-              ></Route>
             </Route>
             <Route path="profile" element={<Profile />}>
 
