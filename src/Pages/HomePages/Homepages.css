@@ -1,0 +1,7 @@
+.homes__page {
+    display: flex;
+    width: 100%;
+    height: calc( 100vh - 0rem);
+    flex-direction: column;
+    background: gray;
+}

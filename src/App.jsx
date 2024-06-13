@@ -18,13 +18,18 @@ import DriverList from "./Pages/Admin/DriverList/DriverList";
 import ForgetPassword from "./Pages/DriverDetail/ForgetPassWord/ForgetPassword";
 import ResetPassword from "./Pages/DriverDetail/ForgetPassWord/ResetPassword";
 import ProfileAd from "./Pages/DriverDetail/Profile/ProfileAd";
+import HomePages from "./Pages/HomePages/HomePages";
 
 function App() {
   return (
     <>
+  
       <AddContextProvider>
         <BrowserRouter>
+     
           <Routes>
+          <Route index element={<HomePages />}></Route>
+            {/* <Route path="homepages" element={<HomePages/>}></Route> */}
             <Route path="admin" element={<Admin />}></Route>
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
               <Route path="driverlist" element={<DriverList />} />
@@ -34,7 +39,7 @@ function App() {
             <Route path="/" element={<ShareLayout />}>
               <Route path="addyouradd" element={<AddYourAdd />}></Route>
               <Route path="announcement" element={<Announcement />}></Route>
-              <Route index element={<Home />}></Route>
+              <Route path="home" element={<Home/>}></Route>
               <Route path="driverad" element={<DriverAd />}></Route>
               <Route path="/driverform" element={<DriverForm />}>
                    

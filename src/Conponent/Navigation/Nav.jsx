@@ -28,7 +28,7 @@ const Nav = () => {
               <div className="logo__icon">
                 <LocalShippingIcon className="icons" />
               </div>
-              <span>MigRo</span>
+              <span>Diver</span>
             </div>
           </div>
           <div
