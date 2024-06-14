@@ -28,7 +28,7 @@ function App() {
         <BrowserRouter>
      
           <Routes>
-          
+          <Route path="/" element={<HomePages />}></Route>
             {/* <Route path="homepages" element={<HomePages/>}></Route> */}
             <Route path="admin" element={<Admin />}></Route>
             <Route path="admin/dashboard" element={<AdminSharedLayout />}>
@@ -39,7 +39,7 @@ function App() {
             <Route path="/" element={<ShareLayout />}>
               <Route path="addyouradd" element={<AddYourAdd />}></Route>
               <Route path="announcement" element={<Announcement />}></Route>
-              <Route index element={<HomePages />}></Route>
+              <Route path="home" element={<Home/>}></Route>
               <Route path="driverad" element={<DriverAd />}></Route>
               <Route path="/driverform" element={<DriverForm />}>
                    

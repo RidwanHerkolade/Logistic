@@ -35,7 +35,7 @@ const Nav = () => {
             className={mobile ? "nav__link-mobile" : "nav__link" }
             // onClick={handleClick}
           >
-            <Link to="/" className="homepage__link" onClick={handleNavClick}>
+            <Link to="home" className="homepage__link" onClick={handleNavClick}>
               <HouseIcon className="icon" />
               <span>Homepage</span>
             </Link>
