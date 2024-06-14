@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeHeader from './HomeHeader/HomeHeader'
-import "./HomePages.css"
+import "./Homepages.css"
 import Footer from './Footer/Footer'
 
 

@@ -35,8 +35,8 @@ function App() {
               <Route path="driverlist" element={<DriverList />} />
               <Route path="adslist" element={<AdsList />} />
             </Route>
-
             <Route path="/" element={<ShareLayout />}>
+  
               <Route path="addyouradd" element={<AddYourAdd />}></Route>
               <Route path="announcement" element={<Announcement />}></Route>
               <Route path="home" element={<Home/>}></Route>
